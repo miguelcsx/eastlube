@@ -1,0 +1,15 @@
+/* app/tailwind.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'gotham Book';
+    src: url(./assets/GothamSSm-Book_Web.woff2);
+}
+
+* {
+    font-family: 'Gotham Book', sans-serif;
+    scroll-behavior: auto;
+}
