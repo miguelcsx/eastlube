@@ -5,22 +5,28 @@ import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons
 const testimonials = [
   {
     id: 1,
-    name: "John F. Kennedy",
+    name: "Carter Machinery",
     testimony: "Eastern Lubrication Systems has consistently delivered top-notch service. Their technicians are incredibly knowledgeable, and their attention to detail during installations and maintenance is commendable. It's evident that they take pride in their work.",
-    image: "https://images.unsplash.com/photo-1682713496815-33c0a4dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=80",
+    image: "images/carter.jpeg",
   },
   {
     id: 2,
-    name: "Barack Obama",
-    testimony: "I've been impressed by the company's dedication to innovation. Eastern Lubrication Systems doesn't just provide solutions; they continually seek out the latest technology to optimize our lubrication systems. Their commitment to staying at the forefront of the industry is truly commendable.",
-    image: "https://images.unsplash.com/photo-1580130379624-3a069adbffc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1452&q=80",
+    name: "Harbour Group Management",
+    testimony: "We've been impressed by the company's dedication to innovation. Eastern Lubrication Systems doesn't just provide solutions; they continually seek out the latest technology to optimize our lubrication systems. Their commitment to staying at the forefront of the industry is truly commendable.",
+    image: "images/hgliving.jpg",
   },
   {
     id: 3,
-    name: "Bill Clinton",
+    name: "The Heritage Group Accelerator",
     testimony: "The work culture at Eastern Lubrication Systems is exceptional. The team's collaborative spirit and commitment to excellence make it a fantastic place to work. They've created an environment where employees feel valued, and that positivity translates into the high-quality service they provide to clients.",
-    image: "https://images.unsplash.com/photo-1580128637411-80206ae868e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlsbCUyMGNsaW50b258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    image: "images/hga.png",
   },
+  {
+    id: 4,
+    name: "United Parcel Service",
+    testimony: "Eastern Lubrication Systems transformed our workflow. Their expertise in lubrication systems made our maintenance process more efficient. They're attentive and offer cost-saving solutions. Partnering with them has been a game-changer for us.",
+    image: "images/ups.png",
+  }
   // Add more testimonials as needed
 ];
 

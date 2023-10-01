@@ -42,11 +42,11 @@ const CareersSection = () => {
                 maxWidth: "1400px", // Set a maximum width if needed
               }}
             />
-            <h3 className="text-2xl font-semibold px-2 ">{position.title}</h3>
+            <h3 className="text-2xl font-semibold px-2 text-cyan-300">{position.title}</h3>
             <p className="text-lg mb-4">{position.subtitle}</p>
             <p className="text-md mb-4 px-8 md:px-32 ">{position.description}</p>
-            <button className="bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black">
-              Contact
+            <button className="bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300">
+              Apply
             </button>
           </div>
         ))}

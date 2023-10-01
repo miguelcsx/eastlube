@@ -31,8 +31,8 @@ const GallerySection: React.FC = () => {
           description: 'Description 4' 
         },
         { id: 5, 
-          src: 'images/reels.jpg', 
-          title: 'Reels', 
+          src: 'images/service-center.png', 
+          title: 'Service Center', 
           description: 'Description 5' 
         },
         { id: 6, 

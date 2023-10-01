@@ -104,7 +104,7 @@ __export(root_exports, {
 });
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-3EKUQUWV.css";
+var tailwind_default = "/build/_assets/tailwind-TPXRG5B4.css";
 
 // app/root.tsx
 import {
@@ -208,7 +208,7 @@ var Navbar = () => {
 // app/components/Footer.tsx
 import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
 var Footer = () => /* @__PURE__ */ jsx5("footer", { className: "bg-black text-white py-10", children: /* @__PURE__ */ jsxs4("div", { className: "container mx-auto text-center", children: [
-  /* @__PURE__ */ jsx5("div", { className: "text-xl font-bold mb-6", children: "Eastlube" }),
+  /* @__PURE__ */ jsx5("div", { className: "text-xl font-bold mb-6", children: "Eastern Lubrication Systems" }),
   /* @__PURE__ */ jsx5("div", { className: "mb-2", children: /* @__PURE__ */ jsx5("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }) }),
   /* @__PURE__ */ jsxs4("div", { className: "text-sm", children: [
     "\xA9 ",
@@ -219,10 +219,13 @@ var Footer = () => /* @__PURE__ */ jsx5("footer", { className: "bg-black text-wh
 
 // app/components/Header.tsx
 import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
-var Header = ({ title, description }) => /* @__PURE__ */ jsx6("div", { className: "bg-black w-full p-8 border-b", children: /* @__PURE__ */ jsxs5("div", { className: "text-white text-left mb-8 mx-4 md:mx-32 mt-12", children: [
-  /* @__PURE__ */ jsx6("h1", { className: "text-4xl font-bold", children: title }),
-  /* @__PURE__ */ jsx6("p", { className: "mt-12 pr-12", children: description })
-] }) }), Header_default = Header;
+var Header = ({ title, description, children }) => /* @__PURE__ */ jsxs5("div", { className: "bg-black w-full p-8 border-b", children: [
+  /* @__PURE__ */ jsxs5("div", { className: "text-white text-left mb-8 mx-2 md:mx-16 lg:mx-32 mt-12", children: [
+    /* @__PURE__ */ jsx6("h1", { className: "text-4xl font-bold", children: title }),
+    /* @__PURE__ */ jsx6("p", { className: "mt-12 md:pr-12", children: description })
+  ] }),
+  children
+] }), Header_default = Header;
 
 // app/components/ServiceSection.tsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -283,7 +286,7 @@ var services = [
 ], ServiceSection = () => /* @__PURE__ */ jsx7("div", { className: "bg-black w-full p-8 border-b", children: /* @__PURE__ */ jsx7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white", children: services.map((service) => /* @__PURE__ */ jsxs6("div", { className: "p-4 flex items-center md:mx-12", children: [
   /* @__PURE__ */ jsx7("div", { className: "mr-4 w-16 h-16 flex-shrink-0", children: /* @__PURE__ */ jsx7(FontAwesomeIcon, { icon: faCube }) }),
   /* @__PURE__ */ jsxs6("div", { className: "flex-grow-1", children: [
-    /* @__PURE__ */ jsx7("h2", { className: "text-lg font-semibold", children: service.title }),
+    /* @__PURE__ */ jsx7("h2", { className: "text-lg font-semibold text-cyan-300", children: service.title }),
     /* @__PURE__ */ jsx7("p", { className: "mt-2", children: service.description })
   ] })
 ] }, service.id)) }) }), ServiceSection_default = ServiceSection;
@@ -296,21 +299,27 @@ import { jsx as jsx8, jsxs as jsxs7 } from "react/jsx-runtime";
 var testimonials = [
   {
     id: 1,
-    name: "John F. Kennedy",
+    name: "Carter Machinery",
     testimony: "Eastern Lubrication Systems has consistently delivered top-notch service. Their technicians are incredibly knowledgeable, and their attention to detail during installations and maintenance is commendable. It's evident that they take pride in their work.",
-    image: "https://images.unsplash.com/photo-1682713496815-33c0a4dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=80"
+    image: "images/carter.jpeg"
   },
   {
     id: 2,
-    name: "Barack Obama",
-    testimony: "I've been impressed by the company's dedication to innovation. Eastern Lubrication Systems doesn't just provide solutions; they continually seek out the latest technology to optimize our lubrication systems. Their commitment to staying at the forefront of the industry is truly commendable.",
-    image: "https://images.unsplash.com/photo-1580130379624-3a069adbffc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1452&q=80"
+    name: "Harbour Group Management",
+    testimony: "We've been impressed by the company's dedication to innovation. Eastern Lubrication Systems doesn't just provide solutions; they continually seek out the latest technology to optimize our lubrication systems. Their commitment to staying at the forefront of the industry is truly commendable.",
+    image: "images/hgliving.jpg"
   },
   {
     id: 3,
-    name: "Bill Clinton",
+    name: "The Heritage Group Accelerator",
     testimony: "The work culture at Eastern Lubrication Systems is exceptional. The team's collaborative spirit and commitment to excellence make it a fantastic place to work. They've created an environment where employees feel valued, and that positivity translates into the high-quality service they provide to clients.",
-    image: "https://images.unsplash.com/photo-1580128637411-80206ae868e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlsbCUyMGNsaW50b258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+    image: "images/hga.png"
+  },
+  {
+    id: 4,
+    name: "United Parcel Service",
+    testimony: "Eastern Lubrication Systems transformed our workflow. Their expertise in lubrication systems made our maintenance process more efficient. They're attentive and offer cost-saving solutions. Partnering with them has been a game-changer for us.",
+    image: "images/ups.png"
   }
   // Add more testimonials as needed
 ], TestimonialCarousel = () => {
@@ -426,7 +435,7 @@ var AboutSection = () => {
 // app/components/ImageSection.tsx
 import { jsx as jsx11, jsxs as jsxs10 } from "react/jsx-runtime";
 var ImageSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-zinc-950 text-white pt-4 pb-8", children: /* @__PURE__ */ jsxs10("div", { className: "mx-auto", children: [
-  /* @__PURE__ */ jsx11("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-0", children: [
+  /* @__PURE__ */ jsx11("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-0 md:px-12 lg:px-24 pt-2", children: [
     {
       src: "images/truck-tom.jpg",
       description: "Image 1 Description"
@@ -458,7 +467,7 @@ var ImageSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-zinc-
       )
     }
   ) }, index)) }),
-  /* @__PURE__ */ jsx11("p", { className: "mt-4 text-justify px-8 md:px-36 py-4", children: "At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. We're united by a shared commitment to delivering exceptional service to our clients. Join us in a dynamic work culture that values your contributions and fosters professional growth." })
+  /* @__PURE__ */ jsx11("p", { className: "mt-4 text-justify px-8 md:px-12 lg:px-24 py-4", children: "At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. We're united by a shared commitment to delivering exceptional service to our clients. Join us in a dynamic work culture that values your contributions and fosters professional growth." })
 ] }) }), ImageSection_default = ImageSection;
 
 // app/components/CareersSections.tsx
@@ -502,10 +511,10 @@ var CareersSection = () => /* @__PURE__ */ jsx12("section", { className: "bg-bla
         }
       }
     ),
-    /* @__PURE__ */ jsx12("h3", { className: "text-2xl font-semibold px-2 ", children: position.title }),
+    /* @__PURE__ */ jsx12("h3", { className: "text-2xl font-semibold px-2 text-cyan-300", children: position.title }),
     /* @__PURE__ */ jsx12("p", { className: "text-lg mb-4", children: position.subtitle }),
     /* @__PURE__ */ jsx12("p", { className: "text-md mb-4 px-8 md:px-32 ", children: position.description }),
-    /* @__PURE__ */ jsx12("button", { className: "bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black", children: "Contact" })
+    /* @__PURE__ */ jsx12("button", { className: "bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300", children: "Apply" })
   ] }, index))
 ] }) }), CareersSections_default = CareersSection;
 
@@ -797,8 +806,8 @@ var GallerySection = () => {
     },
     {
       id: 5,
-      src: "images/reels.jpg",
-      title: "Reels",
+      src: "images/service-center.png",
+      title: "Service Center",
       description: "Description 5"
     },
     {
@@ -935,7 +944,7 @@ var MissionVision = () => /* @__PURE__ */ jsxs21("section", { className: "border
     ) }),
     /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8", children: [
       /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4", children: "Mission" }),
-      /* @__PURE__ */ jsx23("p", { className: "text-lg", children: "To empower industries with precision lubrication solutions, ensuring optimal performance, efficiency, and sustainability, while building lasting relationships based on trust and excellence." })
+      /* @__PURE__ */ jsx23("p", { className: "text-lg", children: "To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service." })
     ] })
   ] }),
   /* @__PURE__ */ jsxs21("div", { className: "flex flex-col md:flex-row", children: [
@@ -1023,29 +1032,37 @@ var Collection = () => /* @__PURE__ */ jsx25("div", { className: "bg-black p-4 m
   ] })
 ] }, index)) }) }) }), Collection_default = Collection;
 
+// app/components/DownloadButton.tsx
+import { jsx as jsx26 } from "react/jsx-runtime";
+var DownloadButton = () => /* @__PURE__ */ jsx26("div", { className: "w-56 sm:w-64 mx-2 md:pr-12 md:mx-16 lg:mx-32 text-white bg-black p-4 rounded-md border border-white hover:bg-white hover:text-black hover:border-black hover:shadow-md transition-all duration-300", children: /* @__PURE__ */ jsx26("button", { onClick: () => {
+  let pdfFile = "assets/services-portfolio.pdf", currentDate = /* @__PURE__ */ new Date(), filename = `eastlube-portfolio-${currentDate.getDate()}-${currentDate.getMonth() + 1}-${currentDate.getFullYear()}.pdf`, tempAnchor = document.createElement("a");
+  tempAnchor.style.display = "none", tempAnchor.href = pdfFile, tempAnchor.setAttribute("download", filename), document.body.appendChild(tempAnchor), tempAnchor.click(), document.body.removeChild(tempAnchor);
+}, children: "Download Portfolio" }) }), DownloadButton_default = DownloadButton;
+
 // app/routes/work.tsx
-import { jsx as jsx26, jsxs as jsxs24 } from "react/jsx-runtime";
+import { jsx as jsx27, jsxs as jsxs24 } from "react/jsx-runtime";
 var meta6 = () => [
   { title: "Portfolio | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Portfolio() {
   return /* @__PURE__ */ jsxs24("main", { className: "bg-black", children: [
-    /* @__PURE__ */ jsx26(Navbar_default, {}),
-    /* @__PURE__ */ jsx26("div", { className: "px-4 md:px-14 lg:px-28", children: /* @__PURE__ */ jsx26(
+    /* @__PURE__ */ jsx27(Navbar_default, {}),
+    /* @__PURE__ */ jsx27("div", { className: "px-4 md:px-14 lg:px-28", children: /* @__PURE__ */ jsx27(
       Header_default,
       {
         title: "Our Work",
-        description: "Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products."
+        description: "Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products.",
+        children: /* @__PURE__ */ jsx27(DownloadButton_default, {})
       }
     ) }),
-    /* @__PURE__ */ jsx26(Collection_default, {}),
-    /* @__PURE__ */ jsx26(Footer_default, {})
+    /* @__PURE__ */ jsx27(Collection_default, {}),
+    /* @__PURE__ */ jsx27(Footer_default, {})
   ] });
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-J4YGCUIQ.js", imports: ["/build/_shared/chunk-BZNBSATU.js", "/build/_shared/chunk-NR2ZEJD3.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-4FZ5V23S.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-K34HO53Z.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-34S6LJ5O.js", "/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-44QMHMMR.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-AKSMYOHZ.js", imports: ["/build/_shared/chunk-44QMHMMR.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-56DXIACP.js", imports: ["/build/_shared/chunk-34S6LJ5O.js", "/build/_shared/chunk-44QMHMMR.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-57HNUJ3P.js", imports: ["/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-44QMHMMR.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-QURRY2CF.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-25JR747B.js", "/build/_shared/chunk-44QMHMMR.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-NODXEGUB.js", imports: ["/build/_shared/chunk-25JR747B.js", "/build/_shared/chunk-44QMHMMR.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "351717fc", hmr: void 0, url: "/build/manifest-351717FC.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-J4YGCUIQ.js", imports: ["/build/_shared/chunk-BZNBSATU.js", "/build/_shared/chunk-NR2ZEJD3.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WASP4D3O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-5S6M5P7T.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-34S6LJ5O.js", "/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-MKZIS24H.js", imports: ["/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-HWS5GVKY.js", imports: ["/build/_shared/chunk-34S6LJ5O.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-VFUI76DU.js", imports: ["/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-LCFN33TO.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-KNF3SQKX.js", imports: ["/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "45e635e3", hmr: void 0, url: "/build/manifest-45E635E3.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "production", assetsBuildDirectory = "public/build", future = {}, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

@@ -19,7 +19,7 @@ const ImageSection = () => {
   return (
     <section className="bg-zinc-950 text-white pt-4 pb-8">
       <div className="mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 md:px-12 lg:px-24 pt-2">
           {images.map((image, index) => (
             <div key={index} className="w-full">
               <div
@@ -38,7 +38,7 @@ const ImageSection = () => {
             </div>
           ))}
         </div>
-        <p className="mt-4 text-justify px-8 md:px-36 py-4">
+        <p className="mt-4 text-justify px-8 md:px-12 lg:px-24 py-4">
           At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. 
           We're united by a shared commitment to delivering exceptional service to our clients. 
           Join us in a dynamic work culture that values your contributions and fosters professional growth.

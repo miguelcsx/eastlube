@@ -5,6 +5,8 @@ import Footer from "~/components/Footer";
 import Header from "~/components/Header";
 import Collection from "~/components/Collection";
 
+import DownloadButton from "~/components/DownloadButton";
+
 export const meta: MetaFunction = () => {
   return [
     { title: "Portfolio | Eastlube" },
@@ -20,6 +22,7 @@ export default function Portfolio() {
         <Header
           title="Our Work"
           description="Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products."
+          children={<DownloadButton/>}
         />
       </div>
       <Collection />

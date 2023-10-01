@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="bg-black text-white py-10">
       <div className="container mx-auto text-center">
         {/* First row - Company name */}
-        <div className="text-xl font-bold mb-6">Eastlube</div>
+        <div className="text-xl font-bold mb-6">Eastern Lubrication Systems</div>
 
         {/* Second row - Contact email */}
         <div className="mb-2">

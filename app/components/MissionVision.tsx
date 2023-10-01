@@ -17,7 +17,7 @@ const MissionVision = () => {
         <div className="md:w-1/2 bg-black text-white py-6 px-8">
           <h2 className="text-4xl font-bold mb-4">Mission</h2>
           <p className="text-lg">
-            To empower industries with precision lubrication solutions, ensuring optimal performance, efficiency, and sustainability, while building lasting relationships based on trust and excellence.
+            To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service.
           </p>
         </div>
       </div>
@@ -28,7 +28,7 @@ const MissionVision = () => {
         <div className="md:w-1/2 bg-black text-white py-6 px-8">
           <h2 className="text-4xl font-bold mb-4">Vision</h2>
           <p className="text-lg">
-          To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future.
+            To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future.
           </p>
         </div>
         {/* Right Column */}
