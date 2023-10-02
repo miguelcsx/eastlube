@@ -45,7 +45,7 @@ const TestimonialCarousel = () => {
     <div className="bg-black  w-full p-8 text-white">
       <div className="max-w-4xl mx-auto relative container p-4 rounded-lg overflow-hidden">
         {/* Title */}
-        <h1 className="text-4xl text-white mb-16">Clients Opinions</h1>
+        <h1 className="text-4xl text-white mb-16">Featured Clients</h1>
 
         {/* Testimonial Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
@@ -76,8 +76,8 @@ const TestimonialCarousel = () => {
 
           {/* Testimonial Name and Testimony */}
           <div className="col-span-1">
-            <h2 className="text-3xl font-semibold mb-2">{testimonials[currentTestimonialIndex].name}</h2>
-            <p className="text-italic text-sm">{testimonials[currentTestimonialIndex].testimony}</p>
+            <h2 className="text-4xl font-semibold mb-20 md:mr-12">{testimonials[currentTestimonialIndex].name}</h2>
+            {/*mb-2 3xl <p className="text-italic text-sm">{testimonials[currentTestimonialIndex].testimony}</p>*/}
           </div>
         </div>
       </div>

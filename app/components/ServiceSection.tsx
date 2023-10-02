@@ -59,7 +59,7 @@ const services = [
 
 const ServiceSection = () => {
     return (
-        <div className="bg-black w-full p-8 border-b">
+        <div className="bg-black bg-opacity-90 w-full p-8 border-b">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white">
                 {services.map((service) => (
                     <div key={service.id} className="p-4 flex items-center md:mx-12">

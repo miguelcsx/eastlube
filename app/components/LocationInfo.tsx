@@ -9,7 +9,7 @@ const LocationInfo: React.FC = () => {
             <div className="container mx-auto flex flex-col md:flex-row items-center justify-center">
                 {/* Left Column - Title */}
                 <div className="md:w-1/2 text-center md:text-left">
-                    <h2 className="text-5xl font-bold">Our Locations</h2>
+                    <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl">Our Locations</h2>
                 </div>
 
                 {/* Right Column - Business Location and Contact */}

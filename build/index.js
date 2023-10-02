@@ -104,7 +104,7 @@ __export(root_exports, {
 });
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-TPXRG5B4.css";
+var tailwind_default = "/build/_assets/tailwind-GFQJBFRB.css";
 
 // app/root.tsx
 import {
@@ -181,7 +181,7 @@ import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
 var Navbar = () => {
   let [isSidenavOpen, setIsSidenavOpen] = useState2(!1);
   return /* @__PURE__ */ jsxs3("nav", { className: "sticky bg-black text-white top-0 left-0 right-0 z-50 flex justify-between items-center px-12 p-4 text-sm font-bold", children: [
-    /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsx4(Link2, { to: "/", children: /* @__PURE__ */ jsx4("img", { className: "h-3", src: "", alt: "Eastlube" }) }) }),
+    /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsx4(Link2, { to: "/", className: "sm:text-sm", children: /* @__PURE__ */ jsx4("img", { className: "h-8 md:h-3", src: "", alt: "Eastern Lubrication Systems" }) }) }),
     /* @__PURE__ */ jsx4("div", { className: "hidden lg:inline", children: /* @__PURE__ */ jsxs3("ul", { className: "flex justify-center hover:cursor-pointer", children: [
       /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/services", children: "Services" }) }),
       /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/work", children: "Portfolio" }) }),
@@ -283,7 +283,7 @@ var services = [
     description: "Reliable and efficient solutions for precise oil distribution."
   }
   // Add more service objects as needed
-], ServiceSection = () => /* @__PURE__ */ jsx7("div", { className: "bg-black w-full p-8 border-b", children: /* @__PURE__ */ jsx7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white", children: services.map((service) => /* @__PURE__ */ jsxs6("div", { className: "p-4 flex items-center md:mx-12", children: [
+], ServiceSection = () => /* @__PURE__ */ jsx7("div", { className: "bg-black bg-opacity-90 w-full p-8 border-b", children: /* @__PURE__ */ jsx7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white", children: services.map((service) => /* @__PURE__ */ jsxs6("div", { className: "p-4 flex items-center md:mx-12", children: [
   /* @__PURE__ */ jsx7("div", { className: "mr-4 w-16 h-16 flex-shrink-0", children: /* @__PURE__ */ jsx7(FontAwesomeIcon, { icon: faCube }) }),
   /* @__PURE__ */ jsxs6("div", { className: "flex-grow-1", children: [
     /* @__PURE__ */ jsx7("h2", { className: "text-lg font-semibold text-cyan-300", children: service.title }),
@@ -328,7 +328,7 @@ var testimonials = [
   };
   return /* @__PURE__ */ jsxs7("div", { className: "bg-black  w-full p-8 text-white", children: [
     /* @__PURE__ */ jsxs7("div", { className: "max-w-4xl mx-auto relative container p-4 rounded-lg overflow-hidden", children: [
-      /* @__PURE__ */ jsx8("h1", { className: "text-4xl text-white mb-16", children: "Clients Opinions" }),
+      /* @__PURE__ */ jsx8("h1", { className: "text-4xl text-white mb-16", children: "Featured Clients" }),
       /* @__PURE__ */ jsxs7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 items-center", children: [
         /* @__PURE__ */ jsx8(
           "button",
@@ -356,10 +356,7 @@ var testimonials = [
             children: /* @__PURE__ */ jsx8(FontAwesomeIcon2, { icon: faChevronRight })
           }
         ),
-        /* @__PURE__ */ jsxs7("div", { className: "col-span-1", children: [
-          /* @__PURE__ */ jsx8("h2", { className: "text-3xl font-semibold mb-2", children: testimonials[currentTestimonialIndex].name }),
-          /* @__PURE__ */ jsx8("p", { className: "text-italic text-sm", children: testimonials[currentTestimonialIndex].testimony })
-        ] })
+        /* @__PURE__ */ jsx8("div", { className: "col-span-1", children: /* @__PURE__ */ jsx8("h2", { className: "text-4xl font-semibold mb-20 md:mr-12", children: testimonials[currentTestimonialIndex].name }) })
       ] })
     ] }),
     /* @__PURE__ */ jsx8("div", { className: "flex justify-center mt-4", children: testimonials.map((_, index) => /* @__PURE__ */ jsx8(
@@ -414,28 +411,10 @@ __export(careers_exports, {
   meta: () => meta2
 });
 
-// app/components/AboutSection.tsx
-import { jsx as jsx10, jsxs as jsxs9 } from "react/jsx-runtime";
-var AboutSection = () => {
-  let years = ((startYear) => {
-    let years2 = (/* @__PURE__ */ new Date()).getFullYear() - startYear;
-    return Math.floor(years2 / 5) * 5;
-  })(1992);
-  return /* @__PURE__ */ jsx10("section", { className: "bg-black text-white pt-14 pb-6", children: /* @__PURE__ */ jsxs9("div", { className: "container mx-auto text-justify", children: [
-    /* @__PURE__ */ jsx10("h2", { className: "text-3xl font-bold mb-8 text-center", children: "About our business" }),
-    /* @__PURE__ */ jsxs9("p", { className: "text-base mb-4 mx-8 md:mx-24 ", children: [
-      "Eastern Lubrication System is a company with more than ",
-      years,
-      " years of experience in providing services in the lubrication equipment. We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas."
-    ] }),
-    /* @__PURE__ */ jsx10("p", { className: "text-base pb-16 mx-8 md:mx-24", children: "We offer competitive pricing and represent the most trusted names in the business: Graco, Balcrank, Lincoln, Reelcraft, Hannay and many more." })
-  ] }) });
-}, AboutSection_default = AboutSection;
-
 // app/components/ImageSection.tsx
-import { jsx as jsx11, jsxs as jsxs10 } from "react/jsx-runtime";
-var ImageSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-zinc-950 text-white pt-4 pb-8", children: /* @__PURE__ */ jsxs10("div", { className: "mx-auto", children: [
-  /* @__PURE__ */ jsx11("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-0 md:px-12 lg:px-24 pt-2", children: [
+import { jsx as jsx10, jsxs as jsxs9 } from "react/jsx-runtime";
+var ImageSection = () => /* @__PURE__ */ jsx10("section", { className: "bg-zinc-950 text-white pt-4 pb-8", children: /* @__PURE__ */ jsxs9("div", { className: "mx-auto", children: [
+  /* @__PURE__ */ jsx10("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-0 md:px-12 lg:px-24 pt-2", children: [
     {
       src: "images/truck-tom.jpg",
       description: "Image 1 Description"
@@ -448,7 +427,7 @@ var ImageSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-zinc-
       src: "images/work-site.jpg",
       description: "Image 3 Description"
     }
-  ].map((image, index) => /* @__PURE__ */ jsx11("div", { className: "w-full", children: /* @__PURE__ */ jsx11(
+  ].map((image, index) => /* @__PURE__ */ jsx10("div", { className: "w-full", children: /* @__PURE__ */ jsx10(
     "div",
     {
       className: "image-container",
@@ -457,7 +436,7 @@ var ImageSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-zinc-
         // Set your desired fixed height here
         overflow: "hidden"
       },
-      children: /* @__PURE__ */ jsx11(
+      children: /* @__PURE__ */ jsx10(
         "img",
         {
           src: image.src,
@@ -467,14 +446,14 @@ var ImageSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-zinc-
       )
     }
   ) }, index)) }),
-  /* @__PURE__ */ jsx11("p", { className: "mt-4 text-justify px-8 md:px-12 lg:px-24 py-4", children: "At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. We're united by a shared commitment to delivering exceptional service to our clients. Join us in a dynamic work culture that values your contributions and fosters professional growth." })
+  /* @__PURE__ */ jsx10("p", { className: "mt-4 text-justify px-8 md:px-12 lg:px-24 py-4", children: "At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. We're united by a shared commitment to delivering exceptional service to our clients. Join us in a dynamic work culture that values your contributions and fosters professional growth." })
 ] }) }), ImageSection_default = ImageSection;
 
 // app/components/CareersSections.tsx
-import { jsx as jsx12, jsxs as jsxs11 } from "react/jsx-runtime";
-var CareersSection = () => /* @__PURE__ */ jsx12("section", { className: "bg-black text-white pt-24 pb-12", children: /* @__PURE__ */ jsxs11("div", { className: "max-w-6xl mx-auto text-center", children: [
-  /* @__PURE__ */ jsx12("h2", { className: "text-4xl font-bold mb-4", children: "Careers" }),
-  /* @__PURE__ */ jsx12("p", { className: "text-lg mb-8", children: "Explore our available job positions." }),
+import { jsx as jsx11, jsxs as jsxs10 } from "react/jsx-runtime";
+var CareersSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-black text-white pt-24 pb-12", children: /* @__PURE__ */ jsxs10("div", { className: "max-w-6xl mx-auto text-center", children: [
+  /* @__PURE__ */ jsx11("h2", { className: "text-4xl font-bold mb-4", children: "Careers" }),
+  /* @__PURE__ */ jsx11("p", { className: "text-lg mb-8", children: "Explore our available job positions." }),
   [
     {
       title: "Secretary",
@@ -486,16 +465,16 @@ var CareersSection = () => /* @__PURE__ */ jsx12("section", { className: "bg-bla
       title: "Lubrication Technician",
       subtitle: "Automotive Services",
       description: "Skilled in the installation, maintanance, and servicing of automotive lubrication systems, ensuring optimal performance and customer satisfaction.",
-      imageSrc: "images/outside-pump.jpg"
+      imageSrc: "images/lub.png"
     },
     {
       title: "Inventory Control Specialist",
       subtitle: "Resource Management",
       description: "Manages and optimizes fluid inventory, ensuring the availability of essential resources and minimizing waste within the company's operations.",
-      imageSrc: "images/used-oil.jpg"
+      imageSrc: "images/outside-pump.jpg"
     }
-  ].map((position, index) => /* @__PURE__ */ jsxs11("div", { className: "mb-8", children: [
-    /* @__PURE__ */ jsx12(
+  ].map((position, index) => /* @__PURE__ */ jsxs10("div", { className: "mb-8", children: [
+    /* @__PURE__ */ jsx11(
       "img",
       {
         src: position.imageSrc,
@@ -511,34 +490,34 @@ var CareersSection = () => /* @__PURE__ */ jsx12("section", { className: "bg-bla
         }
       }
     ),
-    /* @__PURE__ */ jsx12("h3", { className: "text-2xl font-semibold px-2 text-cyan-300", children: position.title }),
-    /* @__PURE__ */ jsx12("p", { className: "text-lg mb-4", children: position.subtitle }),
-    /* @__PURE__ */ jsx12("p", { className: "text-md mb-4 px-8 md:px-32 ", children: position.description }),
-    /* @__PURE__ */ jsx12("button", { className: "bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300", children: "Apply" })
+    /* @__PURE__ */ jsx11("h3", { className: "text-2xl font-semibold px-2 text-cyan-300", children: position.title }),
+    /* @__PURE__ */ jsx11("p", { className: "text-lg mb-4", children: position.subtitle }),
+    /* @__PURE__ */ jsx11("p", { className: "text-md mb-4 px-8 md:px-32 ", children: position.description }),
+    /* @__PURE__ */ jsx11("button", { className: "bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300", children: "Apply" })
   ] }, index))
 ] }) }), CareersSections_default = CareersSection;
 
 // app/routes/careers.tsx
-import { jsx as jsx13, jsxs as jsxs12 } from "react/jsx-runtime";
+import { jsx as jsx12, jsxs as jsxs11 } from "react/jsx-runtime";
 var meta2 = () => [
   { title: "Careers | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Careers() {
-  return /* @__PURE__ */ jsxs12("main", { children: [
-    /* @__PURE__ */ jsx13(Navbar_default, {}),
-    /* @__PURE__ */ jsx13(AboutSection_default, {}),
-    /* @__PURE__ */ jsx13(ImageSection_default, {}),
-    /* @__PURE__ */ jsx13("div", { className: "flex h-[70vh]", children: /* @__PURE__ */ jsx13(
+  return /* @__PURE__ */ jsxs11("main", { children: [
+    /* @__PURE__ */ jsx12(Navbar_default, {}),
+    /* @__PURE__ */ jsx12(Header_default, { title: "Work with us", description: "Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products. As a full line service company, we have every component necessary for an effective lubrication system. We also perform installation service making us the complete solution for all your needs." }),
+    /* @__PURE__ */ jsx12(ImageSection_default, {}),
+    /* @__PURE__ */ jsx12("div", { className: "flex h-[70vh] bg-black", children: /* @__PURE__ */ jsx12(
       "img",
       {
         src: "images/entrance.png",
         alt: "Background",
-        className: "h-full w-full object-cover"
+        className: "h-full w-full object-cover md:px-3 lg:px-6"
       }
     ) }),
-    /* @__PURE__ */ jsx13(CareersSections_default, {}),
-    /* @__PURE__ */ jsx13(Footer_default, {})
+    /* @__PURE__ */ jsx12(CareersSections_default, {}),
+    /* @__PURE__ */ jsx12(Footer_default, {})
   ] });
 }
 
@@ -550,29 +529,29 @@ __export(contact_exports, {
 });
 
 // app/components/ContactForm.tsx
-import { jsx as jsx14, jsxs as jsxs13 } from "react/jsx-runtime";
-var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 text-white pt-24 pb-6 md:px-12 px-6", children: /* @__PURE__ */ jsx14("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxs13("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
-  /* @__PURE__ */ jsxs13("div", { children: [
-    /* @__PURE__ */ jsx14("h2", { className: "text-4xl font-bold mb-4", children: "Contact" }),
-    /* @__PURE__ */ jsx14("p", { className: "text-base mb-8 mr-20", children: "Come visit our service centers and experience the power of expert lubrication support!" }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx14("h3", { className: "text-xl font-semibold", children: "Address" }),
-      /* @__PURE__ */ jsx14("p", { children: "512 N. Crain Highway, Suite #13" }),
-      /* @__PURE__ */ jsx14("p", { children: "Glen Burnie, MD 21061" })
+import { jsx as jsx13, jsxs as jsxs12 } from "react/jsx-runtime";
+var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 text-white pt-24 pb-6 md:px-12 px-6", children: /* @__PURE__ */ jsx13("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxs12("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
+  /* @__PURE__ */ jsxs12("div", { children: [
+    /* @__PURE__ */ jsx13("h2", { className: "text-4xl font-bold mb-4", children: "Contact" }),
+    /* @__PURE__ */ jsx13("p", { className: "text-base mb-8 mr-20", children: "Come visit our service centers and experience the power of expert lubrication support!" }),
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsx13("h3", { className: "text-xl font-semibold", children: "Address" }),
+      /* @__PURE__ */ jsx13("p", { children: "512 N. Crain Highway, Suite #13" }),
+      /* @__PURE__ */ jsx13("p", { children: "Glen Burnie, MD 21061" })
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx14("h3", { className: "text-xl font-semibold", children: "Email" }),
-      /* @__PURE__ */ jsx14("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" })
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsx13("h3", { className: "text-xl font-semibold", children: "Email" }),
+      /* @__PURE__ */ jsx13("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" })
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx14("h3", { className: "text-xl font-semibold", children: "Phone" }),
-      /* @__PURE__ */ jsx14("p", { children: "+1 833-880-PUMP (7867)" })
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsx13("h3", { className: "text-xl font-semibold", children: "Phone" }),
+      /* @__PURE__ */ jsx13("p", { children: "+1 833-880-PUMP (7867)" })
     ] })
   ] }),
-  /* @__PURE__ */ jsx14("div", { children: /* @__PURE__ */ jsxs13("form", { children: [
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx14("label", { htmlFor: "name", className: "block text-base font-thin mb-1", children: "Name" }),
-      /* @__PURE__ */ jsx14(
+  /* @__PURE__ */ jsx13("div", { children: /* @__PURE__ */ jsxs12("form", { children: [
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsx13("label", { htmlFor: "name", className: "block text-base font-thin mb-1", children: "Name" }),
+      /* @__PURE__ */ jsx13(
         "input",
         {
           required: !0,
@@ -584,10 +563,10 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
         }
       )
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4 flex", children: [
-      /* @__PURE__ */ jsxs13("div", { className: "mr-2", children: [
-        /* @__PURE__ */ jsx14("label", { htmlFor: "address", className: "block text-base font-thin mb-1", children: "Address" }),
-        /* @__PURE__ */ jsx14(
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4 flex", children: [
+      /* @__PURE__ */ jsxs12("div", { className: "mr-2", children: [
+        /* @__PURE__ */ jsx13("label", { htmlFor: "address", className: "block text-base font-thin mb-1", children: "Address" }),
+        /* @__PURE__ */ jsx13(
           "input",
           {
             type: "text",
@@ -598,9 +577,9 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
           }
         )
       ] }),
-      /* @__PURE__ */ jsxs13("div", { children: [
-        /* @__PURE__ */ jsx14("label", { htmlFor: "zipCode", className: "block text-base font-thin mb-1", children: "ZIP Code" }),
-        /* @__PURE__ */ jsx14(
+      /* @__PURE__ */ jsxs12("div", { children: [
+        /* @__PURE__ */ jsx13("label", { htmlFor: "zipCode", className: "block text-base font-thin mb-1", children: "ZIP Code" }),
+        /* @__PURE__ */ jsx13(
           "input",
           {
             type: "text",
@@ -612,11 +591,11 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
         )
       ] })
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4 flex", children: [
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4 flex", children: [
       " ",
-      /* @__PURE__ */ jsxs13("div", { className: "mr-2", children: [
-        /* @__PURE__ */ jsx14("label", { htmlFor: "email", className: "block text-base font-thin mb-1", children: "Email" }),
-        /* @__PURE__ */ jsx14(
+      /* @__PURE__ */ jsxs12("div", { className: "mr-2", children: [
+        /* @__PURE__ */ jsx13("label", { htmlFor: "email", className: "block text-base font-thin mb-1", children: "Email" }),
+        /* @__PURE__ */ jsx13(
           "input",
           {
             required: !0,
@@ -628,9 +607,9 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
           }
         )
       ] }),
-      /* @__PURE__ */ jsxs13("div", { children: [
-        /* @__PURE__ */ jsx14("label", { htmlFor: "phone", className: "block text-base font-thin mb-1", children: "Phone" }),
-        /* @__PURE__ */ jsx14(
+      /* @__PURE__ */ jsxs12("div", { children: [
+        /* @__PURE__ */ jsx13("label", { htmlFor: "phone", className: "block text-base font-thin mb-1", children: "Phone" }),
+        /* @__PURE__ */ jsx13(
           "input",
           {
             type: "tel",
@@ -642,9 +621,9 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
         )
       ] })
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx14("label", { htmlFor: "subject", className: "block text-base font-thin mb-1", children: "Subject" }),
-      /* @__PURE__ */ jsx14(
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsx13("label", { htmlFor: "subject", className: "block text-base font-thin mb-1", children: "Subject" }),
+      /* @__PURE__ */ jsx13(
         "input",
         {
           type: "text",
@@ -655,9 +634,9 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
         }
       )
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx14("label", { htmlFor: "message", className: "block text-base font-thin mb-1", children: "Message" }),
-      /* @__PURE__ */ jsx14(
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsx13("label", { htmlFor: "message", className: "block text-base font-thin mb-1", children: "Message" }),
+      /* @__PURE__ */ jsx13(
         "textarea",
         {
           id: "message",
@@ -667,9 +646,9 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
         }
       )
     ] }),
-    /* @__PURE__ */ jsxs13("div", { className: "mb-4 flex justify-center", children: [
+    /* @__PURE__ */ jsxs12("div", { className: "mb-4 flex justify-center", children: [
       " ",
-      /* @__PURE__ */ jsx14(
+      /* @__PURE__ */ jsx13(
         "button",
         {
           type: "submit",
@@ -682,8 +661,8 @@ var ContactForm = () => /* @__PURE__ */ jsx14("div", { className: "bg-zinc-950 t
 ] }) }) }), ContactForm_default = ContactForm;
 
 // app/components/Map.tsx
-import { jsx as jsx15 } from "react/jsx-runtime";
-var Map = () => /* @__PURE__ */ jsx15("section", { className: "w-screen h-[60vh]", children: /* @__PURE__ */ jsx15(
+import { jsx as jsx14 } from "react/jsx-runtime";
+var Map = () => /* @__PURE__ */ jsx14("section", { className: "w-screen h-[60vh]", children: /* @__PURE__ */ jsx14(
   "iframe",
   {
     src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12372.373576009162!2d-76.6217315!3d39.1725975!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7fd22320bc205%3A0x1898610d91b6621e!2sEastern%20Lubrication%20Systems!5e0!3m2!1sen!2sco!4v1695784779300!5m2!1sen!2sco",
@@ -697,17 +676,17 @@ var Map = () => /* @__PURE__ */ jsx15("section", { className: "w-screen h-[60vh]
 ) }), Map_default = Map;
 
 // app/routes/contact.tsx
-import { jsx as jsx16, jsxs as jsxs14 } from "react/jsx-runtime";
+import { jsx as jsx15, jsxs as jsxs13 } from "react/jsx-runtime";
 var meta3 = () => [
   { title: "Contact Us | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Contact() {
-  return /* @__PURE__ */ jsxs14("main", { children: [
-    /* @__PURE__ */ jsx16(Navbar_default, {}),
-    /* @__PURE__ */ jsx16(ContactForm_default, {}),
-    /* @__PURE__ */ jsx16(Map_default, {}),
-    /* @__PURE__ */ jsx16(Footer_default, {})
+  return /* @__PURE__ */ jsxs13("main", { children: [
+    /* @__PURE__ */ jsx15(Navbar_default, {}),
+    /* @__PURE__ */ jsx15(ContactForm_default, {}),
+    /* @__PURE__ */ jsx15(Map_default, {}),
+    /* @__PURE__ */ jsx15(Footer_default, {})
   ] });
 }
 
@@ -719,9 +698,9 @@ __export(index_exports, {
 });
 
 // app/components/Welcome.tsx
-import { jsx as jsx17, jsxs as jsxs15 } from "react/jsx-runtime";
-var SplitScreen = () => /* @__PURE__ */ jsx17("div", { className: "flex h-screen", children: /* @__PURE__ */ jsxs15("div", { className: "flex-1 relative text-center", children: [
-  /* @__PURE__ */ jsx17(
+import { jsx as jsx16, jsxs as jsxs14 } from "react/jsx-runtime";
+var SplitScreen = () => /* @__PURE__ */ jsx16("div", { className: "flex h-screen", children: /* @__PURE__ */ jsxs14("div", { className: "flex-1 relative text-center", children: [
+  /* @__PURE__ */ jsx16(
     "img",
     {
       src: "images/installations.jpg",
@@ -729,12 +708,30 @@ var SplitScreen = () => /* @__PURE__ */ jsx17("div", { className: "flex h-screen
       className: "h-full w-full object-cover"
     }
   ),
-  /* @__PURE__ */ jsx17("div", { className: "absolute top-0 left-0 h-full w-full bg-black opacity-50" }),
-  /* @__PURE__ */ jsxs15("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white", children: [
-    /* @__PURE__ */ jsx17("h1", { className: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6", children: "Keeping your business moving" }),
-    /* @__PURE__ */ jsx17("p", { className: "text-base md:text-lg lg:text-xl mb-8", children: "Experience the power and performance of a good lubrication system" })
+  /* @__PURE__ */ jsx16("div", { className: "absolute top-0 left-0 h-full w-full bg-black opacity-50" }),
+  /* @__PURE__ */ jsxs14("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white", children: [
+    /* @__PURE__ */ jsx16("h1", { className: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6", children: "Keeping your business moving" }),
+    /* @__PURE__ */ jsx16("p", { className: "text-base md:text-lg lg:text-xl mb-8", children: "Experience the power and performance of a good lubrication system" })
   ] })
 ] }) }), Welcome_default = SplitScreen;
+
+// app/components/AboutSection.tsx
+import { jsx as jsx17, jsxs as jsxs15 } from "react/jsx-runtime";
+var AboutSection = () => {
+  let years = ((startYear) => {
+    let years2 = (/* @__PURE__ */ new Date()).getFullYear() - startYear;
+    return Math.floor(years2 / 5) * 5;
+  })(1992);
+  return /* @__PURE__ */ jsx17("section", { className: "bg-black text-white pt-14 pb-6", children: /* @__PURE__ */ jsxs15("div", { className: "container mx-auto text-justify", children: [
+    /* @__PURE__ */ jsx17("h2", { className: "text-3xl font-bold mb-8 text-center", children: "About our business" }),
+    /* @__PURE__ */ jsxs15("p", { className: "text-base mb-4 mx-8 md:mx-24 ", children: [
+      "Eastern Lubrication System is a company with more than ",
+      years,
+      " years of experience in providing services in the lubrication equipment. We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas."
+    ] }),
+    /* @__PURE__ */ jsx17("p", { className: "text-base pb-16 mx-8 md:mx-24", children: "We offer competitive pricing and represent the most trusted names in the business: Graco, Balcrank, Lincoln, Reelcraft, Hannay and many more." })
+  ] }) });
+}, AboutSection_default = AboutSection;
 
 // app/components/Features.tsx
 import { jsx as jsx18, jsxs as jsxs16 } from "react/jsx-runtime";
@@ -857,7 +854,7 @@ var GallerySection = () => {
 // app/components/LocationInfo.tsx
 import { jsx as jsx20, jsxs as jsxs18 } from "react/jsx-runtime";
 var LocationInfo = () => /* @__PURE__ */ jsx20("section", { className: "bg-black py-28 text-white", children: /* @__PURE__ */ jsxs18("div", { className: "container mx-auto flex flex-col md:flex-row items-center justify-center", children: [
-  /* @__PURE__ */ jsx20("div", { className: "md:w-1/2 text-center md:text-left", children: /* @__PURE__ */ jsx20("h2", { className: "text-5xl font-bold", children: "Our Locations" }) }),
+  /* @__PURE__ */ jsx20("div", { className: "md:w-1/2 text-center md:text-left", children: /* @__PURE__ */ jsx20("h2", { className: "font-bold text-3xl md:text-4xl lg:text-5xl", children: "Our Locations" }) }),
   /* @__PURE__ */ jsxs18("div", { className: "md:w-1/2 mt-6 md:mt-0", children: [
     /* @__PURE__ */ jsx20("p", { className: "text-lg mb-4", children: "512 N. Crain Highway, Suite #13 Glen Burnie, MD 21061" }),
     /* @__PURE__ */ jsxs18("p", { className: "text-lg", children: [
@@ -932,7 +929,7 @@ var AboutUsSection = () => {
 
 // app/components/MissionVision.tsx
 import { jsx as jsx23, jsxs as jsxs21 } from "react/jsx-runtime";
-var MissionVision = () => /* @__PURE__ */ jsxs21("section", { className: "border-y", children: [
+var MissionVision = () => /* @__PURE__ */ jsxs21("section", { className: "border-y bg-black text-center", children: [
   /* @__PURE__ */ jsxs21("div", { className: "flex flex-col md:flex-row", children: [
     /* @__PURE__ */ jsx23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsx23(
       "img",
@@ -942,15 +939,15 @@ var MissionVision = () => /* @__PURE__ */ jsxs21("section", { className: "border
         className: "w-full h-auto"
       }
     ) }),
-    /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8", children: [
-      /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4", children: "Mission" }),
-      /* @__PURE__ */ jsx23("p", { className: "text-lg", children: "To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service." })
+    /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
+      /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Mission" }),
+      /* @__PURE__ */ jsx23("p", { className: "text-lg text-justify px-8", children: "To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service." })
     ] })
   ] }),
   /* @__PURE__ */ jsxs21("div", { className: "flex flex-col md:flex-row", children: [
-    /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8", children: [
-      /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4", children: "Vision" }),
-      /* @__PURE__ */ jsx23("p", { className: "text-lg", children: "To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future." })
+    /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
+      /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Vision" }),
+      /* @__PURE__ */ jsx23("p", { className: "text-lg text-justify px-8", children: "To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future." })
     ] }),
     /* @__PURE__ */ jsx23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsx23(
       "img",
@@ -1062,7 +1059,7 @@ function Portfolio() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-J4YGCUIQ.js", imports: ["/build/_shared/chunk-BZNBSATU.js", "/build/_shared/chunk-NR2ZEJD3.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WASP4D3O.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-5S6M5P7T.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-34S6LJ5O.js", "/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-MKZIS24H.js", imports: ["/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-HWS5GVKY.js", imports: ["/build/_shared/chunk-34S6LJ5O.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-VFUI76DU.js", imports: ["/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-LCFN33TO.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-KNF3SQKX.js", imports: ["/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-B3LWWHOG.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "45e635e3", hmr: void 0, url: "/build/manifest-45E635E3.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-J4YGCUIQ.js", imports: ["/build/_shared/chunk-BZNBSATU.js", "/build/_shared/chunk-NR2ZEJD3.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OG23JBHV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-ISPBSO6W.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-OHE72U2F.js", imports: ["/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-QDYUZGIN.js", imports: ["/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-MCXMJZBC.js", imports: ["/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-OH7AZEZB.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-TN2YXMLK.js", imports: ["/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "1807c99e", hmr: void 0, url: "/build/manifest-1807C99E.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "production", assetsBuildDirectory = "public/build", future = {}, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {

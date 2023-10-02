@@ -14,14 +14,14 @@ const CareersSection = () => {
       subtitle: "Automotive Services",
       description: "Skilled in the installation, maintanance, and servicing of automotive lubrication systems, ensuring optimal performance and customer satisfaction.",
       imageSrc:
-        "images/outside-pump.jpg",
+        "images/lub.png",
     },
     {
       title: "Inventory Control Specialist",
       subtitle: "Resource Management",
       description: "Manages and optimizes fluid inventory, ensuring the availability of essential resources and minimizing waste within the company's operations.",
       imageSrc:
-        "images/used-oil.jpg",
+        "images/outside-pump.jpg",
     },
   ];
 
