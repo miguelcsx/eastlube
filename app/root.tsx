@@ -1,5 +1,5 @@
 import stylesheet from "~/tailwind.css";
-
+import { Analytics } from "@vercel/analytics/react";
 import type { LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -29,6 +29,7 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        <Analytics/>
       </body>
     </html>
   );
