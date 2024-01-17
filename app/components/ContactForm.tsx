@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { json } from "@remix-run/node";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ContactForm = () => {
     return (
@@ -16,13 +18,18 @@ const ContactForm = () => {
                         </div>
                         <div className="mb-4">
                             <h3 className="text-xl font-semibold">Email</h3>
-                            <a href="mailto:contact@example.com" className="text-lg hover:underline">
+                            <a href="mailto:sales@eastlube.com" className="text-lg hover:underline">
                                 sales@eastlube.com
                             </a>
                         </div>
                         <div className="mb-4">
                             <h3 className="text-xl font-semibold">Phone</h3>
                             <p>+1 833-880-PUMP (7867)</p>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-semibold">Hours</h3>
+                            <p>Monday - Friday: 7:30 AM - 4:00 PM</p>
+                            <p>Saturday - Sunday: Closed</p>
                         </div>
                     </div>
 
@@ -43,7 +50,7 @@ const ContactForm = () => {
                                 />
                             </div>
                             <div className="mb-4 flex">
-                                <div className="mr-2">
+                                <div className="mr-2 w-full">
                                     <label htmlFor="address" className="block text-base font-thin mb-1">
                                         Address
                                     </label>
@@ -55,7 +62,7 @@ const ContactForm = () => {
                                         className="w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
                                     />
                                 </div>
-                                <div>
+                                <div className="w-full">
                                     <label htmlFor="zipCode" className="block text-base font-thin mb-1">
                                         ZIP Code
                                     </label>
@@ -70,7 +77,7 @@ const ContactForm = () => {
 
                             </div>
                             <div className="mb-4 flex"> {/* Wrap email and phone in a flex container */}
-                                <div className="mr-2">
+                                <div className="mr-2 w-full">
                                     <label htmlFor="email" className="block text-base font-thin mb-1">
                                         Email
                                     </label>
@@ -83,7 +90,7 @@ const ContactForm = () => {
                                         className="w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
                                     />
                                 </div>
-                                <div>
+                                <div className="w-full">
                                     <label htmlFor="phone" className="block text-base font-thin mb-1">
                                         Phone
                                     </label>
@@ -129,8 +136,6 @@ const ContactForm = () => {
                             </div>
                         </form>
                     </div>
-
-
                 </div>
             </div>
         </div >

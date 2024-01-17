@@ -7,7 +7,7 @@ import Map from "~/components/Map";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: "Contact Us | Eastlube" },
+        { title: "Contact | Eastlube" },
         { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" },
     ];
 };

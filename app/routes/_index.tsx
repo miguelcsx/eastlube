@@ -13,7 +13,7 @@ import LocationInfo from "~/components/LocationInfo";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "The best lubrication systems in the world | Eastlube" },
+    { title: "Eastern Lubrication Systems | Keeping your business moving" },
     { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" },
   ];
 };

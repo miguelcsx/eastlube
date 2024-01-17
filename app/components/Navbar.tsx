@@ -21,7 +21,9 @@ const Navbar = () => {
 
             {/* LOGO */}
             <div>
-                <Link to="/" className="sm:text-sm"><img className="h-8 md:h-3" src="" alt="Eastern Lubrication Systems" /></Link>
+                <Link to="/" className="sm:text-sm">
+                    <span className="inline ">Eastern Lubrication Systems</span>
+                </Link>
             </div>
 
             {/* MENU */}

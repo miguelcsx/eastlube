@@ -5,51 +5,71 @@ const CareersSection = () => {
     {
       title: "Secretary",
       subtitle: "Administrative Support",
-      description: "Responsible for administrative support, managing correspondence, scheduling appointments, and maintaining efficient office operations.",
-      imageSrc:
-        "images/oil-dispensing-station.jpeg",
+      description:
+        "Responsible for administrative support, managing correspondence, scheduling appointments, and maintaining efficient office operations.",
+      imageSrc: "images/oil-dispensing-station.jpeg",
+      tags: ["Administrative", "Secretarial"],
     },
     {
       title: "Lubrication Technician",
       subtitle: "Automotive Services",
-      description: "Skilled in the installation, maintanance, and servicing of automotive lubrication systems, ensuring optimal performance and customer satisfaction.",
-      imageSrc:
-        "images/lub.png",
+      description:
+        "Skilled in the installation, maintenance, and servicing of automotive lubrication systems, ensuring optimal performance and customer satisfaction.",
+      imageSrc: "images/lub.png",
+      tags: ["Automotive", "Technician"],
     },
     {
       title: "Inventory Control Specialist",
       subtitle: "Resource Management",
-      description: "Manages and optimizes fluid inventory, ensuring the availability of essential resources and minimizing waste within the company's operations.",
-      imageSrc:
-        "images/outside-pump.jpg",
+      description:
+        "Manages and optimizes fluid inventory, ensuring the availability of essential resources and minimizing waste within the company's operations.",
+      imageSrc: "images/outside-pump.jpg",
+      tags: ["Inventory Control", "Resource Management"],
     },
   ];
 
   return (
     <section className="bg-black text-white pt-24 pb-12">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4">Careers</h2>
-        <p className="text-lg mb-8">Explore our available job positions.</p>
-        {jobPositions.map((position, index) => (
-          <div key={index} className="mb-8">
-            <img
-              src={position.imageSrc}
-              alt={position.title}
-              className="mx-auto mb-4"
-              style={{
-                width: "80%", // Set the width to 80% of the viewport width
-                height: "auto", // Maintain the aspect ratio
-                maxWidth: "1400px", // Set a maximum width if needed
-              }}
-            />
-            <h3 className="text-2xl font-semibold px-2 text-cyan-300">{position.title}</h3>
-            <p className="text-lg mb-4">{position.subtitle}</p>
-            <p className="text-md mb-4 px-8 md:px-32 ">{position.description}</p>
-            <button className="bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300">
-              Apply
-            </button>
-          </div>
-        ))}
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-8 text-center">Careers</h2>
+        <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mx-3 lg:mx-0">
+          {jobPositions.map((position, index) => (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row bg-black border-gray-500 border p-6 rounded shadow-md sm:mx-3 transition-all duration-300 hover:border-white hover:shadow-lg cursor-pointer"
+              onClick={() => {}}
+            >
+              <div className="md:w-1/4 md:pr-6 mb-4 md:mb-0">
+                <div className="h-48 overflow-hidden rounded">
+                  <img
+                    src={position.imageSrc}
+                    alt={position.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div className="md:w-3/4 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    {position.title}
+                  </h3>
+                  <p className="text-md text-gray-600 mb-2">{position.subtitle}</p>
+                  <p className="text-sm mb-4">{position.description}</p>
+                </div>
+                <div className="flex flex-wrap mt-4">
+                  {position.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="bg-gray-300 text-gray-800 rounded-md px-2 py-1 text-sm mr-2 mb-2"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -14,7 +14,7 @@ import { createReadableStreamFromReadable } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
-import { jsx } from "react/jsx-runtime";
+import { jsxDEV } from "react/jsx-dev-runtime";
 var ABORT_DELAY = 5e3;
 function handleRequest(request, responseStatusCode, responseHeaders, remixContext, loadContext) {
   return isbot(request.headers.get("user-agent")) ? handleBotRequest(
@@ -32,13 +32,21 @@ function handleRequest(request, responseStatusCode, responseHeaders, remixContex
 function handleBotRequest(request, responseStatusCode, responseHeaders, remixContext) {
   return new Promise((resolve, reject) => {
     let shellRendered = !1, { pipe, abort } = renderToPipeableStream(
-      /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsxDEV(
         RemixServer,
         {
           context: remixContext,
           url: request.url,
           abortDelay: ABORT_DELAY
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/entry.server.tsx",
+          lineNumber: 48,
+          columnNumber: 7
+        },
+        this
       ),
       {
         onAllReady() {
@@ -65,13 +73,21 @@ function handleBotRequest(request, responseStatusCode, responseHeaders, remixCon
 function handleBrowserRequest(request, responseStatusCode, responseHeaders, remixContext) {
   return new Promise((resolve, reject) => {
     let shellRendered = !1, { pipe, abort } = renderToPipeableStream(
-      /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsxDEV(
         RemixServer,
         {
           context: remixContext,
           url: request.url,
           abortDelay: ABORT_DELAY
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/entry.server.tsx",
+          lineNumber: 98,
+          columnNumber: 7
+        },
+        this
       ),
       {
         onShellReady() {
@@ -104,7 +120,7 @@ __export(root_exports, {
 });
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-GFQJBFRB.css";
+var tailwind_default = "/build/_assets/tailwind-BLWS7XYD.css";
 
 // app/root.tsx
 import {
@@ -115,25 +131,69 @@ import {
   Scripts,
   ScrollRestoration
 } from "@remix-run/react";
-import { jsx as jsx2, jsxs } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV2 } from "react/jsx-dev-runtime";
 var links = () => [
   { rel: "stylesheet", href: tailwind_default }
 ];
 function App() {
-  return /* @__PURE__ */ jsxs("html", { lang: "en", children: [
-    /* @__PURE__ */ jsxs("head", { children: [
-      /* @__PURE__ */ jsx2("meta", { charSet: "utf-8" }),
-      /* @__PURE__ */ jsx2("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }),
-      /* @__PURE__ */ jsx2(Meta, {}),
-      /* @__PURE__ */ jsx2(Links, {})
-    ] }),
-    /* @__PURE__ */ jsxs("body", { children: [
-      /* @__PURE__ */ jsx2(Outlet, {}),
-      /* @__PURE__ */ jsx2(ScrollRestoration, {}),
-      /* @__PURE__ */ jsx2(Scripts, {}),
-      /* @__PURE__ */ jsx2(LiveReload, {})
-    ] })
-  ] });
+  return /* @__PURE__ */ jsxDEV2("html", { lang: "en", children: [
+    /* @__PURE__ */ jsxDEV2("head", { children: [
+      /* @__PURE__ */ jsxDEV2("meta", { charSet: "utf-8" }, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 22,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 23,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Meta, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 24,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Links, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 25,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.tsx",
+      lineNumber: 21,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV2("body", { children: [
+      /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 28,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(ScrollRestoration, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 29,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Scripts, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 30,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(LiveReload, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 31,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.tsx",
+      lineNumber: 27,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/root.tsx",
+    lineNumber: 20,
+    columnNumber: 5
+  }, this);
 }
 
 // app/routes/services.tsx
@@ -150,46 +210,194 @@ import { Link as Link2 } from "react-router-dom";
 // app/components/Sidenav.tsx
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Fragment, jsx as jsx3, jsxs as jsxs2 } from "react/jsx-runtime";
+import { Fragment, jsxDEV as jsxDEV3 } from "react/jsx-dev-runtime";
 var Sidenav = ({ isOpen, onClose }) => {
   let [isSidenavOpen, setIsSidenavOpen] = useState(isOpen), handleLinkClick = () => {
     onClose();
   };
   return useEffect(() => {
     setIsSidenavOpen(isOpen), isSidenavOpen ? document.body.style.overflowY = "hidden" : document.body.style.overflowY = "auto";
-  }, [isOpen, isSidenavOpen]), /* @__PURE__ */ jsxs2(Fragment, { children: [
-    isOpen && /* @__PURE__ */ jsx3("div", { className: "fixed inset-0 bg-black/50 z-10", onClick: onClose }),
-    /* @__PURE__ */ jsxs2("div", { className: `fixed top-0 left-0 h-full w-72 bg-black text-white z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`, children: [
-      /* @__PURE__ */ jsxs2("div", { className: "p-4 flex justify-between", children: [
-        /* @__PURE__ */ jsx3("h1", { className: "text-xl font-bold p-2", children: "Eastlube" }),
-        /* @__PURE__ */ jsx3("button", { onClick: onClose, className: "text-gray-500 hover:bg-white/5 focus:outline-none p-2 rounded", children: /* @__PURE__ */ jsx3("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-6 w-6", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ jsx3("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M6 18L18 6M6 6l12 12" }) }) })
-      ] }),
-      /* @__PURE__ */ jsx3("nav", { className: "flex-grow", children: /* @__PURE__ */ jsxs2("ul", { className: "flex flex-col hover:cursor-pointer mr-8 ml-3", children: [
-        /* @__PURE__ */ jsx3("li", { className: "hover:rounded hover:bg-white/5 py-2 px-3", children: /* @__PURE__ */ jsx3(Link, { to: "/", onClick: handleLinkClick, children: "Home" }) }),
-        /* @__PURE__ */ jsx3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsx3(Link, { to: "/services", onClick: handleLinkClick, children: "Services" }) }),
-        /* @__PURE__ */ jsx3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsx3(Link, { to: "/work", onClick: handleLinkClick, children: "Portfolio" }) }),
-        /* @__PURE__ */ jsx3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsx3(Link, { to: "/careers", onClick: handleLinkClick, children: "Careers" }) }),
-        /* @__PURE__ */ jsx3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsx3(Link, { to: "/about", onClick: handleLinkClick, children: "About" }) }),
-        /* @__PURE__ */ jsx3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsx3(Link, { to: "/contact", onClick: handleLinkClick, children: "Contact" }) })
-      ] }) })
-    ] })
-  ] });
+  }, [isOpen, isSidenavOpen]), /* @__PURE__ */ jsxDEV3(Fragment, { children: [
+    isOpen && /* @__PURE__ */ jsxDEV3("div", { className: "fixed inset-0 bg-black/50 z-10", onClick: onClose }, void 0, !1, {
+      fileName: "app/components/Sidenav.tsx",
+      lineNumber: 32,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV3("div", { className: `fixed top-0 left-0 h-full w-72 bg-black text-white z-20 transform transition-all duration-300 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`, children: [
+      /* @__PURE__ */ jsxDEV3("div", { className: "p-4 flex justify-between", children: [
+        /* @__PURE__ */ jsxDEV3("h1", { className: "text-xl font-bold p-2", children: "Eastlube" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 37,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ jsxDEV3("button", { onClick: onClose, className: "text-gray-500 hover:bg-white/5 focus:outline-none p-2 rounded", children: /* @__PURE__ */ jsxDEV3("svg", { xmlns: "http://www.w3.org/2000/svg", className: "h-6 w-6", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ jsxDEV3("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M6 18L18 6M6 6l12 12" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 40,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 39,
+          columnNumber: 13
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 38,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Sidenav.tsx",
+        lineNumber: 36,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV3("nav", { className: "flex-grow", children: /* @__PURE__ */ jsxDEV3("ul", { className: "flex flex-col hover:cursor-pointer mr-8 ml-3", children: [
+        /* @__PURE__ */ jsxDEV3("li", { className: "hover:rounded hover:bg-white/5 py-2 px-3", children: /* @__PURE__ */ jsxDEV3(Link, { to: "/", onClick: handleLinkClick, children: "Home" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 47,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 46,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsxDEV3(Link, { to: "/services", onClick: handleLinkClick, children: "Services" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 52,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 51,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsxDEV3(Link, { to: "/work", onClick: handleLinkClick, children: "Portfolio" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 57,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 56,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsxDEV3(Link, { to: "/careers", onClick: handleLinkClick, children: "Careers" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 62,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 61,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsxDEV3(Link, { to: "/about", onClick: handleLinkClick, children: "About" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 67,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 66,
+          columnNumber: 13
+        }, this),
+        /* @__PURE__ */ jsxDEV3("li", { className: "block lg:hidden py-2 px-3 hover:rounded hover:bg-white/5", children: /* @__PURE__ */ jsxDEV3(Link, { to: "/contact", onClick: handleLinkClick, children: "Contact" }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 72,
+          columnNumber: 15
+        }, this) }, void 0, !1, {
+          fileName: "app/components/Sidenav.tsx",
+          lineNumber: 71,
+          columnNumber: 13
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Sidenav.tsx",
+        lineNumber: 45,
+        columnNumber: 11
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Sidenav.tsx",
+        lineNumber: 44,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/Sidenav.tsx",
+      lineNumber: 35,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Sidenav.tsx",
+    lineNumber: 30,
+    columnNumber: 5
+  }, this);
 }, Sidenav_default = Sidenav;
 
 // app/components/Navbar.tsx
-import { jsx as jsx4, jsxs as jsxs3 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV4 } from "react/jsx-dev-runtime";
 var Navbar = () => {
   let [isSidenavOpen, setIsSidenavOpen] = useState2(!1);
-  return /* @__PURE__ */ jsxs3("nav", { className: "sticky bg-black text-white top-0 left-0 right-0 z-50 flex justify-between items-center px-12 p-4 text-sm font-bold", children: [
-    /* @__PURE__ */ jsx4("div", { children: /* @__PURE__ */ jsx4(Link2, { to: "/", className: "sm:text-sm", children: /* @__PURE__ */ jsx4("img", { className: "h-8 md:h-3", src: "", alt: "Eastern Lubrication Systems" }) }) }),
-    /* @__PURE__ */ jsx4("div", { className: "hidden lg:inline", children: /* @__PURE__ */ jsxs3("ul", { className: "flex justify-center hover:cursor-pointer", children: [
-      /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/services", children: "Services" }) }),
-      /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/work", children: "Portfolio" }) }),
-      /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/careers", children: "Careers" }) }),
-      /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/about", children: "About" }) }),
-      /* @__PURE__ */ jsx4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsx4(Link2, { to: "/contact", children: "Contact" }) })
-    ] }) }),
-    /* @__PURE__ */ jsx4("div", { className: "lg:hidden", children: /* @__PURE__ */ jsx4(
+  return /* @__PURE__ */ jsxDEV4("nav", { className: "sticky bg-black text-white top-0 left-0 right-0 z-50 flex justify-between items-center px-12 p-4 text-sm font-bold", children: [
+    /* @__PURE__ */ jsxDEV4("div", { children: /* @__PURE__ */ jsxDEV4(Link2, { to: "/", className: "sm:text-sm", children: /* @__PURE__ */ jsxDEV4("span", { className: "inline ", children: "Eastern Lubrication Systems" }, void 0, !1, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 25,
+      columnNumber: 21
+    }, this) }, void 0, !1, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 24,
+      columnNumber: 17
+    }, this) }, void 0, !1, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 23,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV4("div", { className: "hidden lg:inline", children: /* @__PURE__ */ jsxDEV4("ul", { className: "flex justify-center hover:cursor-pointer", children: [
+      /* @__PURE__ */ jsxDEV4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsxDEV4(Link2, { to: "/services", children: "Services" }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 33,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 32,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsxDEV4(Link2, { to: "/work", children: "Portfolio" }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 36,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 35,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsxDEV4(Link2, { to: "/careers", children: "Careers" }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 39,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 38,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsxDEV4(Link2, { to: "/about", children: "About" }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 42,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 41,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV4("li", { className: "py-1 px-3 hover:rounded hover:bg-white/10", children: /* @__PURE__ */ jsxDEV4(Link2, { to: "/contact", children: "Contact" }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 45,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 44,
+        columnNumber: 21
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 31,
+      columnNumber: 17
+    }, this) }, void 0, !1, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 30,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV4("div", { className: "lg:hidden", children: /* @__PURE__ */ jsxDEV4(
       "button",
       {
         className: "inline-flex items-center rounded-md py-2 px-4 text-sm font-medium bg-white/10 shadow-sm hover:bg-white/20",
@@ -197,40 +405,101 @@ var Navbar = () => {
           setIsSidenavOpen(!isSidenavOpen);
         },
         children: "Menu"
-      }
-    ) }),
-    /* @__PURE__ */ jsx4(Sidenav_default, { isOpen: isSidenavOpen, onClose: () => {
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/Navbar.tsx",
+        lineNumber: 51,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 50,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV4(Sidenav_default, { isOpen: isSidenavOpen, onClose: () => {
       setIsSidenavOpen(!1);
-    } })
-  ] });
+    } }, void 0, !1, {
+      fileName: "app/components/Navbar.tsx",
+      lineNumber: 57,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Navbar.tsx",
+    lineNumber: 20,
+    columnNumber: 9
+  }, this);
 }, Navbar_default = Navbar;
 
 // app/components/Footer.tsx
-import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
-var Footer = () => /* @__PURE__ */ jsx5("footer", { className: "bg-black text-white py-10", children: /* @__PURE__ */ jsxs4("div", { className: "container mx-auto text-center", children: [
-  /* @__PURE__ */ jsx5("div", { className: "text-xl font-bold mb-6", children: "Eastern Lubrication Systems" }),
-  /* @__PURE__ */ jsx5("div", { className: "mb-2", children: /* @__PURE__ */ jsx5("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }) }),
-  /* @__PURE__ */ jsxs4("div", { className: "text-sm", children: [
+import { jsxDEV as jsxDEV5 } from "react/jsx-dev-runtime";
+var Footer = () => /* @__PURE__ */ jsxDEV5("footer", { className: "bg-black text-white py-10", children: /* @__PURE__ */ jsxDEV5("div", { className: "container mx-auto text-center", children: [
+  /* @__PURE__ */ jsxDEV5("div", { className: "text-xl font-bold mb-6", children: "Eastern Lubrication Systems" }, void 0, !1, {
+    fileName: "app/components/Footer.tsx",
+    lineNumber: 10,
+    columnNumber: 9
+  }, this),
+  /* @__PURE__ */ jsxDEV5("div", { className: "mb-2", children: /* @__PURE__ */ jsxDEV5("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }, void 0, !1, {
+    fileName: "app/components/Footer.tsx",
+    lineNumber: 14,
+    columnNumber: 11
+  }, this) }, void 0, !1, {
+    fileName: "app/components/Footer.tsx",
+    lineNumber: 13,
+    columnNumber: 9
+  }, this),
+  /* @__PURE__ */ jsxDEV5("div", { className: "text-sm", children: [
     "\xA9 ",
     (/* @__PURE__ */ new Date()).getFullYear(),
     " Eastern Lubrication Systems. All Rights Reserved."
-  ] })
-] }) }), Footer_default = Footer;
+  ] }, void 0, !0, {
+    fileName: "app/components/Footer.tsx",
+    lineNumber: 20,
+    columnNumber: 9
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/Footer.tsx",
+  lineNumber: 8,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/Footer.tsx",
+  lineNumber: 7,
+  columnNumber: 5
+}, this), Footer_default = Footer;
 
 // app/components/Header.tsx
-import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
-var Header = ({ title, description, children }) => /* @__PURE__ */ jsxs5("div", { className: "bg-black w-full p-8 border-b", children: [
-  /* @__PURE__ */ jsxs5("div", { className: "text-white text-left mb-8 mx-2 md:mx-16 lg:mx-32 mt-12", children: [
-    /* @__PURE__ */ jsx6("h1", { className: "text-4xl font-bold", children: title }),
-    /* @__PURE__ */ jsx6("p", { className: "mt-12 md:pr-12", children: description })
-  ] }),
+import { jsxDEV as jsxDEV6 } from "react/jsx-dev-runtime";
+var Header = ({ title, description, children }) => /* @__PURE__ */ jsxDEV6("div", { className: "bg-black w-full p-8 border-b", children: [
+  /* @__PURE__ */ jsxDEV6("div", { className: "text-white text-left mb-8 mx-2 md:mx-16 lg:mx-32 mt-12", children: [
+    /* @__PURE__ */ jsxDEV6("h1", { className: "text-4xl font-bold", children: title }, void 0, !1, {
+      fileName: "app/components/Header.tsx",
+      lineNumber: 14,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV6("p", { className: "mt-12 md:pr-12", children: description }, void 0, !1, {
+      fileName: "app/components/Header.tsx",
+      lineNumber: 15,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Header.tsx",
+    lineNumber: 13,
+    columnNumber: 7
+  }, this),
   children
-] }), Header_default = Header;
+] }, void 0, !0, {
+  fileName: "app/components/Header.tsx",
+  lineNumber: 11,
+  columnNumber: 5
+}, this), Header_default = Header;
 
 // app/components/ServiceSection.tsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCube } from "@fortawesome/free-solid-svg-icons";
-import { jsx as jsx7, jsxs as jsxs6 } from "react/jsx-runtime";
+
+// app/lib/services.ts
 var services = [
   {
     id: 1,
@@ -283,102 +552,280 @@ var services = [
     description: "Reliable and efficient solutions for precise oil distribution."
   }
   // Add more service objects as needed
-], ServiceSection = () => /* @__PURE__ */ jsx7("div", { className: "bg-black bg-opacity-90 w-full p-8 border-b", children: /* @__PURE__ */ jsx7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white", children: services.map((service) => /* @__PURE__ */ jsxs6("div", { className: "p-4 flex items-center md:mx-12", children: [
-  /* @__PURE__ */ jsx7("div", { className: "mr-4 w-16 h-16 flex-shrink-0", children: /* @__PURE__ */ jsx7(FontAwesomeIcon, { icon: faCube }) }),
-  /* @__PURE__ */ jsxs6("div", { className: "flex-grow-1", children: [
-    /* @__PURE__ */ jsx7("h2", { className: "text-lg font-semibold text-cyan-300", children: service.title }),
-    /* @__PURE__ */ jsx7("p", { className: "mt-2", children: service.description })
-  ] })
-] }, service.id)) }) }), ServiceSection_default = ServiceSection;
+];
+
+// app/components/ServiceSection.tsx
+import { jsxDEV as jsxDEV7 } from "react/jsx-dev-runtime";
+var ServiceSection = () => /* @__PURE__ */ jsxDEV7("div", { className: "bg-black bg-opacity-90 w-full p-8 border-b", children: /* @__PURE__ */ jsxDEV7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 p-4 text-white", children: services.map((service) => /* @__PURE__ */ jsxDEV7("div", { className: "p-4 flex items-center md:mx-12", children: [
+  /* @__PURE__ */ jsxDEV7("div", { className: "mr-4 w-16 h-16 flex-shrink-0", children: /* @__PURE__ */ jsxDEV7(FontAwesomeIcon, { icon: faCube }, void 0, !1, {
+    fileName: "app/components/ServiceSection.tsx",
+    lineNumber: 13,
+    columnNumber: 29
+  }, this) }, void 0, !1, {
+    fileName: "app/components/ServiceSection.tsx",
+    lineNumber: 12,
+    columnNumber: 25
+  }, this),
+  /* @__PURE__ */ jsxDEV7("div", { className: "flex-grow-1", children: [
+    /* @__PURE__ */ jsxDEV7("h2", { className: "text-lg font-semibold text-cyan-300", children: service.title }, void 0, !1, {
+      fileName: "app/components/ServiceSection.tsx",
+      lineNumber: 17,
+      columnNumber: 29
+    }, this),
+    /* @__PURE__ */ jsxDEV7("p", { className: "mt-2", children: service.description }, void 0, !1, {
+      fileName: "app/components/ServiceSection.tsx",
+      lineNumber: 18,
+      columnNumber: 29
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/ServiceSection.tsx",
+    lineNumber: 16,
+    columnNumber: 25
+  }, this)
+] }, service.id, !0, {
+  fileName: "app/components/ServiceSection.tsx",
+  lineNumber: 11,
+  columnNumber: 21
+}, this)) }, void 0, !1, {
+  fileName: "app/components/ServiceSection.tsx",
+  lineNumber: 9,
+  columnNumber: 13
+}, this) }, void 0, !1, {
+  fileName: "app/components/ServiceSection.tsx",
+  lineNumber: 8,
+  columnNumber: 9
+}, this), ServiceSection_default = ServiceSection;
 
 // app/components/Testimonials.tsx
-import { useState as useState3 } from "react";
+import { useState as useState3, useEffect as useEffect2, useRef } from "react";
 import { FontAwesomeIcon as FontAwesomeIcon2 } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { jsx as jsx8, jsxs as jsxs7 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV8 } from "react/jsx-dev-runtime";
+var TestimonialCarousel = ({ testimonials: testimonials2 }) => {
+  let [currentTestimonialIndex, setCurrentTestimonialIndex] = useState3(0), [autoPlay, setAutoPlay] = useState3(!0), [isHovered, setIsHovered] = useState3(!1), carouselRef = useRef(null), changeTestimonial = (newIndex) => {
+    setCurrentTestimonialIndex(newIndex);
+  };
+  useEffect2(() => {
+    let interval;
+    return autoPlay && !isHovered && (interval = setInterval(() => {
+      changeTestimonial((currentTestimonialIndex + 1) % testimonials2.length);
+    }, 4e3)), () => clearInterval(interval);
+  }, [autoPlay, isHovered, currentTestimonialIndex]);
+  let nextTestimonial = () => {
+    changeTestimonial((currentTestimonialIndex + 1) % testimonials2.length);
+  }, prevTestimonial = () => {
+    changeTestimonial((currentTestimonialIndex - 1 + testimonials2.length) % testimonials2.length);
+  }, handleMouseEnter = () => {
+    setIsHovered(!0);
+  }, handleMouseLeave = () => {
+    setIsHovered(!1);
+  }, handleDotClick = (index) => {
+    setCurrentTestimonialIndex(index);
+  };
+  return /* @__PURE__ */ jsxDEV8(
+    "div",
+    {
+      className: "bg-black w-full p-8 text-white overflow-hidden",
+      onMouseEnter: handleMouseEnter,
+      onMouseLeave: handleMouseLeave,
+      children: /* @__PURE__ */ jsxDEV8("div", { className: "max-w-4xl mx-auto relative container p-4 rounded-lg overflow-hidden", children: [
+        /* @__PURE__ */ jsxDEV8("h1", { className: "text-4xl text-white mb-16 text-center", children: "Featured Clients" }, void 0, !1, {
+          fileName: "app/components/Testimonials.tsx",
+          lineNumber: 65,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV8("div", { className: "relative", ref: carouselRef, children: [
+          /* @__PURE__ */ jsxDEV8(
+            "button",
+            {
+              className: "absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-2",
+              onClick: prevTestimonial,
+              children: /* @__PURE__ */ jsxDEV8(FontAwesomeIcon2, { icon: faChevronLeft }, void 0, !1, {
+                fileName: "app/components/Testimonials.tsx",
+                lineNumber: 74,
+                columnNumber: 13
+              }, this)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/components/Testimonials.tsx",
+              lineNumber: 70,
+              columnNumber: 11
+            },
+            this
+          ),
+          testimonials2.map((testimonial, index) => /* @__PURE__ */ jsxDEV8(
+            "div",
+            {
+              className: `testimonial-slide ${index === currentTestimonialIndex ? "opacity-100" : "opacity-0 hidden"} transition-opacity duration-500 ease-in-out flex flex-col items-center justify-center`,
+              children: [
+                /* @__PURE__ */ jsxDEV8("div", { className: "w-48 h-48 md:w-60 md:h-60 mx-auto mb-4 relative overflow-hidden rounded-full", children: /* @__PURE__ */ jsxDEV8(
+                  "img",
+                  {
+                    src: testimonial.image,
+                    alt: testimonial.name,
+                    className: "w-full h-full object-cover rounded-full"
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/Testimonials.tsx",
+                    lineNumber: 88,
+                    columnNumber: 17
+                  },
+                  this
+                ) }, void 0, !1, {
+                  fileName: "app/components/Testimonials.tsx",
+                  lineNumber: 87,
+                  columnNumber: 15
+                }, this),
+                /* @__PURE__ */ jsxDEV8("div", { className: "text-xl md:text-2xl font-medium text-center", children: testimonial.name }, void 0, !1, {
+                  fileName: "app/components/Testimonials.tsx",
+                  lineNumber: 96,
+                  columnNumber: 15
+                }, this)
+              ]
+            },
+            testimonial.id,
+            !0,
+            {
+              fileName: "app/components/Testimonials.tsx",
+              lineNumber: 79,
+              columnNumber: 13
+            },
+            this
+          )),
+          /* @__PURE__ */ jsxDEV8(
+            "button",
+            {
+              className: "absolute top-1/2 right-0 transform -translate-y-1/2 text-white p-2",
+              onClick: nextTestimonial,
+              children: /* @__PURE__ */ jsxDEV8(FontAwesomeIcon2, { icon: faChevronRight }, void 0, !1, {
+                fileName: "app/components/Testimonials.tsx",
+                lineNumber: 107,
+                columnNumber: 13
+              }, this)
+            },
+            void 0,
+            !1,
+            {
+              fileName: "app/components/Testimonials.tsx",
+              lineNumber: 103,
+              columnNumber: 11
+            },
+            this
+          )
+        ] }, void 0, !0, {
+          fileName: "app/components/Testimonials.tsx",
+          lineNumber: 68,
+          columnNumber: 9
+        }, this),
+        /* @__PURE__ */ jsxDEV8("div", { className: "flex justify-center mt-10", children: testimonials2.map((_, index) => /* @__PURE__ */ jsxDEV8(
+          "div",
+          {
+            onClick: () => handleDotClick(index),
+            className: `w-2 h-2 rounded-full bg-zinc-600 ${currentTestimonialIndex % testimonials2.length === index ? "opacity-100" : "opacity-50"} mx-1 cursor-pointer`
+          },
+          index,
+          !1,
+          {
+            fileName: "app/components/Testimonials.tsx",
+            lineNumber: 114,
+            columnNumber: 13
+          },
+          this
+        )) }, void 0, !1, {
+          fileName: "app/components/Testimonials.tsx",
+          lineNumber: 112,
+          columnNumber: 9
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Testimonials.tsx",
+        lineNumber: 63,
+        columnNumber: 7
+      }, this)
+    },
+    void 0,
+    !1,
+    {
+      fileName: "app/components/Testimonials.tsx",
+      lineNumber: 58,
+      columnNumber: 5
+    },
+    this
+  );
+}, Testimonials_default = TestimonialCarousel;
+
+// app/lib/testimonials.ts
 var testimonials = [
   {
     id: 1,
     name: "Carter Machinery",
-    testimony: "Eastern Lubrication Systems has consistently delivered top-notch service. Their technicians are incredibly knowledgeable, and their attention to detail during installations and maintenance is commendable. It's evident that they take pride in their work.",
     image: "images/carter.jpeg"
   },
   {
     id: 2,
     name: "Harbour Group Management",
-    testimony: "We've been impressed by the company's dedication to innovation. Eastern Lubrication Systems doesn't just provide solutions; they continually seek out the latest technology to optimize our lubrication systems. Their commitment to staying at the forefront of the industry is truly commendable.",
     image: "images/hgliving.jpg"
   },
   {
     id: 3,
     name: "The Heritage Group Accelerator",
-    testimony: "The work culture at Eastern Lubrication Systems is exceptional. The team's collaborative spirit and commitment to excellence make it a fantastic place to work. They've created an environment where employees feel valued, and that positivity translates into the high-quality service they provide to clients.",
     image: "images/hga.png"
   },
   {
     id: 4,
     name: "United Parcel Service",
-    testimony: "Eastern Lubrication Systems transformed our workflow. Their expertise in lubrication systems made our maintenance process more efficient. They're attentive and offer cost-saving solutions. Partnering with them has been a game-changer for us.",
     image: "images/ups.png"
+  },
+  {
+    id: 5,
+    name: "PPC Lubricants",
+    image: "images/ppc.png"
+  },
+  {
+    id: 6,
+    name: "Anne Arundel County",
+    image: "images/annearundel.png"
+  },
+  {
+    id: 7,
+    name: "PWI Inc.",
+    image: "images/pwi.png"
+  },
+  {
+    id: 8,
+    name: "Ryder",
+    image: "images/ryder.png"
+  },
+  {
+    id: 9,
+    name: "Synagro",
+    image: "images/synagro.png"
+  },
+  {
+    id: 10,
+    name: "Reliable Contracting Company",
+    image: "images/reliable.png"
   }
   // Add more testimonials as needed
-], TestimonialCarousel = () => {
-  let [currentTestimonialIndex, setCurrentTestimonialIndex] = useState3(0), nextTestimonial = () => {
-    setCurrentTestimonialIndex((currentTestimonialIndex + 1) % testimonials.length);
-  };
-  return /* @__PURE__ */ jsxs7("div", { className: "bg-black  w-full p-8 text-white", children: [
-    /* @__PURE__ */ jsxs7("div", { className: "max-w-4xl mx-auto relative container p-4 rounded-lg overflow-hidden", children: [
-      /* @__PURE__ */ jsx8("h1", { className: "text-4xl text-white mb-16", children: "Featured Clients" }),
-      /* @__PURE__ */ jsxs7("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-4 items-center", children: [
-        /* @__PURE__ */ jsx8(
-          "button",
-          {
-            className: "absolute top-1/2 left-0 transform -translate-y-1/2 text-white p-2",
-            onClick: () => {
-              setCurrentTestimonialIndex((currentTestimonialIndex - 1 + testimonials.length) % testimonials.length);
-            },
-            children: /* @__PURE__ */ jsx8(FontAwesomeIcon2, { icon: faChevronLeft })
-          }
-        ),
-        /* @__PURE__ */ jsx8("div", { className: "col-span-1 ml-4 h-60 w-60 md:h-48 md:w-48 relative md:ml-12", children: /* @__PURE__ */ jsx8(
-          "img",
-          {
-            src: testimonials[currentTestimonialIndex].image,
-            alt: testimonials[currentTestimonialIndex].name,
-            className: "w-full h-full object-cover rounded-full"
-          }
-        ) }),
-        /* @__PURE__ */ jsx8(
-          "button",
-          {
-            className: "absolute top-1/2 right-0 transform -translate-y-1/2 text-white p-2",
-            onClick: nextTestimonial,
-            children: /* @__PURE__ */ jsx8(FontAwesomeIcon2, { icon: faChevronRight })
-          }
-        ),
-        /* @__PURE__ */ jsx8("div", { className: "col-span-1", children: /* @__PURE__ */ jsx8("h2", { className: "text-4xl font-semibold mb-20 md:mr-12", children: testimonials[currentTestimonialIndex].name }) })
-      ] })
-    ] }),
-    /* @__PURE__ */ jsx8("div", { className: "flex justify-center mt-4", children: testimonials.map((_, index) => /* @__PURE__ */ jsx8(
-      "div",
-      {
-        className: `w-2 h-2 rounded-full bg-zinc-600 ${currentTestimonialIndex === index ? "opacity-100" : "opacity-50"} mx-1`
-      },
-      index
-    )) })
-  ] });
-}, Testimonials_default = TestimonialCarousel;
+];
 
 // app/routes/services.tsx
-import { jsx as jsx9, jsxs as jsxs8 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV9 } from "react/jsx-dev-runtime";
 var meta = () => [
   { title: "Services | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Services() {
-  return /* @__PURE__ */ jsxs8("main", { children: [
-    /* @__PURE__ */ jsx9(Navbar_default, {}),
-    /* @__PURE__ */ jsxs8(
+  return /* @__PURE__ */ jsxDEV9("main", { children: [
+    /* @__PURE__ */ jsxDEV9(Navbar_default, {}, void 0, !1, {
+      fileName: "app/routes/services.tsx",
+      lineNumber: 20,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV9(
       "div",
       {
         className: "bg-cover bg-center h-max relative",
@@ -386,22 +833,58 @@ function Services() {
           backgroundImage: 'url("images/oil-dispensing-station.jpeg")'
         },
         children: [
-          /* @__PURE__ */ jsxs8("div", { className: "md:p-12 lg:p-36", children: [
-            /* @__PURE__ */ jsx9(
+          /* @__PURE__ */ jsxDEV9("div", { className: "md:p-12 lg:p-36", children: [
+            /* @__PURE__ */ jsxDEV9(
               Header_default,
               {
                 title: "Our Services",
                 description: "As a full line service company, we have every component neccesary for an effective lubrication system. We also perform installation and service making us the complete solution for all your needs."
-              }
+              },
+              void 0,
+              !1,
+              {
+                fileName: "app/routes/services.tsx",
+                lineNumber: 30,
+                columnNumber: 21
+              },
+              this
             ),
-            /* @__PURE__ */ jsx9(ServiceSection_default, {}),
-            /* @__PURE__ */ jsx9(Testimonials_default, {})
-          ] }),
-          /* @__PURE__ */ jsx9(Footer_default, {})
+            /* @__PURE__ */ jsxDEV9(ServiceSection_default, {}, void 0, !1, {
+              fileName: "app/routes/services.tsx",
+              lineNumber: 35,
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ jsxDEV9(Testimonials_default, { testimonials }, void 0, !1, {
+              fileName: "app/routes/services.tsx",
+              lineNumber: 37,
+              columnNumber: 21
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/routes/services.tsx",
+            lineNumber: 29,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV9(Footer_default, {}, void 0, !1, {
+            fileName: "app/routes/services.tsx",
+            lineNumber: 41,
+            columnNumber: 17
+          }, this)
         ]
-      }
+      },
+      void 0,
+      !0,
+      {
+        fileName: "app/routes/services.tsx",
+        lineNumber: 22,
+        columnNumber: 13
+      },
+      this
     )
-  ] });
+  ] }, void 0, !0, {
+    fileName: "app/routes/services.tsx",
+    lineNumber: 19,
+    columnNumber: 9
+  }, this);
 }
 
 // app/routes/careers.tsx
@@ -412,9 +895,9 @@ __export(careers_exports, {
 });
 
 // app/components/ImageSection.tsx
-import { jsx as jsx10, jsxs as jsxs9 } from "react/jsx-runtime";
-var ImageSection = () => /* @__PURE__ */ jsx10("section", { className: "bg-zinc-950 text-white pt-4 pb-8", children: /* @__PURE__ */ jsxs9("div", { className: "mx-auto", children: [
-  /* @__PURE__ */ jsx10("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-0 md:px-12 lg:px-24 pt-2", children: [
+import { jsxDEV as jsxDEV10 } from "react/jsx-dev-runtime";
+var ImageSection = () => /* @__PURE__ */ jsxDEV10("section", { className: "bg-zinc-950 text-white pt-4 pb-8", children: /* @__PURE__ */ jsxDEV10("div", { className: "mx-auto", children: [
+  /* @__PURE__ */ jsxDEV10("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-0 md:px-12 lg:px-24 pt-2", children: [
     {
       src: "images/truck-tom.jpg",
       description: "Image 1 Description"
@@ -427,7 +910,7 @@ var ImageSection = () => /* @__PURE__ */ jsx10("section", { className: "bg-zinc-
       src: "images/work-site.jpg",
       description: "Image 3 Description"
     }
-  ].map((image, index) => /* @__PURE__ */ jsx10("div", { className: "w-full", children: /* @__PURE__ */ jsx10(
+  ].map((image, index) => /* @__PURE__ */ jsxDEV10("div", { className: "w-full", children: /* @__PURE__ */ jsxDEV10(
     "div",
     {
       className: "image-container",
@@ -436,89 +919,245 @@ var ImageSection = () => /* @__PURE__ */ jsx10("section", { className: "bg-zinc-
         // Set your desired fixed height here
         overflow: "hidden"
       },
-      children: /* @__PURE__ */ jsx10(
+      children: /* @__PURE__ */ jsxDEV10(
         "img",
         {
           src: image.src,
           alt: image.description,
           className: "w-full h-full object-cover"
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/ImageSection.tsx",
+          lineNumber: 32,
+          columnNumber: 17
+        },
+        this
       )
-    }
-  ) }, index)) }),
-  /* @__PURE__ */ jsx10("p", { className: "mt-4 text-justify px-8 md:px-12 lg:px-24 py-4", children: "At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. We're united by a shared commitment to delivering exceptional service to our clients. Join us in a dynamic work culture that values your contributions and fosters professional growth." })
-] }) }), ImageSection_default = ImageSection;
+    },
+    void 0,
+    !1,
+    {
+      fileName: "app/components/ImageSection.tsx",
+      lineNumber: 25,
+      columnNumber: 15
+    },
+    this
+  ) }, index, !1, {
+    fileName: "app/components/ImageSection.tsx",
+    lineNumber: 24,
+    columnNumber: 13
+  }, this)) }, void 0, !1, {
+    fileName: "app/components/ImageSection.tsx",
+    lineNumber: 22,
+    columnNumber: 9
+  }, this),
+  /* @__PURE__ */ jsxDEV10("p", { className: "mt-4 text-justify px-8 md:px-12 lg:px-24 py-4", children: "At Eastern Lubrication Systems, our tight-knit team embodies collaboration, innovation, and excellence. We're united by a shared commitment to delivering exceptional service to our clients. Join us in a dynamic work culture that values your contributions and fosters professional growth." }, void 0, !1, {
+    fileName: "app/components/ImageSection.tsx",
+    lineNumber: 41,
+    columnNumber: 9
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/ImageSection.tsx",
+  lineNumber: 21,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/ImageSection.tsx",
+  lineNumber: 20,
+  columnNumber: 5
+}, this), ImageSection_default = ImageSection;
 
 // app/components/CareersSections.tsx
-import { jsx as jsx11, jsxs as jsxs10 } from "react/jsx-runtime";
-var CareersSection = () => /* @__PURE__ */ jsx11("section", { className: "bg-black text-white pt-24 pb-12", children: /* @__PURE__ */ jsxs10("div", { className: "max-w-6xl mx-auto text-center", children: [
-  /* @__PURE__ */ jsx11("h2", { className: "text-4xl font-bold mb-4", children: "Careers" }),
-  /* @__PURE__ */ jsx11("p", { className: "text-lg mb-8", children: "Explore our available job positions." }),
-  [
+import { jsxDEV as jsxDEV11 } from "react/jsx-dev-runtime";
+var CareersSection = () => /* @__PURE__ */ jsxDEV11("section", { className: "bg-black text-white pt-24 pb-12", children: /* @__PURE__ */ jsxDEV11("div", { className: "max-w-6xl mx-auto", children: [
+  /* @__PURE__ */ jsxDEV11("h2", { className: "text-4xl font-bold mb-8 text-center", children: "Careers" }, void 0, !1, {
+    fileName: "app/components/CareersSections.tsx",
+    lineNumber: 34,
+    columnNumber: 9
+  }, this),
+  /* @__PURE__ */ jsxDEV11("div", { className: "grid grid-cols-1 lg:grid-cols-1 gap-8 mx-3 lg:mx-0", children: [
     {
       title: "Secretary",
       subtitle: "Administrative Support",
       description: "Responsible for administrative support, managing correspondence, scheduling appointments, and maintaining efficient office operations.",
-      imageSrc: "images/oil-dispensing-station.jpeg"
+      imageSrc: "images/oil-dispensing-station.jpeg",
+      tags: ["Administrative", "Secretarial"]
     },
     {
       title: "Lubrication Technician",
       subtitle: "Automotive Services",
-      description: "Skilled in the installation, maintanance, and servicing of automotive lubrication systems, ensuring optimal performance and customer satisfaction.",
-      imageSrc: "images/lub.png"
+      description: "Skilled in the installation, maintenance, and servicing of automotive lubrication systems, ensuring optimal performance and customer satisfaction.",
+      imageSrc: "images/lub.png",
+      tags: ["Automotive", "Technician"]
     },
     {
       title: "Inventory Control Specialist",
       subtitle: "Resource Management",
       description: "Manages and optimizes fluid inventory, ensuring the availability of essential resources and minimizing waste within the company's operations.",
-      imageSrc: "images/outside-pump.jpg"
+      imageSrc: "images/outside-pump.jpg",
+      tags: ["Inventory Control", "Resource Management"]
     }
-  ].map((position, index) => /* @__PURE__ */ jsxs10("div", { className: "mb-8", children: [
-    /* @__PURE__ */ jsx11(
-      "img",
-      {
-        src: position.imageSrc,
-        alt: position.title,
-        className: "mx-auto mb-4",
-        style: {
-          width: "80%",
-          // Set the width to 80% of the viewport width
-          height: "auto",
-          // Maintain the aspect ratio
-          maxWidth: "1400px"
-          // Set a maximum width if needed
-        }
-      }
-    ),
-    /* @__PURE__ */ jsx11("h3", { className: "text-2xl font-semibold px-2 text-cyan-300", children: position.title }),
-    /* @__PURE__ */ jsx11("p", { className: "text-lg mb-4", children: position.subtitle }),
-    /* @__PURE__ */ jsx11("p", { className: "text-md mb-4 px-8 md:px-32 ", children: position.description }),
-    /* @__PURE__ */ jsx11("button", { className: "bg-black border border-white text-white rounded-full py-2 px-6 mt-6 hover:bg-white hover:text-black hover:shadow-md transition-all duration-300", children: "Apply" })
-  ] }, index))
-] }) }), CareersSections_default = CareersSection;
+  ].map((position, index) => /* @__PURE__ */ jsxDEV11(
+    "div",
+    {
+      className: "flex flex-col md:flex-row bg-black border-gray-500 border p-6 rounded shadow-md sm:mx-3 transition-all duration-300 hover:border-white hover:shadow-lg cursor-pointer",
+      onClick: () => {
+      },
+      children: [
+        /* @__PURE__ */ jsxDEV11("div", { className: "md:w-1/4 md:pr-6 mb-4 md:mb-0", children: /* @__PURE__ */ jsxDEV11("div", { className: "h-48 overflow-hidden rounded", children: /* @__PURE__ */ jsxDEV11(
+          "img",
+          {
+            src: position.imageSrc,
+            alt: position.title,
+            className: "w-full h-full object-cover"
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/CareersSections.tsx",
+            lineNumber: 44,
+            columnNumber: 19
+          },
+          this
+        ) }, void 0, !1, {
+          fileName: "app/components/CareersSections.tsx",
+          lineNumber: 43,
+          columnNumber: 17
+        }, this) }, void 0, !1, {
+          fileName: "app/components/CareersSections.tsx",
+          lineNumber: 42,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ jsxDEV11("div", { className: "md:w-3/4 flex flex-col justify-between", children: [
+          /* @__PURE__ */ jsxDEV11("div", { children: [
+            /* @__PURE__ */ jsxDEV11("h3", { className: "text-xl font-semibold mb-2", children: position.title }, void 0, !1, {
+              fileName: "app/components/CareersSections.tsx",
+              lineNumber: 53,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ jsxDEV11("p", { className: "text-md text-gray-600 mb-2", children: position.subtitle }, void 0, !1, {
+              fileName: "app/components/CareersSections.tsx",
+              lineNumber: 56,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ jsxDEV11("p", { className: "text-sm mb-4", children: position.description }, void 0, !1, {
+              fileName: "app/components/CareersSections.tsx",
+              lineNumber: 57,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, !0, {
+            fileName: "app/components/CareersSections.tsx",
+            lineNumber: 52,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ jsxDEV11("div", { className: "flex flex-wrap mt-4", children: position.tags.map((tag, tagIndex) => /* @__PURE__ */ jsxDEV11(
+            "span",
+            {
+              className: "bg-gray-300 text-gray-800 rounded-md px-2 py-1 text-sm mr-2 mb-2",
+              children: tag
+            },
+            tagIndex,
+            !1,
+            {
+              fileName: "app/components/CareersSections.tsx",
+              lineNumber: 61,
+              columnNumber: 21
+            },
+            this
+          )) }, void 0, !1, {
+            fileName: "app/components/CareersSections.tsx",
+            lineNumber: 59,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/CareersSections.tsx",
+          lineNumber: 51,
+          columnNumber: 15
+        }, this)
+      ]
+    },
+    index,
+    !0,
+    {
+      fileName: "app/components/CareersSections.tsx",
+      lineNumber: 37,
+      columnNumber: 13
+    },
+    this
+  )) }, void 0, !1, {
+    fileName: "app/components/CareersSections.tsx",
+    lineNumber: 35,
+    columnNumber: 9
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/CareersSections.tsx",
+  lineNumber: 33,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/CareersSections.tsx",
+  lineNumber: 32,
+  columnNumber: 5
+}, this), CareersSections_default = CareersSection;
 
 // app/routes/careers.tsx
-import { jsx as jsx12, jsxs as jsxs11 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV12 } from "react/jsx-dev-runtime";
 var meta2 = () => [
   { title: "Careers | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Careers() {
-  return /* @__PURE__ */ jsxs11("main", { children: [
-    /* @__PURE__ */ jsx12(Navbar_default, {}),
-    /* @__PURE__ */ jsx12(Header_default, { title: "Work with us", description: "Think about our service centers as a pit stop for your lubrication equipment. Our skilled technicians are ready to provide fast and efficient installation, maintanance, and repair services for all your lubrication needs. Whether you need a quick tune-up or a major overhaul, our service centers are equipped with the lastest technology and tools to get you back on the road to success." }),
-    /* @__PURE__ */ jsx12(ImageSection_default, {}),
-    /* @__PURE__ */ jsx12("div", { className: "flex h-[70vh] bg-black", children: /* @__PURE__ */ jsx12(
+  return /* @__PURE__ */ jsxDEV12("main", { children: [
+    /* @__PURE__ */ jsxDEV12(Navbar_default, {}, void 0, !1, {
+      fileName: "app/routes/careers.tsx",
+      lineNumber: 19,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV12(Header_default, { title: "Work with us", description: "Think about our service centers as a pit stop for your lubrication equipment. Our skilled technicians are ready to provide fast and efficient installation, maintanance, and repair services for all your lubrication needs. Whether you need a quick tune-up or a major overhaul, our service centers are equipped with the lastest technology and tools to get you back on the road to success." }, void 0, !1, {
+      fileName: "app/routes/careers.tsx",
+      lineNumber: 20,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV12(ImageSection_default, {}, void 0, !1, {
+      fileName: "app/routes/careers.tsx",
+      lineNumber: 22,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV12("div", { className: "flex h-[70vh] bg-black", children: /* @__PURE__ */ jsxDEV12(
       "img",
       {
         src: "images/entrance.png",
         alt: "Background",
         className: "h-full w-full object-cover md:px-3 lg:px-6"
-      }
-    ) }),
-    /* @__PURE__ */ jsx12(CareersSections_default, {}),
-    /* @__PURE__ */ jsx12(Footer_default, {})
-  ] });
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/careers.tsx",
+        lineNumber: 25,
+        columnNumber: 17
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/careers.tsx",
+      lineNumber: 23,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV12(CareersSections_default, {}, void 0, !1, {
+      fileName: "app/routes/careers.tsx",
+      lineNumber: 31,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV12(Footer_default, {}, void 0, !1, {
+      fileName: "app/routes/careers.tsx",
+      lineNumber: 32,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/careers.tsx",
+    lineNumber: 18,
+    columnNumber: 9
+  }, this);
 }
 
 // app/routes/contact.tsx
@@ -529,29 +1168,106 @@ __export(contact_exports, {
 });
 
 // app/components/ContactForm.tsx
-import { jsx as jsx13, jsxs as jsxs12 } from "react/jsx-runtime";
-var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 text-white pt-24 pb-6 md:px-12 px-6", children: /* @__PURE__ */ jsx13("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxs12("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
-  /* @__PURE__ */ jsxs12("div", { children: [
-    /* @__PURE__ */ jsx13("h2", { className: "text-4xl font-bold mb-4", children: "Contact" }),
-    /* @__PURE__ */ jsx13("p", { className: "text-base mb-8 mr-20", children: "Come visit our service centers and experience the power of expert lubrication support!" }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx13("h3", { className: "text-xl font-semibold", children: "Address" }),
-      /* @__PURE__ */ jsx13("p", { children: "512 N. Crain Highway, Suite #13" }),
-      /* @__PURE__ */ jsx13("p", { children: "Glen Burnie, MD 21061" })
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx13("h3", { className: "text-xl font-semibold", children: "Email" }),
-      /* @__PURE__ */ jsx13("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" })
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx13("h3", { className: "text-xl font-semibold", children: "Phone" }),
-      /* @__PURE__ */ jsx13("p", { children: "+1 833-880-PUMP (7867)" })
-    ] })
-  ] }),
-  /* @__PURE__ */ jsx13("div", { children: /* @__PURE__ */ jsxs12("form", { children: [
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx13("label", { htmlFor: "name", className: "block text-base font-thin mb-1", children: "Name" }),
-      /* @__PURE__ */ jsx13(
+import { jsxDEV as jsxDEV13 } from "react/jsx-dev-runtime";
+var ContactForm = () => /* @__PURE__ */ jsxDEV13("div", { className: "bg-zinc-950 text-white pt-24 pb-6 md:px-12 px-6", children: /* @__PURE__ */ jsxDEV13("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxDEV13("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
+  /* @__PURE__ */ jsxDEV13("div", { children: [
+    /* @__PURE__ */ jsxDEV13("h2", { className: "text-4xl font-bold mb-4", children: "Contact" }, void 0, !1, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 12,
+      columnNumber: 25
+    }, this),
+    /* @__PURE__ */ jsxDEV13("p", { className: "text-base mb-8 mr-20", children: "Come visit our service centers and experience the power of expert lubrication support!" }, void 0, !1, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 13,
+      columnNumber: 25
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Address" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 15,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV13("p", { children: "512 N. Crain Highway, Suite #13" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 16,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV13("p", { children: "Glen Burnie, MD 21061" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 17,
+        columnNumber: 29
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 14,
+      columnNumber: 25
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Email" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 20,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV13("a", { href: "mailto:sales@eastlube.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 21,
+        columnNumber: 29
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 19,
+      columnNumber: 25
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Phone" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 26,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV13("p", { children: "+1 833-880-PUMP (7867)" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 27,
+        columnNumber: 29
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 25,
+      columnNumber: 25
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { children: [
+      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Hours" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 30,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV13("p", { children: "Monday - Friday: 7:30 AM - 4:00 PM" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 31,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV13("p", { children: "Saturday - Sunday: Closed" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 32,
+        columnNumber: 29
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 29,
+      columnNumber: 25
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/ContactForm.tsx",
+    lineNumber: 11,
+    columnNumber: 21
+  }, this),
+  /* @__PURE__ */ jsxDEV13("div", { children: /* @__PURE__ */ jsxDEV13("form", { children: [
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsxDEV13("label", { htmlFor: "name", className: "block text-base font-thin mb-1", children: "Name" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 40,
+        columnNumber: 33
+      }, this),
+      /* @__PURE__ */ jsxDEV13(
         "input",
         {
           required: !0,
@@ -560,13 +1276,29 @@ var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 t
           name: "name",
           placeholder: "Enter your name",
           className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 43,
+          columnNumber: 33
+        },
+        this
       )
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4 flex", children: [
-      /* @__PURE__ */ jsxs12("div", { className: "mr-2", children: [
-        /* @__PURE__ */ jsx13("label", { htmlFor: "address", className: "block text-base font-thin mb-1", children: "Address" }),
-        /* @__PURE__ */ jsx13(
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 39,
+      columnNumber: 29
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex", children: [
+      /* @__PURE__ */ jsxDEV13("div", { className: "mr-2 w-full", children: [
+        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "address", className: "block text-base font-thin mb-1", children: "Address" }, void 0, !1, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 54,
+          columnNumber: 37
+        }, this),
+        /* @__PURE__ */ jsxDEV13(
           "input",
           {
             type: "text",
@@ -574,12 +1306,28 @@ var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 t
             name: "address",
             placeholder: "Enter your address",
             className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          }
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 57,
+            columnNumber: 37
+          },
+          this
         )
-      ] }),
-      /* @__PURE__ */ jsxs12("div", { children: [
-        /* @__PURE__ */ jsx13("label", { htmlFor: "zipCode", className: "block text-base font-thin mb-1", children: "ZIP Code" }),
-        /* @__PURE__ */ jsx13(
+      ] }, void 0, !0, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 53,
+        columnNumber: 33
+      }, this),
+      /* @__PURE__ */ jsxDEV13("div", { className: "w-full", children: [
+        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "zipCode", className: "block text-base font-thin mb-1", children: "ZIP Code" }, void 0, !1, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 66,
+          columnNumber: 37
+        }, this),
+        /* @__PURE__ */ jsxDEV13(
           "input",
           {
             type: "text",
@@ -587,15 +1335,35 @@ var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 t
             name: "zipCode",
             placeholder: "Enter your ZIP code",
             className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          }
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 69,
+            columnNumber: 37
+          },
+          this
         )
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4 flex", children: [
+      ] }, void 0, !0, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 65,
+        columnNumber: 33
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 52,
+      columnNumber: 29
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex", children: [
       " ",
-      /* @__PURE__ */ jsxs12("div", { className: "mr-2", children: [
-        /* @__PURE__ */ jsx13("label", { htmlFor: "email", className: "block text-base font-thin mb-1", children: "Email" }),
-        /* @__PURE__ */ jsx13(
+      /* @__PURE__ */ jsxDEV13("div", { className: "mr-2 w-full", children: [
+        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "email", className: "block text-base font-thin mb-1", children: "Email" }, void 0, !1, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 81,
+          columnNumber: 37
+        }, this),
+        /* @__PURE__ */ jsxDEV13(
           "input",
           {
             required: !0,
@@ -604,12 +1372,28 @@ var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 t
             name: "email",
             placeholder: "Enter your email",
             className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          }
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 84,
+            columnNumber: 37
+          },
+          this
         )
-      ] }),
-      /* @__PURE__ */ jsxs12("div", { children: [
-        /* @__PURE__ */ jsx13("label", { htmlFor: "phone", className: "block text-base font-thin mb-1", children: "Phone" }),
-        /* @__PURE__ */ jsx13(
+      ] }, void 0, !0, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 80,
+        columnNumber: 33
+      }, this),
+      /* @__PURE__ */ jsxDEV13("div", { className: "w-full", children: [
+        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "phone", className: "block text-base font-thin mb-1", children: "Phone" }, void 0, !1, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 94,
+          columnNumber: 37
+        }, this),
+        /* @__PURE__ */ jsxDEV13(
           "input",
           {
             type: "tel",
@@ -617,13 +1401,33 @@ var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 t
             name: "phone",
             placeholder: "Enter your phone number",
             className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          }
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 97,
+            columnNumber: 37
+          },
+          this
         )
-      ] })
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx13("label", { htmlFor: "subject", className: "block text-base font-thin mb-1", children: "Subject" }),
-      /* @__PURE__ */ jsx13(
+      ] }, void 0, !0, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 93,
+        columnNumber: 33
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 79,
+      columnNumber: 29
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsxDEV13("label", { htmlFor: "subject", className: "block text-base font-thin mb-1", children: "Subject" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 107,
+        columnNumber: 33
+      }, this),
+      /* @__PURE__ */ jsxDEV13(
         "input",
         {
           type: "text",
@@ -631,38 +1435,98 @@ var ContactForm = () => /* @__PURE__ */ jsx13("div", { className: "bg-zinc-950 t
           name: "subject",
           placeholder: "Enter the subject",
           className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 110,
+          columnNumber: 33
+        },
+        this
       )
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsx13("label", { htmlFor: "message", className: "block text-base font-thin mb-1", children: "Message" }),
-      /* @__PURE__ */ jsx13(
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 106,
+      columnNumber: 29
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+      /* @__PURE__ */ jsxDEV13("label", { htmlFor: "message", className: "block text-base font-thin mb-1", children: "Message" }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 119,
+        columnNumber: 33
+      }, this),
+      /* @__PURE__ */ jsxDEV13(
         "textarea",
         {
           id: "message",
           name: "message",
           placeholder: "Write your message here ...",
           className: "w-full border border-white rounded-md py-3 px-3 text-white bg-transparent"
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 122,
+          columnNumber: 33
+        },
+        this
       )
-    ] }),
-    /* @__PURE__ */ jsxs12("div", { className: "mb-4 flex justify-center", children: [
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 118,
+      columnNumber: 29
+    }, this),
+    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex justify-center", children: [
       " ",
-      /* @__PURE__ */ jsx13(
+      /* @__PURE__ */ jsxDEV13(
         "button",
         {
           type: "submit",
           className: "bg-white text-black border border-black rounded-md py-2 px-6 hover:bg-zinc-300",
           children: "Send"
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 130,
+          columnNumber: 33
+        },
+        this
       )
-    ] })
-  ] }) })
-] }) }) }), ContactForm_default = ContactForm;
+    ] }, void 0, !0, {
+      fileName: "app/components/ContactForm.tsx",
+      lineNumber: 129,
+      columnNumber: 29
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/ContactForm.tsx",
+    lineNumber: 38,
+    columnNumber: 25
+  }, this) }, void 0, !1, {
+    fileName: "app/components/ContactForm.tsx",
+    lineNumber: 37,
+    columnNumber: 21
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/ContactForm.tsx",
+  lineNumber: 9,
+  columnNumber: 17
+}, this) }, void 0, !1, {
+  fileName: "app/components/ContactForm.tsx",
+  lineNumber: 8,
+  columnNumber: 13
+}, this) }, void 0, !1, {
+  fileName: "app/components/ContactForm.tsx",
+  lineNumber: 7,
+  columnNumber: 9
+}, this), ContactForm_default = ContactForm;
 
 // app/components/Map.tsx
-import { jsx as jsx14 } from "react/jsx-runtime";
-var Map = () => /* @__PURE__ */ jsx14("section", { className: "w-screen h-[60vh]", children: /* @__PURE__ */ jsx14(
+import { jsxDEV as jsxDEV14 } from "react/jsx-dev-runtime";
+var Map = () => /* @__PURE__ */ jsxDEV14("section", { className: "w-full h-[60vh]", children: /* @__PURE__ */ jsxDEV14(
   "iframe",
   {
     src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12372.373576009162!2d-76.6217315!3d39.1725975!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7fd22320bc205%3A0x1898610d91b6621e!2sEastern%20Lubrication%20Systems!5e0!3m2!1sen!2sco!4v1695784779300!5m2!1sen!2sco",
@@ -672,22 +1536,54 @@ var Map = () => /* @__PURE__ */ jsx14("section", { className: "w-screen h-[60vh]
     allowFullScreen: !0,
     loading: "lazy",
     referrerPolicy: "no-referrer-when-downgrade"
-  }
-) }), Map_default = Map;
+  },
+  void 0,
+  !1,
+  {
+    fileName: "app/components/Map.tsx",
+    lineNumber: 10,
+    columnNumber: 13
+  },
+  this
+) }, void 0, !1, {
+  fileName: "app/components/Map.tsx",
+  lineNumber: 9,
+  columnNumber: 9
+}, this), Map_default = Map;
 
 // app/routes/contact.tsx
-import { jsx as jsx15, jsxs as jsxs13 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV15 } from "react/jsx-dev-runtime";
 var meta3 = () => [
-  { title: "Contact Us | Eastlube" },
+  { title: "Contact | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Contact() {
-  return /* @__PURE__ */ jsxs13("main", { children: [
-    /* @__PURE__ */ jsx15(Navbar_default, {}),
-    /* @__PURE__ */ jsx15(ContactForm_default, {}),
-    /* @__PURE__ */ jsx15(Map_default, {}),
-    /* @__PURE__ */ jsx15(Footer_default, {})
-  ] });
+  return /* @__PURE__ */ jsxDEV15("main", { children: [
+    /* @__PURE__ */ jsxDEV15(Navbar_default, {}, void 0, !1, {
+      fileName: "app/routes/contact.tsx",
+      lineNumber: 18,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV15(ContactForm_default, {}, void 0, !1, {
+      fileName: "app/routes/contact.tsx",
+      lineNumber: 19,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV15(Map_default, {}, void 0, !1, {
+      fileName: "app/routes/contact.tsx",
+      lineNumber: 20,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV15(Footer_default, {}, void 0, !1, {
+      fileName: "app/routes/contact.tsx",
+      lineNumber: 21,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/contact.tsx",
+    lineNumber: 17,
+    columnNumber: 9
+  }, this);
 }
 
 // app/routes/_index.tsx
@@ -698,83 +1594,231 @@ __export(index_exports, {
 });
 
 // app/components/Welcome.tsx
-import { jsx as jsx16, jsxs as jsxs14 } from "react/jsx-runtime";
-var SplitScreen = () => /* @__PURE__ */ jsx16("div", { className: "flex h-screen", children: /* @__PURE__ */ jsxs14("div", { className: "flex-1 relative text-center", children: [
-  /* @__PURE__ */ jsx16(
+import { jsxDEV as jsxDEV16 } from "react/jsx-dev-runtime";
+var SplitScreen = () => /* @__PURE__ */ jsxDEV16("div", { className: "flex h-screen", children: /* @__PURE__ */ jsxDEV16("div", { className: "flex-1 relative text-center", children: [
+  /* @__PURE__ */ jsxDEV16(
     "img",
     {
       src: "images/installations.jpg",
       alt: "Background",
       className: "h-full w-full object-cover"
-    }
+    },
+    void 0,
+    !1,
+    {
+      fileName: "app/components/Welcome.tsx",
+      lineNumber: 9,
+      columnNumber: 9
+    },
+    this
   ),
-  /* @__PURE__ */ jsx16("div", { className: "absolute top-0 left-0 h-full w-full bg-black opacity-50" }),
-  /* @__PURE__ */ jsxs14("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white", children: [
-    /* @__PURE__ */ jsx16("h1", { className: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6", children: "Keeping your business moving" }),
-    /* @__PURE__ */ jsx16("p", { className: "text-base md:text-lg lg:text-xl mb-8", children: "Experience the power and performance of a good lubrication system" })
-  ] })
-] }) }), Welcome_default = SplitScreen;
+  /* @__PURE__ */ jsxDEV16("div", { className: "absolute top-0 left-0 h-full w-full bg-black opacity-50" }, void 0, !1, {
+    fileName: "app/components/Welcome.tsx",
+    lineNumber: 16,
+    columnNumber: 9
+  }, this),
+  /* @__PURE__ */ jsxDEV16("div", { className: "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white", children: [
+    /* @__PURE__ */ jsxDEV16("h1", { className: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6", children: "Keeping your business moving" }, void 0, !1, {
+      fileName: "app/components/Welcome.tsx",
+      lineNumber: 20,
+      columnNumber: 11
+    }, this),
+    /* @__PURE__ */ jsxDEV16("p", { className: "text-base md:text-lg lg:text-xl mb-8", children: "Experience the power and performance of a good lubrication system" }, void 0, !1, {
+      fileName: "app/components/Welcome.tsx",
+      lineNumber: 21,
+      columnNumber: 11
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Welcome.tsx",
+    lineNumber: 19,
+    columnNumber: 9
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/Welcome.tsx",
+  lineNumber: 7,
+  columnNumber: 7
+}, this) }, void 0, !1, {
+  fileName: "app/components/Welcome.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), Welcome_default = SplitScreen;
 
 // app/components/AboutSection.tsx
-import { jsx as jsx17, jsxs as jsxs15 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV17 } from "react/jsx-dev-runtime";
 var AboutSection = () => {
   let years = ((startYear) => {
     let years2 = (/* @__PURE__ */ new Date()).getFullYear() - startYear;
     return Math.floor(years2 / 5) * 5;
   })(1992);
-  return /* @__PURE__ */ jsx17("section", { className: "bg-black text-white pt-14 pb-6", children: /* @__PURE__ */ jsxs15("div", { className: "container mx-auto text-justify", children: [
-    /* @__PURE__ */ jsx17("h2", { className: "text-3xl font-bold mb-8 text-center", children: "About our business" }),
-    /* @__PURE__ */ jsxs15("p", { className: "text-base mb-4 mx-8 md:mx-24 ", children: [
+  return /* @__PURE__ */ jsxDEV17("section", { className: "bg-black text-white pt-14 pb-6", children: /* @__PURE__ */ jsxDEV17("div", { className: "container mx-auto text-justify", children: [
+    /* @__PURE__ */ jsxDEV17("h2", { className: "text-3xl font-bold mb-8 text-center", children: "About our business" }, void 0, !1, {
+      fileName: "app/components/AboutSection.tsx",
+      lineNumber: 17,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV17("p", { className: "text-base mb-4 mx-8 md:mx-24 ", children: [
       "Eastern Lubrication System is a company with more than ",
       years,
       " years of experience in providing services in the lubrication equipment. We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas."
-    ] }),
-    /* @__PURE__ */ jsx17("p", { className: "text-base pb-16 mx-8 md:mx-24", children: "We offer competitive pricing and represent the most trusted names in the business: Graco, Balcrank, Lincoln, Reelcraft, Hannay and many more." })
-  ] }) });
+    ] }, void 0, !0, {
+      fileName: "app/components/AboutSection.tsx",
+      lineNumber: 18,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV17("p", { className: "text-base pb-16 mx-8 md:mx-24", children: "We offer competitive pricing and represent the most trusted names in the business: Graco, Balcrank, Lincoln, Reelcraft, Hannay and many more." }, void 0, !1, {
+      fileName: "app/components/AboutSection.tsx",
+      lineNumber: 22,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/AboutSection.tsx",
+    lineNumber: 16,
+    columnNumber: 7
+  }, this) }, void 0, !1, {
+    fileName: "app/components/AboutSection.tsx",
+    lineNumber: 15,
+    columnNumber: 5
+  }, this);
 }, AboutSection_default = AboutSection;
 
 // app/components/Features.tsx
-import { jsx as jsx18, jsxs as jsxs16 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV18 } from "react/jsx-dev-runtime";
 var Features = () => {
   let years = ((startYear) => {
     let years2 = (/* @__PURE__ */ new Date()).getFullYear() - startYear;
     return `${Math.floor(years2 / 5) * 5}+`;
   })(1992);
-  return /* @__PURE__ */ jsx18("section", { className: "bg-black text-white py-12", children: /* @__PURE__ */ jsxs16("div", { className: "container mx-auto text-center", children: [
-    /* @__PURE__ */ jsx18("h2", { className: "text-4xl font-bold mb-12", children: "Features" }),
-    /* @__PURE__ */ jsxs16("div", { className: "flex flex-wrap justify-center", children: [
-      /* @__PURE__ */ jsx18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxs16("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
-        /* @__PURE__ */ jsx18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "1" }),
-        /* @__PURE__ */ jsxs16("div", { className: "text-lg", children: [
+  return /* @__PURE__ */ jsxDEV18("section", { className: "bg-black text-white py-12", children: /* @__PURE__ */ jsxDEV18("div", { className: "container mx-auto text-center", children: [
+    /* @__PURE__ */ jsxDEV18("h2", { className: "text-4xl font-bold mb-12", children: "Features" }, void 0, !1, {
+      fileName: "app/components/Features.tsx",
+      lineNumber: 17,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV18("div", { className: "flex flex-wrap justify-center", children: [
+      /* @__PURE__ */ jsxDEV18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxDEV18("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "1" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 22,
+          columnNumber: 29
+        }, this),
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-lg", children: [
           years,
           " Years of Experience"
-        ] })
-      ] }) }),
-      /* @__PURE__ */ jsx18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxs16("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
-        /* @__PURE__ */ jsx18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "2" }),
-        /* @__PURE__ */ jsx18("div", { className: "text-lg", children: "Quality Assurance" })
-      ] }) }),
-      /* @__PURE__ */ jsx18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxs16("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
-        /* @__PURE__ */ jsx18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "3" }),
-        /* @__PURE__ */ jsx18("div", { className: "text-lg", children: "Advanced Tech" })
-      ] }) }),
-      /* @__PURE__ */ jsx18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxs16("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
-        /* @__PURE__ */ jsx18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "4" }),
-        /* @__PURE__ */ jsx18("div", { className: "text-lg", children: "Licensed Professionals" })
-      ] }) }),
-      /* @__PURE__ */ jsx18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxs16("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
-        /* @__PURE__ */ jsx18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "5" }),
-        /* @__PURE__ */ jsx18("div", { className: "text-lg", children: "24/7 Support" })
-      ] }) })
-    ] })
-  ] }) });
+        ] }, void 0, !0, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 23,
+          columnNumber: 29
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 21,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 20,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxDEV18("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "2" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 30,
+          columnNumber: 29
+        }, this),
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-lg", children: "Quality Assurance" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 31,
+          columnNumber: 29
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 29,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 28,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxDEV18("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "3" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 38,
+          columnNumber: 29
+        }, this),
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-lg", children: "Advanced Tech" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 39,
+          columnNumber: 29
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 37,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 36,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxDEV18("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "4" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 46,
+          columnNumber: 29
+        }, this),
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-lg", children: "Licensed Professionals" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 47,
+          columnNumber: 29
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 45,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 44,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV18("div", { className: "w-1/2 sm:w-1/3 md:w-1/5 mb-4 md:mb-0 relative", children: /* @__PURE__ */ jsxDEV18("div", { className: "rounded-lg bg-black border-b-4 border-white p-4 h-36 text-center", children: [
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-cyan-500 text-3xl font-bold mb-2", children: "5" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 54,
+          columnNumber: 29
+        }, this),
+        /* @__PURE__ */ jsxDEV18("div", { className: "text-lg", children: "24/7 Support" }, void 0, !1, {
+          fileName: "app/components/Features.tsx",
+          lineNumber: 55,
+          columnNumber: 29
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 53,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Features.tsx",
+        lineNumber: 52,
+        columnNumber: 21
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/Features.tsx",
+      lineNumber: 18,
+      columnNumber: 17
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Features.tsx",
+    lineNumber: 16,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "app/components/Features.tsx",
+    lineNumber: 15,
+    columnNumber: 9
+  }, this);
 }, Features_default = Features;
 
 // app/components/Gallery.tsx
 import { FontAwesomeIcon as FontAwesomeIcon3 } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState as useState4, useEffect as useEffect2 } from "react";
-import { jsx as jsx19, jsxs as jsxs17 } from "react/jsx-runtime";
+import { useState as useState4, useEffect as useEffect3 } from "react";
+import { jsxDEV as jsxDEV19 } from "react/jsx-dev-runtime";
 var GallerySection = () => {
   let [scrollIndex, setScrollIndex] = useState4(0), [isSmallScreen, setIsSmallScreen] = useState4(!1), itemsPerPage = isSmallScreen ? 2 : 3, images = [
     {
@@ -814,7 +1858,7 @@ var GallerySection = () => {
       description: "Description 6"
     }
   ];
-  useEffect2(() => {
+  useEffect3(() => {
     let handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 640);
     };
@@ -827,76 +1871,236 @@ var GallerySection = () => {
   }, handlePrev = () => {
     scrollIndex > 0 && setScrollIndex(scrollIndex - 1);
   };
-  return /* @__PURE__ */ jsx19("section", { className: "bg-zinc-950 text-white py-12", children: /* @__PURE__ */ jsxs17("div", { className: "container mx-auto text-center", children: [
-    /* @__PURE__ */ jsx19("h2", { className: "text-4xl font-bold mb-8", children: "Our Collections" }),
-    /* @__PURE__ */ jsx19("div", { className: "relative overflow-hidden", children: /* @__PURE__ */ jsxs17("div", { className: "flex items-center text-black", children: [
-      scrollIndex > 0 && /* @__PURE__ */ jsx19("button", { className: "absolute top-1/2 transform -translate-y-1/2 z-30 bg-white bg-opacity-30 p-3 px-4 left-3", onClick: handlePrev, children: /* @__PURE__ */ jsx19(FontAwesomeIcon3, { icon: faArrowLeft }) }),
-      scrollIndex + itemsPerPage < images.length && /* @__PURE__ */ jsx19("button", { className: "rounded-sm absolute top-1/2 transform -translate-y-1/2 z-30 bg-white bg-opacity-30 p-3 px-4 right-3", onClick: handleNext, children: /* @__PURE__ */ jsx19(FontAwesomeIcon3, { icon: faArrowRight }) }),
-      /* @__PURE__ */ jsx19("div", { className: "flex", style: { width: `${100 * (images.length / itemsPerPage)}%` }, children: images.slice(scrollIndex, scrollIndex + itemsPerPage).map((image) => /* @__PURE__ */ jsx19("div", { className: "gallery-item relative mx-2 group", style: { width: `${100 / itemsPerPage}%` }, children: /* @__PURE__ */ jsxs17("div", { className: "gallery-image-container relative min-h-[300px] pb-[150%]", children: [
-        /* @__PURE__ */ jsx19(
+  return /* @__PURE__ */ jsxDEV19("section", { className: "bg-zinc-950 text-white py-12", children: /* @__PURE__ */ jsxDEV19("div", { className: "container mx-auto text-center", children: [
+    /* @__PURE__ */ jsxDEV19("h2", { className: "text-4xl font-bold mb-8", children: "Our Collections" }, void 0, !1, {
+      fileName: "app/components/Gallery.tsx",
+      lineNumber: 75,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV19("div", { className: "relative overflow-hidden", children: /* @__PURE__ */ jsxDEV19("div", { className: "flex items-center text-black", children: [
+      scrollIndex > 0 && /* @__PURE__ */ jsxDEV19("button", { className: "absolute top-1/2 transform -translate-y-1/2 z-30 bg-white bg-opacity-30 p-3 px-4 left-3", onClick: handlePrev, children: /* @__PURE__ */ jsxDEV19(FontAwesomeIcon3, { icon: faArrowLeft }, void 0, !1, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 80,
+        columnNumber: 33
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 79,
+        columnNumber: 29
+      }, this),
+      scrollIndex + itemsPerPage < images.length && /* @__PURE__ */ jsxDEV19("button", { className: "rounded-sm absolute top-1/2 transform -translate-y-1/2 z-30 bg-white bg-opacity-30 p-3 px-4 right-3", onClick: handleNext, children: /* @__PURE__ */ jsxDEV19(FontAwesomeIcon3, { icon: faArrowRight }, void 0, !1, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 85,
+        columnNumber: 33
+      }, this) }, void 0, !1, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 84,
+        columnNumber: 29
+      }, this),
+      /* @__PURE__ */ jsxDEV19("div", { className: "flex", style: { width: `${100 * (images.length / itemsPerPage)}%` }, children: images.slice(scrollIndex, scrollIndex + itemsPerPage).map((image) => /* @__PURE__ */ jsxDEV19("div", { className: "gallery-item relative mx-2 group", style: { width: `${100 / itemsPerPage}%` }, children: /* @__PURE__ */ jsxDEV19("div", { className: "gallery-image-container relative min-h-[300px] pb-[150%]", children: [
+        /* @__PURE__ */ jsxDEV19(
           "img",
           {
             src: image.src,
             alt: image.title,
             className: "gallery-image object-cover transition-transform hover:scale-105 hover:brightness-50",
             style: { position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }
-          }
+          },
+          void 0,
+          !1,
+          {
+            fileName: "app/components/Gallery.tsx",
+            lineNumber: 93,
+            columnNumber: 41
+          },
+          this
         ),
-        /* @__PURE__ */ jsxs17("div", { className: "gallery-info absolute bottom-0 left-0 right-0 text-white p-2 opacity-0 transition-opacity group-hover:opacity-100", children: [
-          /* @__PURE__ */ jsx19("h3", { className: "text-lg font-bold", children: image.title }),
-          /* @__PURE__ */ jsx19("p", { className: "text-xs", children: image.description })
-        ] })
-      ] }) }, image.id)) })
-    ] }) })
-  ] }) });
+        /* @__PURE__ */ jsxDEV19("div", { className: "gallery-info absolute bottom-0 left-0 right-0 text-white p-2 opacity-0 transition-opacity group-hover:opacity-100", children: [
+          /* @__PURE__ */ jsxDEV19("h3", { className: "text-lg font-bold", children: image.title }, void 0, !1, {
+            fileName: "app/components/Gallery.tsx",
+            lineNumber: 100,
+            columnNumber: 45
+          }, this),
+          /* @__PURE__ */ jsxDEV19("p", { className: "text-xs", children: image.description }, void 0, !1, {
+            fileName: "app/components/Gallery.tsx",
+            lineNumber: 101,
+            columnNumber: 45
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/Gallery.tsx",
+          lineNumber: 99,
+          columnNumber: 41
+        }, this)
+      ] }, void 0, !0, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 91,
+        columnNumber: 37
+      }, this) }, image.id, !1, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 90,
+        columnNumber: 33
+      }, this)) }, void 0, !1, {
+        fileName: "app/components/Gallery.tsx",
+        lineNumber: 88,
+        columnNumber: 25
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/Gallery.tsx",
+      lineNumber: 77,
+      columnNumber: 21
+    }, this) }, void 0, !1, {
+      fileName: "app/components/Gallery.tsx",
+      lineNumber: 76,
+      columnNumber: 17
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Gallery.tsx",
+    lineNumber: 74,
+    columnNumber: 13
+  }, this) }, void 0, !1, {
+    fileName: "app/components/Gallery.tsx",
+    lineNumber: 73,
+    columnNumber: 9
+  }, this);
 }, Gallery_default = GallerySection;
 
 // app/components/LocationInfo.tsx
-import { jsx as jsx20, jsxs as jsxs18 } from "react/jsx-runtime";
-var LocationInfo = () => /* @__PURE__ */ jsx20("section", { className: "bg-black py-28 text-white", children: /* @__PURE__ */ jsxs18("div", { className: "container mx-auto flex flex-col md:flex-row items-center justify-center", children: [
-  /* @__PURE__ */ jsx20("div", { className: "md:w-1/2 text-center md:text-left", children: /* @__PURE__ */ jsx20("h2", { className: "font-bold text-3xl md:text-4xl lg:text-5xl", children: "Our Locations" }) }),
-  /* @__PURE__ */ jsxs18("div", { className: "md:w-1/2 mt-6 md:mt-0", children: [
-    /* @__PURE__ */ jsx20("p", { className: "text-lg mb-4", children: "512 N. Crain Highway, Suite #13 Glen Burnie, MD 21061" }),
-    /* @__PURE__ */ jsxs18("p", { className: "text-lg", children: [
-      /* @__PURE__ */ jsx20("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }),
+import { jsxDEV as jsxDEV20 } from "react/jsx-dev-runtime";
+var LocationInfo = () => /* @__PURE__ */ jsxDEV20("section", { className: "bg-black py-28 text-white", children: /* @__PURE__ */ jsxDEV20("div", { className: "container mx-auto flex flex-col md:flex-row items-center justify-center", children: [
+  /* @__PURE__ */ jsxDEV20("div", { className: "md:w-1/2 text-center md:text-left", children: /* @__PURE__ */ jsxDEV20("h2", { className: "font-bold text-3xl md:text-4xl lg:text-5xl", children: "Our Locations" }, void 0, !1, {
+    fileName: "app/components/LocationInfo.tsx",
+    lineNumber: 12,
+    columnNumber: 21
+  }, this) }, void 0, !1, {
+    fileName: "app/components/LocationInfo.tsx",
+    lineNumber: 11,
+    columnNumber: 17
+  }, this),
+  /* @__PURE__ */ jsxDEV20("div", { className: "md:w-1/2 mt-6 md:mt-0", children: [
+    /* @__PURE__ */ jsxDEV20("p", { className: "text-lg mb-4", children: "512 N. Crain Highway, Suite #13 Glen Burnie, MD 21061" }, void 0, !1, {
+      fileName: "app/components/LocationInfo.tsx",
+      lineNumber: 17,
+      columnNumber: 21
+    }, this),
+    /* @__PURE__ */ jsxDEV20("p", { className: "text-lg", children: [
+      /* @__PURE__ */ jsxDEV20("a", { href: "mailto:contact@example.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }, void 0, !1, {
+        fileName: "app/components/LocationInfo.tsx",
+        lineNumber: 21,
+        columnNumber: 25
+      }, this),
       " | Phone: +1 833-880-PUMP (7867)"
-    ] })
-  ] })
-] }) }), LocationInfo_default = LocationInfo;
+    ] }, void 0, !0, {
+      fileName: "app/components/LocationInfo.tsx",
+      lineNumber: 20,
+      columnNumber: 21
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/LocationInfo.tsx",
+    lineNumber: 16,
+    columnNumber: 17
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/LocationInfo.tsx",
+  lineNumber: 9,
+  columnNumber: 13
+}, this) }, void 0, !1, {
+  fileName: "app/components/LocationInfo.tsx",
+  lineNumber: 8,
+  columnNumber: 9
+}, this), LocationInfo_default = LocationInfo;
 
 // app/routes/_index.tsx
-import { jsx as jsx21, jsxs as jsxs19 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV21 } from "react/jsx-dev-runtime";
 var meta4 = () => [
-  { title: "The best lubrication systems in the world | Eastlube" },
+  { title: "Eastern Lubrication Systems | Keeping your business moving" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Index() {
-  return /* @__PURE__ */ jsxs19("main", { children: [
-    /* @__PURE__ */ jsx21(Navbar_default, {}),
-    /* @__PURE__ */ jsx21(Welcome_default, {}),
-    /* @__PURE__ */ jsx21(AboutSection_default, {}),
-    /* @__PURE__ */ jsx21("div", { className: "flex h-[80vh]", children: /* @__PURE__ */ jsx21(
+  return /* @__PURE__ */ jsxDEV21("main", { children: [
+    /* @__PURE__ */ jsxDEV21(Navbar_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 24,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(Welcome_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 25,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(AboutSection_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 26,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21("div", { className: "flex h-[80vh]", children: /* @__PURE__ */ jsxDEV21(
       "img",
       {
         src: "images/outside-pump.jpg",
         alt: "Background",
         className: "h-full w-full object-cover"
-      }
-    ) }),
-    /* @__PURE__ */ jsx21(Features_default, {}),
-    /* @__PURE__ */ jsx21(Gallery_default, {}),
-    /* @__PURE__ */ jsx21("div", { className: "flex h-[70vh]", children: /* @__PURE__ */ jsx21(
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/_index.tsx",
+        lineNumber: 29,
+        columnNumber: 9
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 27,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(Features_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 35,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(Gallery_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 36,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21("div", { className: "flex h-[70vh]", children: /* @__PURE__ */ jsxDEV21(
       "img",
       {
         src: "images/tubes.png",
         alt: "Background",
         className: "h-full w-full object-cover"
-      }
-    ) }),
-    /* @__PURE__ */ jsx21(LocationInfo_default, {}),
-    /* @__PURE__ */ jsx21(Map_default, {}),
-    /* @__PURE__ */ jsx21(Footer_default, {})
-  ] });
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/_index.tsx",
+        lineNumber: 39,
+        columnNumber: 9
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 37,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(LocationInfo_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 45,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(Map_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 46,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV21(Footer_default, {}, void 0, !1, {
+      fileName: "app/routes/_index.tsx",
+      lineNumber: 47,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/_index.tsx",
+    lineNumber: 23,
+    columnNumber: 5
+  }, this);
 }
 
 // app/routes/about.tsx
@@ -907,72 +2111,176 @@ __export(about_exports, {
 });
 
 // app/components/AboutUs.tsx
-import { jsx as jsx22, jsxs as jsxs20 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV22 } from "react/jsx-dev-runtime";
 var AboutUsSection = () => {
   let years = ((startYear) => {
     let years2 = (/* @__PURE__ */ new Date()).getFullYear() - startYear;
     return Math.floor(years2 / 5) * 5;
   })(1992);
-  return /* @__PURE__ */ jsxs20("section", { className: "bg-black text-white py-20 text-center", children: [
-    /* @__PURE__ */ jsx22("h3", { className: "text-lg text-gray-500", children: "Our History" }),
-    /* @__PURE__ */ jsx22("h2", { className: "text-4xl font-bold mb-4", children: "About Us" }),
-    /* @__PURE__ */ jsxs20("p", { className: "text-lg max-w-3xl mx-12 md:mx-auto text-justify", children: [
-      /* @__PURE__ */ jsx22("b", { children: "Eastern Lubrication System" }),
+  return /* @__PURE__ */ jsxDEV22("section", { className: "bg-black text-white py-20 text-center", children: [
+    /* @__PURE__ */ jsxDEV22("h3", { className: "text-lg text-gray-500", children: "Our History" }, void 0, !1, {
+      fileName: "app/components/AboutUs.tsx",
+      lineNumber: 16,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV22("h2", { className: "text-4xl font-bold mb-4", children: "About Us" }, void 0, !1, {
+      fileName: "app/components/AboutUs.tsx",
+      lineNumber: 17,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV22("p", { className: "text-lg max-w-3xl mx-12 md:mx-auto text-justify", children: [
+      /* @__PURE__ */ jsxDEV22("b", { children: "Eastern Lubrication System" }, void 0, !1, {
+        fileName: "app/components/AboutUs.tsx",
+        lineNumber: 19,
+        columnNumber: 17
+      }, this),
       " is a company with more than ",
       years,
       " of experience in providing services in the lubrication equipment. We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas.",
-      /* @__PURE__ */ jsx22("br", {}),
+      /* @__PURE__ */ jsxDEV22("br", {}, void 0, !1, {
+        fileName: "app/components/AboutUs.tsx",
+        lineNumber: 21,
+        columnNumber: 17
+      }, this),
       "We offer competitive pricing and represent the most trusted names in the business: Graco, Balcrank, Lincoln, Reelcraft, Hannay and many more."
-    ] })
-  ] });
+    ] }, void 0, !0, {
+      fileName: "app/components/AboutUs.tsx",
+      lineNumber: 18,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/AboutUs.tsx",
+    lineNumber: 15,
+    columnNumber: 9
+  }, this);
 }, AboutUs_default = AboutUsSection;
 
 // app/components/MissionVision.tsx
-import { jsx as jsx23, jsxs as jsxs21 } from "react/jsx-runtime";
-var MissionVision = () => /* @__PURE__ */ jsxs21("section", { className: "border-y bg-black text-center", children: [
-  /* @__PURE__ */ jsxs21("div", { className: "flex flex-col md:flex-row", children: [
-    /* @__PURE__ */ jsx23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsx23(
+import { jsxDEV as jsxDEV23 } from "react/jsx-dev-runtime";
+var MissionVision = () => /* @__PURE__ */ jsxDEV23("section", { className: "border-y bg-black text-center", children: [
+  /* @__PURE__ */ jsxDEV23("div", { className: "flex flex-col md:flex-row", children: [
+    /* @__PURE__ */ jsxDEV23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsxDEV23(
       "img",
       {
         src: "images/small-overhead-reels.jpg",
         alt: "Image 1",
         className: "w-full h-auto"
-      }
-    ) }),
-    /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
-      /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Mission" }),
-      /* @__PURE__ */ jsx23("p", { className: "text-lg text-justify px-8", children: "To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service." })
-    ] })
-  ] }),
-  /* @__PURE__ */ jsxs21("div", { className: "flex flex-col md:flex-row", children: [
-    /* @__PURE__ */ jsxs21("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
-      /* @__PURE__ */ jsx23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Vision" }),
-      /* @__PURE__ */ jsx23("p", { className: "text-lg text-justify px-8", children: "To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future." })
-    ] }),
-    /* @__PURE__ */ jsx23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsx23(
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/MissionVision.tsx",
+        lineNumber: 10,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/MissionVision.tsx",
+      lineNumber: 9,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV23("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
+      /* @__PURE__ */ jsxDEV23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Mission" }, void 0, !1, {
+        fileName: "app/components/MissionVision.tsx",
+        lineNumber: 18,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV23("p", { className: "text-lg text-justify px-8", children: "To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service." }, void 0, !1, {
+        fileName: "app/components/MissionVision.tsx",
+        lineNumber: 19,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/MissionVision.tsx",
+      lineNumber: 17,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/MissionVision.tsx",
+    lineNumber: 7,
+    columnNumber: 7
+  }, this),
+  /* @__PURE__ */ jsxDEV23("div", { className: "flex flex-col md:flex-row", children: [
+    /* @__PURE__ */ jsxDEV23("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
+      /* @__PURE__ */ jsxDEV23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Vision" }, void 0, !1, {
+        fileName: "app/components/MissionVision.tsx",
+        lineNumber: 29,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ jsxDEV23("p", { className: "text-lg text-justify px-8", children: "To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future." }, void 0, !1, {
+        fileName: "app/components/MissionVision.tsx",
+        lineNumber: 30,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/components/MissionVision.tsx",
+      lineNumber: 28,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ jsxDEV23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsxDEV23(
       "img",
       {
         src: "images/reels-place.jpg",
         alt: "Image 2",
         className: "w-full h-full object-cover"
-      }
-    ) })
-  ] })
-] }), MissionVision_default = MissionVision;
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/components/MissionVision.tsx",
+        lineNumber: 36,
+        columnNumber: 11
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/components/MissionVision.tsx",
+      lineNumber: 35,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/MissionVision.tsx",
+    lineNumber: 26,
+    columnNumber: 7
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/MissionVision.tsx",
+  lineNumber: 5,
+  columnNumber: 5
+}, this), MissionVision_default = MissionVision;
 
 // app/routes/about.tsx
-import { jsx as jsx24, jsxs as jsxs22 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV24 } from "react/jsx-dev-runtime";
 var meta5 = () => [
-  { title: "Contact Us | Eastlube" },
+  { title: "About Us | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function About() {
-  return /* @__PURE__ */ jsxs22("main", { children: [
-    /* @__PURE__ */ jsx24(Navbar_default, {}),
-    /* @__PURE__ */ jsx24(AboutUs_default, {}),
-    /* @__PURE__ */ jsx24(MissionVision_default, {}),
-    /* @__PURE__ */ jsx24(Footer_default, {})
-  ] });
+  return /* @__PURE__ */ jsxDEV24("main", { children: [
+    /* @__PURE__ */ jsxDEV24(Navbar_default, {}, void 0, !1, {
+      fileName: "app/routes/about.tsx",
+      lineNumber: 18,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV24(AboutUs_default, {}, void 0, !1, {
+      fileName: "app/routes/about.tsx",
+      lineNumber: 19,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV24(MissionVision_default, {}, void 0, !1, {
+      fileName: "app/routes/about.tsx",
+      lineNumber: 20,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ jsxDEV24(Footer_default, {}, void 0, !1, {
+      fileName: "app/routes/about.tsx",
+      lineNumber: 21,
+      columnNumber: 13
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/about.tsx",
+    lineNumber: 17,
+    columnNumber: 9
+  }, this);
 }
 
 // app/routes/work.tsx
@@ -983,8 +2291,8 @@ __export(work_exports, {
 });
 
 // app/components/Collection.tsx
-import { jsx as jsx25, jsxs as jsxs23 } from "react/jsx-runtime";
-var Collection = () => /* @__PURE__ */ jsx25("div", { className: "bg-black p-4 md:p-14", children: /* @__PURE__ */ jsx25("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsx25("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4", children: [
+import { jsxDEV as jsxDEV25 } from "react/jsx-dev-runtime";
+var Collection = () => /* @__PURE__ */ jsxDEV25("div", { className: "bg-black p-4 md:p-14", children: /* @__PURE__ */ jsxDEV25("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxDEV25("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4", children: [
   {
     id: 1,
     src: "images/polish.jpg",
@@ -1021,48 +2329,120 @@ var Collection = () => /* @__PURE__ */ jsx25("div", { className: "bg-black p-4 m
     title: "Oil Bar Dispenser",
     description: "Description 6"
   }
-].map((image, index) => /* @__PURE__ */ jsxs23("div", { className: "w-full relative aspect-ratio-1/1 group", children: [
-  /* @__PURE__ */ jsx25("img", { src: image.src, alt: `Image ${index}`, className: "w-full h-full object-cover hover:brightness-50" }),
-  /* @__PURE__ */ jsxs23("div", { className: "gallery-info absolute top-[50%] left-0 right-0 text-white p-2 opacity-0 transition-opacity group-hover:opacity-100 flex flex-col justify-center items-center", children: [
-    /* @__PURE__ */ jsx25("h3", { className: "text-lg font-bold", children: image.title }),
-    /* @__PURE__ */ jsx25("p", { className: "text-xs", children: image.description })
-  ] })
-] }, index)) }) }) }), Collection_default = Collection;
+].map((image, index) => /* @__PURE__ */ jsxDEV25("div", { className: "w-full relative aspect-ratio-1/1 group", children: [
+  /* @__PURE__ */ jsxDEV25("img", { src: image.src, alt: `Image ${index}`, className: "w-full h-full object-cover hover:brightness-50" }, void 0, !1, {
+    fileName: "app/components/Collection.tsx",
+    lineNumber: 50,
+    columnNumber: 29
+  }, this),
+  /* @__PURE__ */ jsxDEV25("div", { className: "gallery-info absolute top-[50%] left-0 right-0 text-white p-2 opacity-0 transition-opacity group-hover:opacity-100 flex flex-col justify-center items-center", children: [
+    /* @__PURE__ */ jsxDEV25("h3", { className: "text-lg font-bold", children: image.title }, void 0, !1, {
+      fileName: "app/components/Collection.tsx",
+      lineNumber: 52,
+      columnNumber: 33
+    }, this),
+    /* @__PURE__ */ jsxDEV25("p", { className: "text-xs", children: image.description }, void 0, !1, {
+      fileName: "app/components/Collection.tsx",
+      lineNumber: 53,
+      columnNumber: 33
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/Collection.tsx",
+    lineNumber: 51,
+    columnNumber: 29
+  }, this)
+] }, index, !0, {
+  fileName: "app/components/Collection.tsx",
+  lineNumber: 49,
+  columnNumber: 25
+}, this)) }, void 0, !1, {
+  fileName: "app/components/Collection.tsx",
+  lineNumber: 47,
+  columnNumber: 17
+}, this) }, void 0, !1, {
+  fileName: "app/components/Collection.tsx",
+  lineNumber: 46,
+  columnNumber: 13
+}, this) }, void 0, !1, {
+  fileName: "app/components/Collection.tsx",
+  lineNumber: 45,
+  columnNumber: 9
+}, this), Collection_default = Collection;
 
 // app/components/DownloadButton.tsx
-import { jsx as jsx26 } from "react/jsx-runtime";
-var DownloadButton = () => /* @__PURE__ */ jsx26("div", { className: "w-56 sm:w-64 mx-2 md:pr-12 md:mx-16 lg:mx-32 text-white bg-black p-4 rounded-md border border-white hover:bg-white hover:text-black hover:border-black hover:shadow-md transition-all duration-300", children: /* @__PURE__ */ jsx26("button", { onClick: () => {
+import { jsxDEV as jsxDEV26 } from "react/jsx-dev-runtime";
+var DownloadButton = () => /* @__PURE__ */ jsxDEV26("div", { className: "w-56 sm:w-64 mx-2 md:pr-12 md:mx-16 lg:mx-32 text-white bg-black p-4 rounded-md border border-white hover:bg-white hover:text-black hover:border-black hover:shadow-md transition-all duration-300", children: /* @__PURE__ */ jsxDEV26("button", { onClick: () => {
   let pdfFile = "assets/services-portfolio.pdf", currentDate = /* @__PURE__ */ new Date(), filename = `eastlube-portfolio-${currentDate.getDate()}-${currentDate.getMonth() + 1}-${currentDate.getFullYear()}.pdf`, tempAnchor = document.createElement("a");
   tempAnchor.style.display = "none", tempAnchor.href = pdfFile, tempAnchor.setAttribute("download", filename), document.body.appendChild(tempAnchor), tempAnchor.click(), document.body.removeChild(tempAnchor);
-}, children: "Download Portfolio" }) }), DownloadButton_default = DownloadButton;
+}, children: "Download Portfolio" }, void 0, !1, {
+  fileName: "app/components/DownloadButton.tsx",
+  lineNumber: 30,
+  columnNumber: 13
+}, this) }, void 0, !1, {
+  fileName: "app/components/DownloadButton.tsx",
+  lineNumber: 29,
+  columnNumber: 9
+}, this), DownloadButton_default = DownloadButton;
 
 // app/routes/work.tsx
-import { jsx as jsx27, jsxs as jsxs24 } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV27 } from "react/jsx-dev-runtime";
 var meta6 = () => [
   { title: "Portfolio | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Portfolio() {
-  return /* @__PURE__ */ jsxs24("main", { className: "bg-black", children: [
-    /* @__PURE__ */ jsx27(Navbar_default, {}),
-    /* @__PURE__ */ jsx27("div", { className: "px-4 md:px-14 lg:px-28", children: /* @__PURE__ */ jsx27(
+  return /* @__PURE__ */ jsxDEV27("main", { className: "bg-black", children: [
+    /* @__PURE__ */ jsxDEV27(Navbar_default, {}, void 0, !1, {
+      fileName: "app/routes/work.tsx",
+      lineNumber: 20,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV27("div", { className: "px-4 md:px-14 lg:px-28", children: /* @__PURE__ */ jsxDEV27(
       Header_default,
       {
         title: "Our Work",
         description: "Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products.",
-        children: /* @__PURE__ */ jsx27(DownloadButton_default, {})
-      }
-    ) }),
-    /* @__PURE__ */ jsx27(Collection_default, {}),
-    /* @__PURE__ */ jsx27(Footer_default, {})
-  ] });
+        children: /* @__PURE__ */ jsxDEV27(DownloadButton_default, {}, void 0, !1, {
+          fileName: "app/routes/work.tsx",
+          lineNumber: 25,
+          columnNumber: 21
+        }, this)
+      },
+      void 0,
+      !1,
+      {
+        fileName: "app/routes/work.tsx",
+        lineNumber: 22,
+        columnNumber: 9
+      },
+      this
+    ) }, void 0, !1, {
+      fileName: "app/routes/work.tsx",
+      lineNumber: 21,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV27(Collection_default, {}, void 0, !1, {
+      fileName: "app/routes/work.tsx",
+      lineNumber: 28,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV27(Footer_default, {}, void 0, !1, {
+      fileName: "app/routes/work.tsx",
+      lineNumber: 29,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/routes/work.tsx",
+    lineNumber: 19,
+    columnNumber: 5
+  }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-J4YGCUIQ.js", imports: ["/build/_shared/chunk-BZNBSATU.js", "/build/_shared/chunk-NR2ZEJD3.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-OG23JBHV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-ISPBSO6W.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-OHE72U2F.js", imports: ["/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-3YSR4QJF.js", imports: ["/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-MCXMJZBC.js", imports: ["/build/_shared/chunk-6UJLK7KR.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-OH7AZEZB.js", imports: ["/build/_shared/chunk-UTT5JTMV.js", "/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-TN2YXMLK.js", imports: ["/build/_shared/chunk-7K645NVA.js", "/build/_shared/chunk-YZNNZ4SC.js"], hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "cb51fed5", hmr: void 0, url: "/build/manifest-CB51FED5.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-KM3GHH4E.js", imports: ["/build/_shared/chunk-BA6NHEY4.js", "/build/_shared/chunk-QGHGXAHV.js", "/build/_shared/chunk-3SMLWLAL.js", "/build/_shared/chunk-ZPFBG4YH.js", "/build/_shared/chunk-K6PKGSTD.js", "/build/_shared/chunk-H5ZE7JVG.js", "/build/_shared/chunk-NRH5LTJ7.js", "/build/_shared/chunk-O4OKU2LD.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-I2W2XFFW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-6TYUISC5.js", imports: ["/build/_shared/chunk-XWWTEJSG.js", "/build/_shared/chunk-CX4WSHHZ.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-DMACYCZB.js", imports: ["/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-DHYGQWPS.js", imports: ["/build/_shared/chunk-PFBCQWK5.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-P7W2DDYC.js", imports: ["/build/_shared/chunk-CX4WSHHZ.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-QETUQFCB.js", imports: ["/build/_shared/chunk-XWWTEJSG.js", "/build/_shared/chunk-PFBCQWK5.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-J5E7BA3X.js", imports: ["/build/_shared/chunk-PFBCQWK5.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "c18a79dc", hmr: { runtime: "/build/_shared/chunk-ZPFBG4YH.js", timestamp: 1705453080302 }, url: "/build/manifest-C18A79DC.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var mode = "production", assetsBuildDirectory = "public/build", future = {}, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
+var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
@@ -1129,3 +2509,4 @@ export {
   publicPath,
   routes
 };
+//# sourceMappingURL=index.js.map

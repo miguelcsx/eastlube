@@ -7,7 +7,7 @@ import MissionVision from "~/components/MissionVision";
 
 export const meta: MetaFunction = () => {
     return [
-        { title: "Contact Us | Eastlube" },
+        { title: "About Us | Eastlube" },
         { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" },
     ];
 };

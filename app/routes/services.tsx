@@ -5,7 +5,7 @@ import Footer from "~/components/Footer";
 import Header from "~/components/Header";
 import ServiceSection from "~/components/ServiceSection";
 import TestimonialCarousel from "~/components/Testimonials";
-
+import { testimonials } from "~/lib/testimonials";
 
 export const meta: MetaFunction = () => {
     return [
@@ -34,7 +34,7 @@ export default function Services() {
 
                     <ServiceSection />
 
-                    <TestimonialCarousel />
+                    <TestimonialCarousel testimonials={testimonials}/>
 
                 </div>
 
