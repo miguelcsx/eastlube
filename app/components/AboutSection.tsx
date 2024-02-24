@@ -17,7 +17,7 @@ const AboutSection: React.FC = () => {
         <h2 className="text-3xl font-bold mb-8 text-center">About our business</h2>
         <p className="text-base mb-4 mx-8 md:mx-24 ">
           Eastern Lubrication System is a company with more than {years} years of experience in providing services in the lubrication equipment.
-          We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas.
+          {/*We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas.*/}
         </p>
         <p className="text-base pb-16 mx-8 md:mx-24">
           We offer competitive pricing and represent the most trusted names in the business:

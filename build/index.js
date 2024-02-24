@@ -120,9 +120,10 @@ __export(root_exports, {
 });
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-BLWS7XYD.css";
+var tailwind_default = "/build/_assets/tailwind-NWDVKS3V.css";
 
 // app/root.tsx
+import { Analytics } from "@vercel/analytics/react";
 import {
   Links,
   LiveReload,
@@ -182,6 +183,11 @@ function App() {
       /* @__PURE__ */ jsxDEV2(LiveReload, {}, void 0, !1, {
         fileName: "app/root.tsx",
         lineNumber: 31,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Analytics, {}, void 0, !1, {
+        fileName: "app/root.tsx",
+        lineNumber: 32,
         columnNumber: 9
       }, this)
     ] }, void 0, !0, {
@@ -1168,361 +1174,451 @@ __export(contact_exports, {
 });
 
 // app/components/ContactForm.tsx
+import { useState as useState4 } from "react";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { jsxDEV as jsxDEV13 } from "react/jsx-dev-runtime";
-var ContactForm = () => /* @__PURE__ */ jsxDEV13("div", { className: "bg-zinc-950 text-white pt-24 pb-6 md:px-12 px-6", children: /* @__PURE__ */ jsxDEV13("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxDEV13("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
-  /* @__PURE__ */ jsxDEV13("div", { children: [
-    /* @__PURE__ */ jsxDEV13("h2", { className: "text-4xl font-bold mb-4", children: "Contact" }, void 0, !1, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 12,
-      columnNumber: 25
-    }, this),
-    /* @__PURE__ */ jsxDEV13("p", { className: "text-base mb-8 mr-20", children: "Come visit our service centers and experience the power of expert lubrication support!" }, void 0, !1, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 13,
-      columnNumber: 25
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Address" }, void 0, !1, {
+var ContactForm = () => {
+  let [isModalOpen, setIsModalOpen] = useState4(!1), {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+    reset
+  } = useForm();
+  async function onSubmit(formData) {
+    await fetch("/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "aplication/json"
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        address: formData.address,
+        zipCode: formData.zipCode,
+        email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message
+      })
+    }).then(() => {
+      toast.success("Your email message has been sent successfully"), setIsModalOpen(!0);
+    }), reset();
+  }
+  return /* @__PURE__ */ jsxDEV13("div", { className: "bg-zinc-950 text-white pt-24 pb-6 md:px-12 px-6", children: [
+    isModalOpen && /* @__PURE__ */ jsxDEV13("div", { className: "fixed inset-0 flex items-center justify-center z-50", children: [
+      /* @__PURE__ */ jsxDEV13("div", { className: "absolute inset-0 bg-black opacity-50" }, void 0, !1, {
         fileName: "app/components/ContactForm.tsx",
-        lineNumber: 15,
-        columnNumber: 29
+        lineNumber: 55,
+        columnNumber: 21
       }, this),
-      /* @__PURE__ */ jsxDEV13("p", { children: "512 N. Crain Highway, Suite #13" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 16,
-        columnNumber: 29
-      }, this),
-      /* @__PURE__ */ jsxDEV13("p", { children: "Glen Burnie, MD 21061" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 17,
-        columnNumber: 29
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 14,
-      columnNumber: 25
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Email" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 20,
-        columnNumber: 29
-      }, this),
-      /* @__PURE__ */ jsxDEV13("a", { href: "mailto:sales@eastlube.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 21,
-        columnNumber: 29
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 19,
-      columnNumber: 25
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Phone" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 26,
-        columnNumber: 29
-      }, this),
-      /* @__PURE__ */ jsxDEV13("p", { children: "+1 833-880-PUMP (7867)" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 27,
-        columnNumber: 29
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 25,
-      columnNumber: 25
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { children: [
-      /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Hours" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 30,
-        columnNumber: 29
-      }, this),
-      /* @__PURE__ */ jsxDEV13("p", { children: "Monday - Friday: 7:30 AM - 4:00 PM" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 31,
-        columnNumber: 29
-      }, this),
-      /* @__PURE__ */ jsxDEV13("p", { children: "Saturday - Sunday: Closed" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 32,
-        columnNumber: 29
-      }, this)
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 29,
-      columnNumber: 25
-    }, this)
-  ] }, void 0, !0, {
-    fileName: "app/components/ContactForm.tsx",
-    lineNumber: 11,
-    columnNumber: 21
-  }, this),
-  /* @__PURE__ */ jsxDEV13("div", { children: /* @__PURE__ */ jsxDEV13("form", { children: [
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsxDEV13("label", { htmlFor: "name", className: "block text-base font-thin mb-1", children: "Name" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 40,
-        columnNumber: 33
-      }, this),
-      /* @__PURE__ */ jsxDEV13(
-        "input",
-        {
-          required: !0,
-          type: "text",
-          id: "name",
-          name: "name",
-          placeholder: "Enter your name",
-          className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-        },
-        void 0,
-        !1,
-        {
+      /* @__PURE__ */ jsxDEV13("div", { className: "bg-black rounded-md shadow-md z-50 border-2 border-white", children: /* @__PURE__ */ jsxDEV13("div", { className: "p-8", children: [
+        /* @__PURE__ */ jsxDEV13("h2", { className: "text-2xl font-bold mb-4", children: "Success!" }, void 0, !1, {
           fileName: "app/components/ContactForm.tsx",
-          lineNumber: 43,
-          columnNumber: 33
-        },
-        this
-      )
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 39,
-      columnNumber: 29
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex", children: [
-      /* @__PURE__ */ jsxDEV13("div", { className: "mr-2 w-full", children: [
-        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "address", className: "block text-base font-thin mb-1", children: "Address" }, void 0, !1, {
+          lineNumber: 58,
+          columnNumber: 29
+        }, this),
+        /* @__PURE__ */ jsxDEV13("p", { className: "mb-4", children: "Your email message has been sent successfully." }, void 0, !1, {
           fileName: "app/components/ContactForm.tsx",
-          lineNumber: 54,
-          columnNumber: 37
+          lineNumber: 59,
+          columnNumber: 29
         }, this),
         /* @__PURE__ */ jsxDEV13(
-          "input",
+          "button",
           {
-            type: "text",
-            id: "address",
-            name: "address",
-            placeholder: "Enter your address",
-            className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
+            onClick: () => setIsModalOpen(!1),
+            className: "bg-white hover:bg-gray-200 text-black font-bold py-2 px-4 rounded-full block mx-auto",
+            children: "Close"
           },
           void 0,
           !1,
           {
             fileName: "app/components/ContactForm.tsx",
-            lineNumber: 57,
-            columnNumber: 37
+            lineNumber: 60,
+            columnNumber: 29
           },
           this
         )
       ] }, void 0, !0, {
         fileName: "app/components/ContactForm.tsx",
-        lineNumber: 53,
-        columnNumber: 33
-      }, this),
-      /* @__PURE__ */ jsxDEV13("div", { className: "w-full", children: [
-        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "zipCode", className: "block text-base font-thin mb-1", children: "ZIP Code" }, void 0, !1, {
-          fileName: "app/components/ContactForm.tsx",
-          lineNumber: 66,
-          columnNumber: 37
-        }, this),
-        /* @__PURE__ */ jsxDEV13(
-          "input",
-          {
-            type: "text",
-            id: "zipCode",
-            name: "zipCode",
-            placeholder: "Enter your ZIP code",
-            className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          },
-          void 0,
-          !1,
-          {
-            fileName: "app/components/ContactForm.tsx",
-            lineNumber: 69,
-            columnNumber: 37
-          },
-          this
-        )
-      ] }, void 0, !0, {
+        lineNumber: 57,
+        columnNumber: 25
+      }, this) }, void 0, !1, {
         fileName: "app/components/ContactForm.tsx",
-        lineNumber: 65,
-        columnNumber: 33
+        lineNumber: 56,
+        columnNumber: 21
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/ContactForm.tsx",
-      lineNumber: 52,
-      columnNumber: 29
+      lineNumber: 54,
+      columnNumber: 17
     }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex", children: [
-      " ",
-      /* @__PURE__ */ jsxDEV13("div", { className: "mr-2 w-full", children: [
-        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "email", className: "block text-base font-thin mb-1", children: "Email" }, void 0, !1, {
+    /* @__PURE__ */ jsxDEV13("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxDEV13("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
+      /* @__PURE__ */ jsxDEV13("div", { children: [
+        /* @__PURE__ */ jsxDEV13("h2", { className: "text-4xl font-bold mb-4", children: "Contact" }, void 0, !1, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 74,
+          columnNumber: 25
+        }, this),
+        /* @__PURE__ */ jsxDEV13("p", { className: "text-base mb-8 mr-20", children: "Come visit our service centers and experience the power of expert lubrication support!" }, void 0, !1, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 75,
+          columnNumber: 25
+        }, this),
+        /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+          /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Address" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 77,
+            columnNumber: 29
+          }, this),
+          /* @__PURE__ */ jsxDEV13("p", { children: "512 N. Crain Highway, Suite #13" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 78,
+            columnNumber: 29
+          }, this),
+          /* @__PURE__ */ jsxDEV13("p", { children: "Glen Burnie, MD 21061" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 79,
+            columnNumber: 29
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 76,
+          columnNumber: 25
+        }, this),
+        /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+          /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Email" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 82,
+            columnNumber: 29
+          }, this),
+          /* @__PURE__ */ jsxDEV13("a", { href: "mailto:sales@eastlube.com", className: "text-lg hover:underline", children: "sales@eastlube.com" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 83,
+            columnNumber: 29
+          }, this)
+        ] }, void 0, !0, {
           fileName: "app/components/ContactForm.tsx",
           lineNumber: 81,
-          columnNumber: 37
+          columnNumber: 25
         }, this),
-        /* @__PURE__ */ jsxDEV13(
-          "input",
-          {
-            required: !0,
-            type: "email",
-            id: "email",
-            name: "email",
-            placeholder: "Enter your email",
-            className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          },
-          void 0,
-          !1,
-          {
+        /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+          /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Phone" }, void 0, !1, {
             fileName: "app/components/ContactForm.tsx",
-            lineNumber: 84,
-            columnNumber: 37
-          },
-          this
-        )
-      ] }, void 0, !0, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 80,
-        columnNumber: 33
-      }, this),
-      /* @__PURE__ */ jsxDEV13("div", { className: "w-full", children: [
-        /* @__PURE__ */ jsxDEV13("label", { htmlFor: "phone", className: "block text-base font-thin mb-1", children: "Phone" }, void 0, !1, {
+            lineNumber: 88,
+            columnNumber: 29
+          }, this),
+          /* @__PURE__ */ jsxDEV13("p", { children: "+1 833-880-PUMP (7867)" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 89,
+            columnNumber: 29
+          }, this)
+        ] }, void 0, !0, {
           fileName: "app/components/ContactForm.tsx",
-          lineNumber: 94,
-          columnNumber: 37
+          lineNumber: 87,
+          columnNumber: 25
         }, this),
-        /* @__PURE__ */ jsxDEV13(
-          "input",
-          {
-            type: "tel",
-            id: "phone",
-            name: "phone",
-            placeholder: "Enter your phone number",
-            className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-          },
-          void 0,
-          !1,
-          {
+        /* @__PURE__ */ jsxDEV13("div", { children: [
+          /* @__PURE__ */ jsxDEV13("h3", { className: "text-xl font-semibold", children: "Hours" }, void 0, !1, {
             fileName: "app/components/ContactForm.tsx",
-            lineNumber: 97,
-            columnNumber: 37
-          },
-          this
-        )
+            lineNumber: 92,
+            columnNumber: 29
+          }, this),
+          /* @__PURE__ */ jsxDEV13("p", { children: "Monday - Friday: 7:30 AM - 4:00 PM" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 93,
+            columnNumber: 29
+          }, this),
+          /* @__PURE__ */ jsxDEV13("p", { children: "Saturday - Sunday: Closed" }, void 0, !1, {
+            fileName: "app/components/ContactForm.tsx",
+            lineNumber: 94,
+            columnNumber: 29
+          }, this)
+        ] }, void 0, !0, {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 91,
+          columnNumber: 25
+        }, this)
       ] }, void 0, !0, {
         fileName: "app/components/ContactForm.tsx",
-        lineNumber: 93,
-        columnNumber: 33
+        lineNumber: 73,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ jsxDEV13("div", { children: /* @__PURE__ */ jsxDEV13(
+        "form",
+        {
+          onSubmit: handleSubmit(onSubmit),
+          children: [
+            /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+              /* @__PURE__ */ jsxDEV13("label", { htmlFor: "name", className: "block text-base font-thin mb-1", children: "Name" }, void 0, !1, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 103,
+                columnNumber: 33
+              }, this),
+              /* @__PURE__ */ jsxDEV13(
+                "input",
+                {
+                  required: !0,
+                  type: "text",
+                  id: "name",
+                  placeholder: "Enter your name",
+                  className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent",
+                  ...register("name")
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 106,
+                  columnNumber: 33
+                },
+                this
+              )
+            ] }, void 0, !0, {
+              fileName: "app/components/ContactForm.tsx",
+              lineNumber: 102,
+              columnNumber: 29
+            }, this),
+            /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex", children: [
+              /* @__PURE__ */ jsxDEV13("div", { className: "mr-2 w-full", children: [
+                /* @__PURE__ */ jsxDEV13("label", { htmlFor: "address", className: "block text-base font-thin mb-1", children: "Address" }, void 0, !1, {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 117,
+                  columnNumber: 37
+                }, this),
+                /* @__PURE__ */ jsxDEV13(
+                  "input",
+                  {
+                    type: "text",
+                    id: "address",
+                    placeholder: "Enter your address",
+                    className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent",
+                    ...register("address")
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/ContactForm.tsx",
+                    lineNumber: 120,
+                    columnNumber: 37
+                  },
+                  this
+                )
+              ] }, void 0, !0, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 116,
+                columnNumber: 33
+              }, this),
+              /* @__PURE__ */ jsxDEV13("div", { className: "w-full", children: [
+                /* @__PURE__ */ jsxDEV13("label", { htmlFor: "zipCode", className: "block text-base font-thin mb-1", children: "ZIP Code" }, void 0, !1, {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 129,
+                  columnNumber: 37
+                }, this),
+                /* @__PURE__ */ jsxDEV13(
+                  "input",
+                  {
+                    type: "text",
+                    id: "zipCode",
+                    placeholder: "Enter your ZIP code",
+                    className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent",
+                    ...register("zipCode")
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/ContactForm.tsx",
+                    lineNumber: 132,
+                    columnNumber: 37
+                  },
+                  this
+                )
+              ] }, void 0, !0, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 128,
+                columnNumber: 33
+              }, this)
+            ] }, void 0, !0, {
+              fileName: "app/components/ContactForm.tsx",
+              lineNumber: 115,
+              columnNumber: 29
+            }, this),
+            /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex", children: [
+              " ",
+              /* @__PURE__ */ jsxDEV13("div", { className: "mr-2 w-full", children: [
+                /* @__PURE__ */ jsxDEV13("label", { htmlFor: "email", className: "block text-base font-thin mb-1", children: "Email" }, void 0, !1, {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 144,
+                  columnNumber: 37
+                }, this),
+                /* @__PURE__ */ jsxDEV13(
+                  "input",
+                  {
+                    required: !0,
+                    type: "email",
+                    id: "email",
+                    placeholder: "Enter your email",
+                    className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent",
+                    ...register("email")
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/ContactForm.tsx",
+                    lineNumber: 147,
+                    columnNumber: 37
+                  },
+                  this
+                )
+              ] }, void 0, !0, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 143,
+                columnNumber: 33
+              }, this),
+              /* @__PURE__ */ jsxDEV13("div", { className: "w-full", children: [
+                /* @__PURE__ */ jsxDEV13("label", { htmlFor: "phone", className: "block text-base font-thin mb-1", children: "Phone" }, void 0, !1, {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 157,
+                  columnNumber: 37
+                }, this),
+                /* @__PURE__ */ jsxDEV13(
+                  "input",
+                  {
+                    type: "tel",
+                    id: "phone",
+                    placeholder: "Enter your phone number",
+                    className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent",
+                    ...register("phone")
+                  },
+                  void 0,
+                  !1,
+                  {
+                    fileName: "app/components/ContactForm.tsx",
+                    lineNumber: 160,
+                    columnNumber: 37
+                  },
+                  this
+                )
+              ] }, void 0, !0, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 156,
+                columnNumber: 33
+              }, this)
+            ] }, void 0, !0, {
+              fileName: "app/components/ContactForm.tsx",
+              lineNumber: 142,
+              columnNumber: 29
+            }, this),
+            /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+              /* @__PURE__ */ jsxDEV13("label", { htmlFor: "subject", className: "block text-base font-thin mb-1", children: "Subject" }, void 0, !1, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 170,
+                columnNumber: 33
+              }, this),
+              /* @__PURE__ */ jsxDEV13(
+                "input",
+                {
+                  type: "text",
+                  id: "subject",
+                  placeholder: "Enter the subject",
+                  className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent",
+                  ...register("subject")
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 173,
+                  columnNumber: 33
+                },
+                this
+              )
+            ] }, void 0, !0, {
+              fileName: "app/components/ContactForm.tsx",
+              lineNumber: 169,
+              columnNumber: 29
+            }, this),
+            /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
+              /* @__PURE__ */ jsxDEV13("label", { htmlFor: "message", className: "block text-base font-thin mb-1", children: "Message" }, void 0, !1, {
+                fileName: "app/components/ContactForm.tsx",
+                lineNumber: 182,
+                columnNumber: 33
+              }, this),
+              /* @__PURE__ */ jsxDEV13(
+                "textarea",
+                {
+                  id: "message",
+                  placeholder: "Write your message here ...",
+                  className: "w-full border border-white rounded-md py-3 px-3 text-white bg-transparent",
+                  ...register("message")
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 185,
+                  columnNumber: 33
+                },
+                this
+              )
+            ] }, void 0, !0, {
+              fileName: "app/components/ContactForm.tsx",
+              lineNumber: 181,
+              columnNumber: 29
+            }, this),
+            /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex justify-center", children: [
+              " ",
+              /* @__PURE__ */ jsxDEV13(
+                "button",
+                {
+                  disabled: isSubmitting,
+                  type: "submit",
+                  className: "bg-white text-black border border-black rounded-md py-2 px-6 hover:bg-zinc-300",
+                  children: "Send"
+                },
+                void 0,
+                !1,
+                {
+                  fileName: "app/components/ContactForm.tsx",
+                  lineNumber: 193,
+                  columnNumber: 33
+                },
+                this
+              )
+            ] }, void 0, !0, {
+              fileName: "app/components/ContactForm.tsx",
+              lineNumber: 192,
+              columnNumber: 29
+            }, this)
+          ]
+        },
+        void 0,
+        !0,
+        {
+          fileName: "app/components/ContactForm.tsx",
+          lineNumber: 100,
+          columnNumber: 25
+        },
+        this
+      ) }, void 0, !1, {
+        fileName: "app/components/ContactForm.tsx",
+        lineNumber: 99,
+        columnNumber: 21
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/ContactForm.tsx",
-      lineNumber: 79,
-      columnNumber: 29
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsxDEV13("label", { htmlFor: "subject", className: "block text-base font-thin mb-1", children: "Subject" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 107,
-        columnNumber: 33
-      }, this),
-      /* @__PURE__ */ jsxDEV13(
-        "input",
-        {
-          type: "text",
-          id: "subject",
-          name: "subject",
-          placeholder: "Enter the subject",
-          className: "w-full border border-white rounded-md py-2 px-3 text-white bg-transparent"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/ContactForm.tsx",
-          lineNumber: 110,
-          columnNumber: 33
-        },
-        this
-      )
-    ] }, void 0, !0, {
+      lineNumber: 71,
+      columnNumber: 17
+    }, this) }, void 0, !1, {
       fileName: "app/components/ContactForm.tsx",
-      lineNumber: 106,
-      columnNumber: 29
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4", children: [
-      /* @__PURE__ */ jsxDEV13("label", { htmlFor: "message", className: "block text-base font-thin mb-1", children: "Message" }, void 0, !1, {
-        fileName: "app/components/ContactForm.tsx",
-        lineNumber: 119,
-        columnNumber: 33
-      }, this),
-      /* @__PURE__ */ jsxDEV13(
-        "textarea",
-        {
-          id: "message",
-          name: "message",
-          placeholder: "Write your message here ...",
-          className: "w-full border border-white rounded-md py-3 px-3 text-white bg-transparent"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/ContactForm.tsx",
-          lineNumber: 122,
-          columnNumber: 33
-        },
-        this
-      )
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 118,
-      columnNumber: 29
-    }, this),
-    /* @__PURE__ */ jsxDEV13("div", { className: "mb-4 flex justify-center", children: [
-      " ",
-      /* @__PURE__ */ jsxDEV13(
-        "button",
-        {
-          type: "submit",
-          className: "bg-white text-black border border-black rounded-md py-2 px-6 hover:bg-zinc-300",
-          children: "Send"
-        },
-        void 0,
-        !1,
-        {
-          fileName: "app/components/ContactForm.tsx",
-          lineNumber: 130,
-          columnNumber: 33
-        },
-        this
-      )
-    ] }, void 0, !0, {
-      fileName: "app/components/ContactForm.tsx",
-      lineNumber: 129,
-      columnNumber: 29
+      lineNumber: 70,
+      columnNumber: 13
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/ContactForm.tsx",
-    lineNumber: 38,
-    columnNumber: 25
-  }, this) }, void 0, !1, {
-    fileName: "app/components/ContactForm.tsx",
-    lineNumber: 37,
-    columnNumber: 21
-  }, this)
-] }, void 0, !0, {
-  fileName: "app/components/ContactForm.tsx",
-  lineNumber: 9,
-  columnNumber: 17
-}, this) }, void 0, !1, {
-  fileName: "app/components/ContactForm.tsx",
-  lineNumber: 8,
-  columnNumber: 13
-}, this) }, void 0, !1, {
-  fileName: "app/components/ContactForm.tsx",
-  lineNumber: 7,
-  columnNumber: 9
-}, this), ContactForm_default = ContactForm;
+    lineNumber: 51,
+    columnNumber: 9
+  }, this);
+}, ContactForm_default = ContactForm;
 
 // app/components/Map.tsx
 import { jsxDEV as jsxDEV14 } from "react/jsx-dev-runtime";
@@ -1659,7 +1755,7 @@ var AboutSection = () => {
     /* @__PURE__ */ jsxDEV17("p", { className: "text-base mb-4 mx-8 md:mx-24 ", children: [
       "Eastern Lubrication System is a company with more than ",
       years,
-      " years of experience in providing services in the lubrication equipment. We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas."
+      " years of experience in providing services in the lubrication equipment."
     ] }, void 0, !0, {
       fileName: "app/components/AboutSection.tsx",
       lineNumber: 18,
@@ -1817,10 +1913,10 @@ var Features = () => {
 // app/components/Gallery.tsx
 import { FontAwesomeIcon as FontAwesomeIcon3 } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useState as useState4, useEffect as useEffect3 } from "react";
+import { useState as useState5, useEffect as useEffect3 } from "react";
 import { jsxDEV as jsxDEV19 } from "react/jsx-dev-runtime";
 var GallerySection = () => {
-  let [scrollIndex, setScrollIndex] = useState4(0), [isSmallScreen, setIsSmallScreen] = useState4(!1), itemsPerPage = isSmallScreen ? 2 : 3, images = [
+  let [scrollIndex, setScrollIndex] = useState5(0), [isSmallScreen, setIsSmallScreen] = useState5(!1), itemsPerPage = isSmallScreen ? 2 : 3, images = [
     {
       id: 1,
       src: "images/bulk-oil-tanks.jpeg",
@@ -2136,7 +2232,7 @@ var AboutUsSection = () => {
       }, this),
       " is a company with more than ",
       years,
-      " of experience in providing services in the lubrication equipment. We install and service automotive lubrication systems in the Maryland (D.C.), Delaware and Northern Virginia areas.",
+      " of experience in providing services in the lubrication equipment.",
       /* @__PURE__ */ jsxDEV22("br", {}, void 0, !1, {
         fileName: "app/components/AboutUs.tsx",
         lineNumber: 21,
@@ -2185,7 +2281,10 @@ var MissionVision = () => /* @__PURE__ */ jsxDEV23("section", { className: "bord
         lineNumber: 18,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ jsxDEV23("p", { className: "text-lg text-justify px-8", children: "To be one of the best companies in the automotive area, in the states of Maryland, Delaware and Northern Virginia of United States, which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service." }, void 0, !1, {
+      /* @__PURE__ */ jsxDEV23("p", { className: "text-lg text-justify px-8", children: [
+        "To be one of the best companies in the automotive area,",
+        "which provides our customers with the most optimal solutions according to their needs in terms of price, quality and service."
+      ] }, void 0, !0, {
         fileName: "app/components/MissionVision.tsx",
         lineNumber: 19,
         columnNumber: 11
@@ -2204,17 +2303,17 @@ var MissionVision = () => /* @__PURE__ */ jsxDEV23("section", { className: "bord
     /* @__PURE__ */ jsxDEV23("div", { className: "md:w-1/2 bg-black text-white py-6 px-8 my-auto", children: [
       /* @__PURE__ */ jsxDEV23("h2", { className: "text-4xl font-bold mb-4 text-cyan-300", children: "Vision" }, void 0, !1, {
         fileName: "app/components/MissionVision.tsx",
-        lineNumber: 29,
+        lineNumber: 31,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ jsxDEV23("p", { className: "text-lg text-justify px-8", children: "To be the leading provider of innovative lubrication technology, setting industry standards for reliability and service. We aspire to continuously evolve, adapting to the changing needs of our clients and the world, while contributing to a greener, more efficient future." }, void 0, !1, {
         fileName: "app/components/MissionVision.tsx",
-        lineNumber: 30,
+        lineNumber: 32,
         columnNumber: 11
       }, this)
     ] }, void 0, !0, {
       fileName: "app/components/MissionVision.tsx",
-      lineNumber: 28,
+      lineNumber: 30,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ jsxDEV23("div", { className: "md:w-1/2", children: /* @__PURE__ */ jsxDEV23(
@@ -2228,18 +2327,18 @@ var MissionVision = () => /* @__PURE__ */ jsxDEV23("section", { className: "bord
       !1,
       {
         fileName: "app/components/MissionVision.tsx",
-        lineNumber: 36,
+        lineNumber: 38,
         columnNumber: 11
       },
       this
     ) }, void 0, !1, {
       fileName: "app/components/MissionVision.tsx",
-      lineNumber: 35,
+      lineNumber: 37,
       columnNumber: 9
     }, this)
   ] }, void 0, !0, {
     fileName: "app/components/MissionVision.tsx",
-    lineNumber: 26,
+    lineNumber: 28,
     columnNumber: 7
   }, this)
 ] }, void 0, !0, {
@@ -2283,6 +2382,104 @@ function About() {
   }, this);
 }
 
+// app/routes/send.ts
+var send_exports = {};
+__export(send_exports, {
+  action: () => action
+});
+import { json } from "@remix-run/node";
+import { Resend } from "resend";
+
+// app/components/EmailMessage.tsx
+import { jsxDEV as jsxDEV25 } from "react/jsx-dev-runtime";
+var EmailMessage = ({ name, address, zipCode, email, phone, subject, message }) => /* @__PURE__ */ jsxDEV25("div", { className: "bg-white shadow-md rounded-md p-4", children: [
+  /* @__PURE__ */ jsxDEV25("div", { className: "mb-4", children: [
+    /* @__PURE__ */ jsxDEV25("h2", { className: "text-xl font-bold", children: subject }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 19,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV25("p", { children: message }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 20,
+      columnNumber: 17
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/EmailMessage.tsx",
+    lineNumber: 18,
+    columnNumber: 13
+  }, this),
+  /* @__PURE__ */ jsxDEV25("div", { className: "border-t border-gray-300 mt-12", children: [
+    /* @__PURE__ */ jsxDEV25("h3", { className: "text-lg font-bold mb-2", children: "Contact Information" }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 23,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV25("p", { className: "mb-1 font-medium font-bold text-lg", children: name }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 24,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV25("p", { className: "mb-1 text-sm text-gray-600 italic", children: [
+      address,
+      " - ",
+      zipCode
+    ] }, void 0, !0, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 25,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV25("p", { className: "mb-1 text-sm text-gray-600", children: /* @__PURE__ */ jsxDEV25("a", { href: `mailto:${email}`, children: email }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 26,
+      columnNumber: 59
+    }, this) }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 26,
+      columnNumber: 17
+    }, this),
+    /* @__PURE__ */ jsxDEV25("p", { className: "mb-1 text-sm text-gray-600", children: /* @__PURE__ */ jsxDEV25("a", { href: `tel:${phone}`, children: phone }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 27,
+      columnNumber: 59
+    }, this) }, void 0, !1, {
+      fileName: "app/components/EmailMessage.tsx",
+      lineNumber: 27,
+      columnNumber: 17
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/components/EmailMessage.tsx",
+    lineNumber: 22,
+    columnNumber: 13
+  }, this)
+] }, void 0, !0, {
+  fileName: "app/components/EmailMessage.tsx",
+  lineNumber: 17,
+  columnNumber: 9
+}, this), EmailMessage_default = EmailMessage;
+
+// app/routes/send.ts
+var resend = new Resend(process.env.RESEND_API_KEY), action = async ({ request }) => {
+  if (request.method === "POST") {
+    let formData = new URLSearchParams(await request.text()), message = JSON.parse(Object.keys(Object.fromEntries(formData.entries()))[0]), { data, error } = await resend.emails.send({
+      from: "Eastlube Website <sales@eastlube.com>",
+      to: ["sales@eastlube.com"],
+      subject: `${message.name} needs info about ${message.subject} - Eastlube website`,
+      react: EmailMessage_default({
+        name: message.name,
+        address: message.address,
+        zipCode: message.zipCode,
+        email: message.email,
+        phone: message.phone,
+        subject: message.subject,
+        message: message.message
+      })
+    });
+    return error ? json({ error }, 400) : json(data, 200);
+  }
+  return json({ error: "Method not allowed" }, 405);
+};
+
 // app/routes/work.tsx
 var work_exports = {};
 __export(work_exports, {
@@ -2291,8 +2488,8 @@ __export(work_exports, {
 });
 
 // app/components/Collection.tsx
-import { jsxDEV as jsxDEV25 } from "react/jsx-dev-runtime";
-var Collection = () => /* @__PURE__ */ jsxDEV25("div", { className: "bg-black p-4 md:p-14", children: /* @__PURE__ */ jsxDEV25("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxDEV25("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4", children: [
+import { jsxDEV as jsxDEV26 } from "react/jsx-dev-runtime";
+var Collection = () => /* @__PURE__ */ jsxDEV26("div", { className: "bg-black p-4 md:p-14", children: /* @__PURE__ */ jsxDEV26("div", { className: "max-w-6xl mx-auto", children: /* @__PURE__ */ jsxDEV26("div", { className: "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4", children: [
   {
     id: 1,
     src: "images/polish.jpg",
@@ -2329,19 +2526,19 @@ var Collection = () => /* @__PURE__ */ jsxDEV25("div", { className: "bg-black p-
     title: "Oil Bar Dispenser",
     description: "Description 6"
   }
-].map((image, index) => /* @__PURE__ */ jsxDEV25("div", { className: "w-full relative aspect-ratio-1/1 group", children: [
-  /* @__PURE__ */ jsxDEV25("img", { src: image.src, alt: `Image ${index}`, className: "w-full h-full object-cover hover:brightness-50" }, void 0, !1, {
+].map((image, index) => /* @__PURE__ */ jsxDEV26("div", { className: "w-full relative aspect-ratio-1/1 group", children: [
+  /* @__PURE__ */ jsxDEV26("img", { src: image.src, alt: `Image ${index}`, className: "w-full h-full object-cover hover:brightness-50" }, void 0, !1, {
     fileName: "app/components/Collection.tsx",
     lineNumber: 50,
     columnNumber: 29
   }, this),
-  /* @__PURE__ */ jsxDEV25("div", { className: "gallery-info absolute top-[50%] left-0 right-0 text-white p-2 opacity-0 transition-opacity group-hover:opacity-100 flex flex-col justify-center items-center", children: [
-    /* @__PURE__ */ jsxDEV25("h3", { className: "text-lg font-bold", children: image.title }, void 0, !1, {
+  /* @__PURE__ */ jsxDEV26("div", { className: "gallery-info absolute top-[50%] left-0 right-0 text-white p-2 opacity-0 transition-opacity group-hover:opacity-100 flex flex-col justify-center items-center", children: [
+    /* @__PURE__ */ jsxDEV26("h3", { className: "text-lg font-bold", children: image.title }, void 0, !1, {
       fileName: "app/components/Collection.tsx",
       lineNumber: 52,
       columnNumber: 33
     }, this),
-    /* @__PURE__ */ jsxDEV25("p", { className: "text-xs", children: image.description }, void 0, !1, {
+    /* @__PURE__ */ jsxDEV26("p", { className: "text-xs", children: image.description }, void 0, !1, {
       fileName: "app/components/Collection.tsx",
       lineNumber: 53,
       columnNumber: 33
@@ -2370,8 +2567,8 @@ var Collection = () => /* @__PURE__ */ jsxDEV25("div", { className: "bg-black p-
 }, this), Collection_default = Collection;
 
 // app/components/DownloadButton.tsx
-import { jsxDEV as jsxDEV26 } from "react/jsx-dev-runtime";
-var DownloadButton = () => /* @__PURE__ */ jsxDEV26("div", { className: "w-56 sm:w-64 mx-2 md:pr-12 md:mx-16 lg:mx-32 text-white bg-black p-4 rounded-md border border-white hover:bg-white hover:text-black hover:border-black hover:shadow-md transition-all duration-300", children: /* @__PURE__ */ jsxDEV26("button", { onClick: () => {
+import { jsxDEV as jsxDEV27 } from "react/jsx-dev-runtime";
+var DownloadButton = () => /* @__PURE__ */ jsxDEV27("div", { className: "w-56 sm:w-64 mx-2 md:pr-12 md:mx-16 lg:mx-32 text-white bg-black p-4 rounded-md border border-white hover:bg-white hover:text-black hover:border-black hover:shadow-md transition-all duration-300", children: /* @__PURE__ */ jsxDEV27("button", { onClick: () => {
   let pdfFile = "assets/services-portfolio.pdf", currentDate = /* @__PURE__ */ new Date(), filename = `eastlube-portfolio-${currentDate.getDate()}-${currentDate.getMonth() + 1}-${currentDate.getFullYear()}.pdf`, tempAnchor = document.createElement("a");
   tempAnchor.style.display = "none", tempAnchor.href = pdfFile, tempAnchor.setAttribute("download", filename), document.body.appendChild(tempAnchor), tempAnchor.click(), document.body.removeChild(tempAnchor);
 }, children: "Download Portfolio" }, void 0, !1, {
@@ -2385,24 +2582,24 @@ var DownloadButton = () => /* @__PURE__ */ jsxDEV26("div", { className: "w-56 sm
 }, this), DownloadButton_default = DownloadButton;
 
 // app/routes/work.tsx
-import { jsxDEV as jsxDEV27 } from "react/jsx-dev-runtime";
+import { jsxDEV as jsxDEV28 } from "react/jsx-dev-runtime";
 var meta6 = () => [
   { title: "Portfolio | Eastlube" },
   { name: "Eastern Lubrication Systems", content: "Pumps, Reels and more!" }
 ];
 function Portfolio() {
-  return /* @__PURE__ */ jsxDEV27("main", { className: "bg-black", children: [
-    /* @__PURE__ */ jsxDEV27(Navbar_default, {}, void 0, !1, {
+  return /* @__PURE__ */ jsxDEV28("main", { className: "bg-black", children: [
+    /* @__PURE__ */ jsxDEV28(Navbar_default, {}, void 0, !1, {
       fileName: "app/routes/work.tsx",
       lineNumber: 20,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ jsxDEV27("div", { className: "px-4 md:px-14 lg:px-28", children: /* @__PURE__ */ jsxDEV27(
+    /* @__PURE__ */ jsxDEV28("div", { className: "px-4 md:px-14 lg:px-28", children: /* @__PURE__ */ jsxDEV28(
       Header_default,
       {
         title: "Our Work",
         description: "Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products.",
-        children: /* @__PURE__ */ jsxDEV27(DownloadButton_default, {}, void 0, !1, {
+        children: /* @__PURE__ */ jsxDEV28(DownloadButton_default, {}, void 0, !1, {
           fileName: "app/routes/work.tsx",
           lineNumber: 25,
           columnNumber: 21
@@ -2421,12 +2618,12 @@ function Portfolio() {
       lineNumber: 21,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ jsxDEV27(Collection_default, {}, void 0, !1, {
+    /* @__PURE__ */ jsxDEV28(Collection_default, {}, void 0, !1, {
       fileName: "app/routes/work.tsx",
       lineNumber: 28,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ jsxDEV27(Footer_default, {}, void 0, !1, {
+    /* @__PURE__ */ jsxDEV28(Footer_default, {}, void 0, !1, {
       fileName: "app/routes/work.tsx",
       lineNumber: 29,
       columnNumber: 7
@@ -2439,7 +2636,7 @@ function Portfolio() {
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-KM3GHH4E.js", imports: ["/build/_shared/chunk-BA6NHEY4.js", "/build/_shared/chunk-QGHGXAHV.js", "/build/_shared/chunk-3SMLWLAL.js", "/build/_shared/chunk-ZPFBG4YH.js", "/build/_shared/chunk-K6PKGSTD.js", "/build/_shared/chunk-H5ZE7JVG.js", "/build/_shared/chunk-NRH5LTJ7.js", "/build/_shared/chunk-O4OKU2LD.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-I2W2XFFW.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-6TYUISC5.js", imports: ["/build/_shared/chunk-XWWTEJSG.js", "/build/_shared/chunk-CX4WSHHZ.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-DMACYCZB.js", imports: ["/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-DHYGQWPS.js", imports: ["/build/_shared/chunk-PFBCQWK5.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-P7W2DDYC.js", imports: ["/build/_shared/chunk-CX4WSHHZ.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-QETUQFCB.js", imports: ["/build/_shared/chunk-XWWTEJSG.js", "/build/_shared/chunk-PFBCQWK5.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-J5E7BA3X.js", imports: ["/build/_shared/chunk-PFBCQWK5.js", "/build/_shared/chunk-5K34AAH4.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "c18a79dc", hmr: { runtime: "/build/_shared/chunk-ZPFBG4YH.js", timestamp: 1705453080302 }, url: "/build/manifest-C18A79DC.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-NEF26BM4.js", imports: ["/build/_shared/chunk-BA6NHEY4.js", "/build/_shared/chunk-QGHGXAHV.js", "/build/_shared/chunk-NRH5LTJ7.js", "/build/_shared/chunk-3SMLWLAL.js", "/build/_shared/chunk-ZPFBG4YH.js", "/build/_shared/chunk-K6PKGSTD.js", "/build/_shared/chunk-H5ZE7JVG.js", "/build/_shared/chunk-O4OKU2LD.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-TW3KTALZ.js", imports: void 0, hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/_index": { id: "routes/_index", parentId: "root", path: void 0, index: !0, caseSensitive: void 0, module: "/build/routes/_index-Y72UCPXV.js", imports: ["/build/_shared/chunk-XWWTEJSG.js", "/build/_shared/chunk-M3LSD6TZ.js", "/build/_shared/chunk-QIOTMQCL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/about": { id: "routes/about", parentId: "root", path: "about", index: void 0, caseSensitive: void 0, module: "/build/routes/about-HVDJB67S.js", imports: ["/build/_shared/chunk-QIOTMQCL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/careers": { id: "routes/careers", parentId: "root", path: "careers", index: void 0, caseSensitive: void 0, module: "/build/routes/careers-2CLXSQKB.js", imports: ["/build/_shared/chunk-65CQALOT.js", "/build/_shared/chunk-QIOTMQCL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/contact": { id: "routes/contact", parentId: "root", path: "contact", index: void 0, caseSensitive: void 0, module: "/build/routes/contact-5LSHCNFX.js", imports: ["/build/_shared/chunk-M3LSD6TZ.js", "/build/_shared/chunk-QIOTMQCL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/send": { id: "routes/send", parentId: "root", path: "send", index: void 0, caseSensitive: void 0, module: "/build/routes/send-6ZLBSN3E.js", imports: void 0, hasAction: !0, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/services": { id: "routes/services", parentId: "root", path: "services", index: void 0, caseSensitive: void 0, module: "/build/routes/services-OQ6VD5U7.js", imports: ["/build/_shared/chunk-65CQALOT.js", "/build/_shared/chunk-XWWTEJSG.js", "/build/_shared/chunk-QIOTMQCL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 }, "routes/work": { id: "routes/work", parentId: "root", path: "work", index: void 0, caseSensitive: void 0, module: "/build/routes/work-P5S2XBI4.js", imports: ["/build/_shared/chunk-65CQALOT.js", "/build/_shared/chunk-QIOTMQCL.js"], hasAction: !1, hasLoader: !1, hasClientAction: !1, hasClientLoader: !1, hasErrorBoundary: !1 } }, version: "436d63e7", hmr: { runtime: "/build/_shared/chunk-ZPFBG4YH.js", timestamp: 1706909965001 }, url: "/build/manifest-436D63E7.js" };
 
 // server-entry-module:@remix-run/dev/server-build
 var mode = "development", assetsBuildDirectory = "public/build", future = { v3_fetcherPersist: !1, v3_relativeSplatPath: !1 }, publicPath = "/build/", entry = { module: entry_server_exports }, routes = {
@@ -2490,6 +2687,14 @@ var mode = "development", assetsBuildDirectory = "public/build", future = { v3_f
     index: void 0,
     caseSensitive: void 0,
     module: about_exports
+  },
+  "routes/send": {
+    id: "routes/send",
+    parentId: "root",
+    path: "send",
+    index: void 0,
+    caseSensitive: void 0,
+    module: send_exports
   },
   "routes/work": {
     id: "routes/work",
