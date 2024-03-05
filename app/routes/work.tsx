@@ -22,7 +22,7 @@ export default function Portfolio() {
         <Header
           title="Our Work"
           description="Eastern Lubrication Systems is a distributor of oil pumps, grease pumps, hose reels, portable waste drains, diaphragm pumps, oil control handles, grease dispensers and fluid inventory control products."
-          children={<DownloadButton/>}
+          children={""}
         />
       </div>
       <Collection />

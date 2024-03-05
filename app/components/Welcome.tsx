@@ -7,7 +7,7 @@ const SplitScreen: React.FC = () => {
       <div className="flex-1 relative text-center">
         {/* Background image */}
         <img
-          src="images/installations.jpg" 
+          src="images/outside-pump.jpg" 
           alt="Background"
           className="h-full w-full object-cover"
         />
