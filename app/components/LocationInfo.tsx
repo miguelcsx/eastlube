@@ -20,7 +20,7 @@ const LocationInfo: React.FC = () => {
                     <p className="text-lg">
                         <a href="mailto:contact@example.com" className="text-lg hover:underline">
                             sales@eastlube.com
-                        </a> | Phone: +1 833-880-PUMP (7867)
+                        </a> | Phone: <a href="tel:410-761-2100" className="text-lg hover:underline">+1 410-320-7147</a>
                     </p>
                 </div>
             </div>

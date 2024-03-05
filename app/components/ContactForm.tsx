@@ -16,6 +16,12 @@ type FormInput = {
 };
 
 const ContactForm = () => {
+
+    const phoneNumbers = [
+        { number: '+1 410-320-7147', info: 'Lubrication Equipment Services' },
+        { number: '+1 410-582-0600', info: 'Accounts Payable/Receivable' }
+    ];
+
     const [isModalOpen, setIsModalOpen] = useState(false);
     const {
         register,
@@ -86,7 +92,11 @@ const ContactForm = () => {
                         </div>
                         <div className="mb-4">
                             <h3 className="text-xl font-semibold">Phone</h3>
-                            <p>+1 833-880-PUMP (7867)</p>
+                            {phoneNumbers.map((phone, index) => (
+                                <p key={index} className="mb-1">
+                                    <a href={`tel:${phone.number}`} className="hover:underline">{phone.number}</a> - {phone.info}
+                                </p>
+                            ))}
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold">Hours</h3>
