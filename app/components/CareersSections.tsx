@@ -7,7 +7,7 @@ const CareersSection = () => {
       subtitle: "Administrative Support",
       description:
         "Responsible for administrative support, managing correspondence, scheduling appointments, and maintaining efficient office operations.",
-      imageSrc: "images/oil-dispensing-station.jpeg",
+      imageSrc: "images/tools.jpg",
       tags: ["Administrative", "Secretarial"],
     },
     {
@@ -23,7 +23,7 @@ const CareersSection = () => {
       subtitle: "Resource Management",
       description:
         "Manages and optimizes fluid inventory, ensuring the availability of essential resources and minimizing waste within the company's operations.",
-      imageSrc: "images/outside-pump.jpg",
+      imageSrc: "images/spanner.jpg",
       tags: ["Inventory Control", "Resource Management"],
     },
   ];

@@ -29,7 +29,7 @@ export default function Services() {
                 <div className="md:p-12 lg:p-36">
                     <Header 
                      title="Our Services" 
-                     description="As a full line service company, we have every component neccesary for an effective lubrication system. We also perform installation and service making us the complete solution for all your needs."
+                     description="As a full line service company, we have every component necessary for an effective lubrication system. We also perform installation and service making us the complete solution for all your needs."
                     />
 
                     <ServiceSection />

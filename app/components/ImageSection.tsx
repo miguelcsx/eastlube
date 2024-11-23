@@ -3,7 +3,7 @@ import React from "react";
 const ImageSection = () => {
   const images = [
     {
-      src: "images/truck-tom.jpg",
+      src: "images/factory.jpg",
       description: "Image 1 Description",
     },
     {
@@ -11,7 +11,7 @@ const ImageSection = () => {
       description: "Image 2 Description",
     },
     {
-      src: "images/work-site.jpg",
+      src: "images/motor-spare.jpg",
       description: "Image 3 Description",
     },
   ];
